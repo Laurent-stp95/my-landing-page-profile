@@ -1,5 +1,5 @@
 /* =============================================
-   EXPERIENCE — Timeline layout
+   EXPERIENCE — Wisembly Showcase
    ============================================= */
 
    .experience {
@@ -7,66 +7,238 @@
     background: var(--bg-elevated);
   }
   
-  .timeline {
-    position: relative;
-    padding-left: 3rem;
+  /* --- Intro block --- */
+  .wisembly-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 5rem;
   }
   
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 1px;
-    background: linear-gradient(to bottom, var(--accent), var(--border));
+  .wisembly-context p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 520px;
   }
   
-  .timeline-item {
-    position: relative;
-    padding-bottom: 3.5rem;
+  .wisembly-context p strong {
+    color: var(--text);
   }
   
-  .timeline-item:last-child {
-    padding-bottom: 0;
-  }
-  
-  .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -3rem;
-    top: 8px;
-    width: 9px;
-    height: 9px;
-    background: var(--accent);
-    border-radius: 50%;
-    transform: translateX(-4px);
-  }
-  
-  .timeline-date {
+  .wisembly-context .role-tag {
+    display: inline-block;
     font-family: var(--mono);
     font-size: 0.75rem;
+    letter-spacing: 0.08em;
     color: var(--accent);
-    margin-bottom: 0.5rem;
+    border: 1px solid rgba(232, 255, 71, 0.3);
+    padding: 0.4rem 1rem;
+    border-radius: 2px;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* KPI big number */
+  .wisembly-kpi {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+  }
+  
+  .kpi-number {
+    font-family: var(--serif);
+    font-size: clamp(4rem, 8vw, 7rem);
+    font-style: italic;
+    color: var(--accent);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    position: relative;
+  }
+  
+  .kpi-number::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 0;
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(to left, var(--accent), transparent);
+  }
+  
+  .kpi-label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 1.2rem;
+    max-width: 260px;
+    line-height: 1.6;
+  }
+  
+  .kpi-sub {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    opacity: 0.6;
+    margin-top: 0.5rem;
     letter-spacing: 0.05em;
   }
   
-  .timeline-role {
+  /* --- Feature grid --- */
+  .features-label {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  
+  /* --- Feature card --- */
+  .feature-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2.2rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .feature-card:hover {
+    border-color: rgba(232, 255, 71, 0.25);
+    transform: translateY(-4px);
+  }
+  
+  /* Subtle accent line on top */
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .feature-card:hover::before {
+    width: 100%;
+  }
+  
+  .feature-card-icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.4s ease;
+  }
+  
+  .feature-card:hover .feature-card-icon {
+    border-color: var(--accent);
+  }
+  
+  .feature-card-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--text-muted);
+    fill: none;
+    stroke-width: 1.5;
+    transition: stroke 0.4s ease;
+  }
+  
+  .feature-card:hover .feature-card-icon svg {
+    stroke: var(--accent);
+  }
+  
+  .feature-card h3 {
     font-family: var(--serif);
-    font-size: 1.6rem;
-    margin-bottom: 0.3rem;
-  }
-  
-  .timeline-company {
-    color: var(--text-muted);
-    font-size: 0.95rem;
+    font-size: 1.25rem;
     margin-bottom: 0.8rem;
+    color: var(--text);
   }
   
-  .timeline-desc {
+  .feature-card p {
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.7;
-    max-width: 560px;
   }
   
+  .feature-card .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1.2rem;
+  }
+  
+  .feature-card .card-tag {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    background: rgba(232, 255, 71, 0.06);
+    padding: 0.25rem 0.6rem;
+    border-radius: 2px;
+  }
+  
+  /* --- Staggered reveal --- */
+  .feature-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.4s ease;
+  }
+  
+  .feature-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .feature-card:nth-child(1) { transition-delay: 0s; }
+  .feature-card:nth-child(2) { transition-delay: 0.1s; }
+  .feature-card:nth-child(3) { transition-delay: 0.15s; }
+  .feature-card:nth-child(4) { transition-delay: 0.2s; }
+  .feature-card:nth-child(5) { transition-delay: 0.25s; }
+  .feature-card:nth-child(6) { transition-delay: 0.3s; }
+  
+  /* --- Bottom context bar --- */
+  .experience-footer {
+    margin-top: 4rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .experience-footer-text {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.7;
+    max-width: 520px;
+  }
+  
+  .experience-footer-text strong {
+    color: var(--text);
+  }
+  
+  .experience-period {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    white-space: nowrap;
+    opacity: 0.6;
+  }
