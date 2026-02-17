@@ -4,18 +4,42 @@
 
    @media (max-width: 900px) {
     section {
-      padding: 4rem 1.5rem;
+      padding: 3.5rem 1.5rem;
+    }
+  
+    /* Hero mobile */
+    .hero {
+      padding: 0 1.5rem;
     }
   
     .hero h1 {
-      font-size: 3rem;
+      font-size: clamp(2.5rem, 11vw, 3.8rem);
     }
   
-    .hero-stats {
-      flex-wrap: wrap;
-      gap: 2rem;
+    .hero-geo {
+      width: 200px;
+      height: 200px;
+      right: -40px;
+      opacity: 0.5;
     }
   
+    .hero-scroll-hint {
+      left: 1.5rem;
+      bottom: 2rem;
+    }
+  
+    .hero-meta {
+      right: 1.5rem;
+      bottom: 2rem;
+    }
+  
+    .hero-rotator {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.2rem;
+    }
+  
+    /* About */
     .about-grid {
       grid-template-columns: 1fr;
     }
@@ -23,7 +47,7 @@
     /* Wisembly section */
     .wisembly-intro {
       grid-template-columns: 1fr;
-      gap: 2.5rem;
+      gap: 2rem;
     }
   
     .wisembly-kpi {

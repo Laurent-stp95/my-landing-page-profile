@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Animations Hero</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <style>
+    body {
+      margin: 0;
+      background: var(--bg, #0a0f0d);
+      font-family: system-ui, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-grain"></div>
+    <div class="hero-geo" id="heroGeo"></div>
+    <div class="hero-content">
+      <p class="hero-greeting">
+        <span class="greeting-line"></span>
+        <span class="greeting-text">Salut, moi c'est</span>
+      </p>
+      <h1>
+        <span class="title-line"><span class="title-word">Laurent</span></span>
+        <span class="title-line"><span class="title-word">Del Braccio<span class="accent-dot">.</span></span></span>
+      </h1>
+      <div class="hero-rotator">
+        <span class="rotator-static">Product Manager —</span>
+        <span class="rotator-words" id="rotatorWords">
+          <span class="rotator-word active">SaaS B2B</span>
+          <span class="rotator-word">Event Tech</span>
+          <span class="rotator-word">Data-driven</span>
+          <span class="rotator-word">User-centric</span>
+        </span>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span class="scroll-line"></span>
+      <span class="scroll-text">scroll</span>
+    </div>
+    <div class="hero-meta">
+      <span>Disponible</span>
+      <span class="meta-dot"></span>
+      <span>Paris</span>
+    </div>
+  </section>
+
+  <script src="js/parallax.js"></script>
+
+  <script>
+    // Debug : afficher les animations appliquées
+    setTimeout(() => {
+      const greeting = document.querySelector('.hero-greeting');
+      const titleWord = document.querySelector('.title-word');
+      const geo = document.querySelector('.hero-geo');
+
+      console.log('Hero Greeting:', greeting);
+      console.log('Animation greeting:', window.getComputedStyle(greeting).animation);
+      console.log('Opacity greeting:', window.getComputedStyle(greeting).opacity);
+
+      console.log('Title Word:', titleWord);
+      console.log('Animation title:', window.getComputedStyle(titleWord).animation);
+      console.log('Opacity title:', window.getComputedStyle(titleWord).opacity);
+
+      console.log('Geo:', geo);
+      console.log('Animation geo:', window.getComputedStyle(geo).animation);
+      console.log('Opacity geo:', window.getComputedStyle(geo).opacity);
+    }, 2000);
+  </script>
+</body>
+</html>
