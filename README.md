@@ -18,14 +18,5 @@ my-landing-page-pm/
 └── assets/       ← images, favicon
 ```
 
-## Lancer en local
+Le site sera dispo sur https://laurent-stp95.github.io/my-landing-page-profile/
 
-Ouvrir `index.html` dans un navigateur. C'est tout.
-
-## Déployer sur GitHub Pages
-
-1. Aller dans **Settings** → **Pages**
-2. Source : **Deploy from a branch**
-3. Branch : `main` / `/ (root)`
-4. Cliquer **Save**
-5. Le site sera dispo sur `https://TON-USERNAME.github.io/my-landing-page-pm/`
