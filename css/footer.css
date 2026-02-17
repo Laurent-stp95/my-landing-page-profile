@@ -1,0 +1,21 @@
+/* =============================================
+   FOOTER
+   ============================================= */
+
+   footer {
+    padding: 2rem 3rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  footer span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  
+  footer span a {
+    color: var(--accent);
+    text-decoration: none;
+  }

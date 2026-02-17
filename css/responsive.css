@@ -1,0 +1,60 @@
+/* =============================================
+   RESPONSIVE — Mobile breakpoints
+   ============================================= */
+
+   @media (max-width: 900px) {
+    /* Nav */
+    nav {
+      padding: 1rem 1.5rem;
+    }
+  
+    .nav-burger {
+      display: block;
+    }
+  
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(20px);
+      flex-direction: column;
+      padding: 1.5rem;
+      gap: 1.2rem;
+      border-bottom: 1px solid var(--border);
+    }
+  
+    .nav-links.open {
+      display: flex;
+    }
+  
+    /* Sections */
+    section {
+      padding: 4rem 1.5rem;
+    }
+  
+    .hero {
+      padding: 6rem 1.5rem 3rem;
+    }
+  
+    .hero-stats {
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+  
+    .geo-circle {
+      display: none;
+    }
+  
+    /* Grids */
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }

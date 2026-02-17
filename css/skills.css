@@ -1,0 +1,62 @@
+/* =============================================
+   SKILLS — Skill cards grid
+   ============================================= */
+
+   .skills {
+    border-top: 1px solid var(--border);
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .skill-block {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-radius: 12px;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .skill-block:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+  }
+  
+  .skill-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  
+  .skill-block h3 {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .skill-block p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+  
+  .skill-tools {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  
+  .skill-tools span {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    padding: 0.3rem 0.6rem;
+    background: rgba(232, 255, 71, 0.08);
+    color: var(--accent);
+    border-radius: 4px;
+  }
