@@ -28,9 +28,15 @@
   }
   
   .skill-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(232, 255, 71, 0.2);
+    border-radius: 10px;
+    margin-bottom: 1.2rem;
+    background: rgba(232, 255, 71, 0.05);
   }
   
   .skill-block h3 {
