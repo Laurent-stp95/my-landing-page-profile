@@ -80,7 +80,8 @@
     width: 400px;
     height: 400px;
     border-radius: 50%;
-    border: 1px solid var(--border);
+    border: 1px solid rgba(232, 255, 71, 0.25);
+    box-shadow: 0 0 60px rgba(232, 255, 71, 0.06);
     opacity: 0;
     animation: geoReveal 1.5s 1s forwards;
   }
@@ -90,7 +91,7 @@
     position: absolute;
     inset: 40px;
     border-radius: 50%;
-    border: 1px solid rgba(232, 255, 71, 0.15);
+    border: 1px solid rgba(232, 255, 71, 0.35);
     animation: spin 30s linear infinite;
   }
   
@@ -99,5 +100,6 @@
     position: absolute;
     inset: 80px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(232, 255, 71, 0.05) 0%, transparent 70%);
+    border: 1px solid rgba(232, 255, 71, 0.15);
+    background: radial-gradient(circle, rgba(232, 255, 71, 0.08) 0%, transparent 70%);
   }
