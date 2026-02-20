@@ -11,6 +11,6 @@ const observer = new IntersectionObserver(
   { threshold: 0.15 }
 );
 
-document.querySelectorAll('.reveal, .feature-card, .project-card').forEach((el) => {
+document.querySelectorAll('.reveal, .project-card').forEach((el) => {
   observer.observe(el);
 });

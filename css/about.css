@@ -6,13 +6,115 @@
   border-top: 1px solid var(--border);
 }
 
-.about-text {
-  font-size: 1.05rem;
-  color: var(--text-muted);
-  line-height: 1.8;
+/* Grid 2 colonnes : texte | aside */
+.about-body {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 4rem;
+  align-items: start;
 }
 
-.about-text strong {
+.about-col-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+/* Citation */
+.about-quote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
   color: var(--text);
-  font-weight: 600;
+  line-height: 1.6;
+  margin: 0;
+  padding-left: 1.4rem;
+  border-left: 2px solid var(--accent);
+}
+
+.about-text {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Aside — stats + footnote */
+.about-col-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-left: 2rem;
+  border-left: 1px solid var(--border);
+}
+
+.about-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.about-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.about-stat-value {
+  font-family: var(--mono);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.about-stat-label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+}
+
+/* Footnote */
+.about-footnote {
+  font-size: 0.85rem;
+  color: var(--text-subtle);
+  line-height: 1.7;
+  font-style: italic;
+  margin: 0;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 900px) {
+  .about-body {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-col-aside {
+    padding-left: 0;
+    border-left: none;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .about-stats {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .about-footnote {
+    flex: 1 1 100%;
+  }
 }
