@@ -93,7 +93,17 @@
     }
 
     .project-card-header {
-      gap: 0.8rem;
+      flex-wrap: wrap;
+      gap: 0.6rem 1rem;
+      align-items: flex-start;
+    }
+
+    .project-title {
+      flex-basis: calc(100% - 3rem); /* pousse le tag à la ligne */
+    }
+
+    .project-scope {
+      margin-left: 1.6rem; /* aligné sous le titre, après l'espace du numéro */
     }
 
     /* Skills */

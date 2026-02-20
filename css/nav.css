@@ -17,13 +17,13 @@
   }
   
   .nav-logo {
-    font-family: var(--serif);
-    font-size: 1.3rem;
+    font-family: var(--mono);
+    font-size: 0.95rem;
     color: var(--text);
     text-decoration: none;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.04em;
   }
-  
+
   .nav-logo span {
     color: var(--accent);
   }
