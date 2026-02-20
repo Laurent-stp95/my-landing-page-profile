@@ -234,7 +234,7 @@
   /* Tablet (< 1024px) */
   @media (max-width: 1024px) {
     .hero {
-      padding: 0 4vw;
+      padding: 0 5vw;
     }
 
     .hero h1 {

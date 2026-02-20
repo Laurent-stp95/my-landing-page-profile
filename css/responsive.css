@@ -4,12 +4,12 @@
 
    @media (max-width: 900px) {
     section {
-      padding: 3.5rem 1.5rem;
+      padding: 3.5rem 5vw;
     }
-  
+
     /* Hero mobile */
     .hero {
-      padding: 0 1.5rem;
+      padding: 0 5vw;
     }
   
     .hero h1 {
@@ -93,17 +93,28 @@
     }
 
     .project-card-header {
-      flex-wrap: wrap;
-      gap: 0.6rem 1rem;
-      align-items: flex-start;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto auto;
+      column-gap: 1rem;
+      row-gap: 0.6rem;
+      align-items: start;
+    }
+
+    .project-number {
+      grid-row: 1;
+      grid-column: 1;
     }
 
     .project-title {
-      flex-basis: calc(100% - 3rem); /* pousse le tag à la ligne */
+      grid-row: 1;
+      grid-column: 2;
     }
 
     .project-scope {
-      margin-left: 1.6rem; /* aligné sous le titre, après l'espace du numéro */
+      grid-row: 2;
+      grid-column: 2;
+      justify-self: start;
     }
 
     /* Skills */
