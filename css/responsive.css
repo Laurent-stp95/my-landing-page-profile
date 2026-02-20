@@ -75,6 +75,32 @@
       align-items: flex-start;
     }
   
+    /* Projects */
+    .project-narrative {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .narrative-block {
+      padding-left: 0;
+      border-left: none;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .narrative-block:first-child {
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .project-card {
+      padding: 1.8rem 1.5rem;
+    }
+
+    .project-card-header {
+      gap: 0.8rem;
+    }
+
     /* Skills */
     .skills-grid {
       grid-template-columns: 1fr;

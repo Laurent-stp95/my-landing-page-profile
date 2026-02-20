@@ -38,8 +38,8 @@
     inset: 0;
     opacity: 0.06;
     background-image:
-      linear-gradient(90deg, rgba(232, 255, 71, 0.3) 1px, transparent 1px),
-      linear-gradient(rgba(232, 255, 71, 0.3) 1px, transparent 1px);
+      linear-gradient(90deg, var(--accent-glow) 1px, transparent 1px),
+      linear-gradient(var(--accent-glow) 1px, transparent 1px);
     background-size: 120px 120px;
     z-index: 0;
     pointer-events: none;
@@ -47,39 +47,39 @@
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  /* Architectural shapes */
-  .arch-shape {
+  /* SVG arch shapes — animés par GSAP */
+  .arch-svg {
     position: absolute;
-    border: 2px solid rgba(232, 255, 71, 0.15);
     pointer-events: none;
-    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    overflow: visible;
+    opacity: 0;
   }
 
-  .arch-1 {
+  .arch-path {
+    stroke: var(--border-accent);
+    stroke-width: 2;
+    fill: none;
+  }
+
+  .arch-svg.arch-1 {
     top: 15%;
     right: 8%;
     width: 280px;
     height: 380px;
-    border-radius: 4px;
-    transform: rotate(12deg) translate(var(--arch1-x, 0), var(--arch1-y, 0));
   }
 
-  .arch-2 {
+  .arch-svg.arch-2 {
     bottom: 20%;
     right: 15%;
     width: 200px;
     height: 200px;
-    border-radius: 50%;
-    transform: translate(var(--arch2-x, 0), var(--arch2-y, 0));
   }
 
-  .arch-3 {
+  .arch-svg.arch-3 {
     top: 40%;
     right: 3%;
     width: 150px;
     height: 250px;
-    border-radius: 2px;
-    transform: rotate(-8deg) translate(var(--arch3-x, 0), var(--arch3-y, 0));
   }
   
   .hero-content {

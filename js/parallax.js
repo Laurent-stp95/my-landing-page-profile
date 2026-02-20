@@ -4,41 +4,20 @@ if (hero) {
   // Initialize CSS variables
   hero.style.setProperty('--grid-x', '0px');
   hero.style.setProperty('--grid-y', '0px');
-  hero.style.setProperty('--arch1-x', '0px');
-  hero.style.setProperty('--arch1-y', '0px');
-  hero.style.setProperty('--arch2-x', '0px');
-  hero.style.setProperty('--arch2-y', '0px');
-  hero.style.setProperty('--arch3-x', '0px');
-  hero.style.setProperty('--arch3-y', '0px');
 
   // Apply parallax on mouse move
   document.addEventListener('mousemove', (e) => {
     const x = (e.clientX / window.innerWidth - 0.5);
     const y = (e.clientY / window.innerHeight - 0.5);
 
-    // Apply very subtle parallax to grid (::before)
-    const gridX = x * 15;
-    const gridY = y * 15;
+    // Grid background (CSS custom property, inchangé)
+    hero.style.setProperty('--grid-x', `${x * 15}px`);
+    hero.style.setProperty('--grid-y', `${y * 15}px`);
 
-    // Apply parallax to different architectural shapes at different speeds
-    const arch1X = x * -35;
-    const arch1Y = y * -35;
-
-    const arch2X = x * -50;
-    const arch2Y = y * -50;
-
-    const arch3X = x * -25;
-    const arch3Y = y * -25;
-
-    // Update CSS custom properties for parallax
-    hero.style.setProperty('--grid-x', `${gridX}px`);
-    hero.style.setProperty('--grid-y', `${gridY}px`);
-    hero.style.setProperty('--arch1-x', `${arch1X}px`);
-    hero.style.setProperty('--arch1-y', `${arch1Y}px`);
-    hero.style.setProperty('--arch2-x', `${arch2X}px`);
-    hero.style.setProperty('--arch2-y', `${arch2Y}px`);
-    hero.style.setProperty('--arch3-x', `${arch3X}px`);
-    hero.style.setProperty('--arch3-y', `${arch3Y}px`);
+    // SVG shapes via gsap.set (compatible avec la timeline GSAP)
+    gsap.set('.arch-svg.arch-1', { x: x * -35, y: y * -35 });
+    gsap.set('.arch-svg.arch-2', { x: x * -50, y: y * -50 });
+    gsap.set('.arch-svg.arch-3', { x: x * -25, y: y * -25 });
   });
 }
 
