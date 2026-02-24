@@ -10,14 +10,14 @@
   --bg-subtle: #1f1916;
 
   /* --- Text Colors (gris chauds) --- */
-  --text: #f0ebe4;
-  --text-muted: #8a7f76;
-  --text-subtle: #544d47;
+  --text: #f0ebe4;        /* ~16.8:1 sur --bg */
+  --text-muted: #a89e96;  /* ~7.2:1 sur --bg  */
+  --text-subtle: #8c8079; /* ~5.2:1 sur --bg  */
 
   /* --- Accent Orange (couleur principale) --- */
   --accent: #f09807;
   --accent-hover: #ffa51f;
-  --accent-dim: #c27a05;
+  --accent-dim: #d98a06;  /* ~4.8:1 sur --bg-elevated */
   --accent-soft: rgba(240, 152, 7, 0.12);
   --accent-glow: rgba(240, 152, 7, 0.2);
 
@@ -25,7 +25,7 @@
   --border: #231f1c;
   --border-subtle: #1a1612;
   --border-bright: #2d2621;
-  --border-accent: rgba(240, 152, 7, 0.15);
+  --border-accent: rgba(240, 151, 7, 0.528);
 
   /* --- Surface States --- */
   --surface-hover: rgba(240, 152, 7, 0.05);

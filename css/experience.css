@@ -78,8 +78,7 @@
   .kpi-sub {
     font-family: var(--mono);
     font-size: 0.7rem;
-    color: var(--text-muted);
-    opacity: 0.6;
+    color: var(--text-subtle);
     margin-top: 0.5rem;
     letter-spacing: 0.05em;
   }
@@ -238,7 +237,6 @@
     font-family: var(--mono);
     font-size: 0.7rem;
     letter-spacing: 0.08em;
-    color: var(--text-muted);
+    color: var(--text-subtle);
     white-space: nowrap;
-    opacity: 0.6;
   }

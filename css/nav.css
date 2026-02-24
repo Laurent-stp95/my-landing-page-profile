@@ -13,7 +13,7 @@
     z-index: 100;
     backdrop-filter: blur(20px);
     background: rgba(10, 10, 10, 0.7);
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-bright);
   }
   
   .nav-logo {
@@ -55,4 +55,17 @@
   
   .nav-links a:hover {
     color: var(--accent);
+  }
+
+  .nav-links a:focus-visible,
+  .nav-logo:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+
+  .nav-burger:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 2px;
   }
