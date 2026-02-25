@@ -1,3 +1,21 @@
+/* E — Curseur personnalisé */
+const cursorDot  = document.getElementById('cursorDot');
+const cursorRing = document.getElementById('cursorRing');
+
+if (cursorDot && cursorRing) {
+  document.addEventListener('mousemove', (e) => {
+    cursorDot.style.left  = e.clientX + 'px';
+    cursorDot.style.top   = e.clientY + 'px';
+    cursorRing.style.left = e.clientX + 'px';
+    cursorRing.style.top  = e.clientY + 'px';
+  });
+
+  document.querySelectorAll('a, button, [role="button"]').forEach(el => {
+    el.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
+    el.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
+  });
+}
+
 /* Parallax — Architectural background */
 const hero = document.querySelector('.hero');
 if (hero) {
@@ -38,6 +56,10 @@ words.forEach(word => {
 if (words.length > 1) {
   let current = 0;
 
+  // F — Compteur
+  const counterCurrent = document.getElementById('rotatorCounter')?.querySelector('.counter-current');
+  const pad = (n) => String(n + 1).padStart(2, '0');
+
   const setLetterDelays = (word, delayPerLetter) => {
     const letters = word.querySelectorAll('span');
     letters.forEach((letter, index) => {
@@ -64,6 +86,15 @@ if (words.length > 1) {
 
       words[current].classList.remove('exit');
       words[current].classList.add('active');
+
+      // F — Mise à jour compteur
+      if (counterCurrent) {
+        counterCurrent.style.opacity = '0';
+        setTimeout(() => {
+          counterCurrent.textContent = pad(current);
+          counterCurrent.style.opacity = '1';
+        }, 150);
+      }
 
       // Clean up exit class after animation completes
       setTimeout(() => {
