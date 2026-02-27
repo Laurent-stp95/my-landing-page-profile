@@ -1,0 +1,75 @@
+{
+  "company": "Acme Corp",
+  "company_slug": "acme-corp",
+  "job_title": "Product Manager Senior",
+  "date": "25 février 2026",
+  "code": "482719",
+  "letter": {
+    "hook": "Ce qui m'attire chez Acme Corp, c'est votre ambition de repenser l'expérience client B2B dans un marché qui stagne sur des outils vieillissants.",
+    "body": "<p>Avec plus de 4 ans à piloter des refontes SaaS complexes chez Wisembly, j'ai appris à naviguer à l'intersection de la stratégie produit, des contraintes techniques et des besoins clients — exactement le profil que vous décrivez.</p><p>J'ai notamment mené la migration d'une architecture legacy vers une plateforme modulaire all-in-one, en coordonnant une squad pluridisciplinaire et en alignant Sales, CS et Dev autour d'une roadmap commune. Le résultat : +35% de volume d'événements gérés et un repositionnement marché réussi.</p><p>Je cherche aujourd'hui un environnement où l'ambition produit est réelle, où je peux avoir un impact mesurable rapidement. Ce que vous construisez chez Acme Corp correspond précisément à cela.</p>"
+  },
+  "matching": {
+    "score": 80,
+    "total": 5,
+    "matched": 4,
+    "rows": [
+      {
+        "expected": "5+ ans en Product Management",
+        "provided": "4 ans PM SaaS B2B, Lead Squad chez Wisembly"
+      },
+      {
+        "expected": "Expérience produit B2B SaaS",
+        "provided": "Refonte all-in-one événementielle, +35% croissance"
+      },
+      {
+        "expected": "Management d'équipe cross-fonctionnelle",
+        "provided": "12 collaborateurs managés, coordination Dev/Design/CS/Sales"
+      },
+      {
+        "expected": "Maîtrise Figma & outils agiles",
+        "provided": "Figma quotidien, Notion, GitHub, sprints & backlog"
+      },
+      {
+        "expected": "Anglais professionnel",
+        "provided": "En cours de renforcement — niveau B2 actuel"
+      }
+    ]
+  },
+  "benchmark": {
+    "challenges": {
+      "title": "Enjeux produit actuels",
+      "content": "D'après votre offre et vos publications LinkedIn, Acme Corp cherche à accélérer la rétention sur les comptes mid-market tout en scalant l'acquisition enterprise. C'est exactement la tension roadmap que j'ai gérée chez Wisembly : prioriser entre valeur immédiate pour les clients existants et features différenciantes pour les deals grands comptes."
+    },
+    "news": {
+      "title": "Actualités récentes",
+      "content": "Votre levée de série B (janvier 2026) et le recrutement simultané de 3 PM senior signalent une phase de structuration accélérée du pôle produit. C'est un moment clé — et exactement le type de contexte où j'ai démontré ma valeur : construire les fondations produit dans un environnement qui scale vite."
+    }
+  },
+  "cv": {
+    "jobs": [
+      {
+        "title": "Product Manager — Lead Squad",
+        "period": "Juil. 2021 → aujourd'hui · 4 ans+",
+        "company": "Wisembly by Mediactive Group · Paris 10",
+        "tagline": "Refonte et scaling d'une solution SaaS B2B événementielle (All-in-one)",
+        "items": [
+          "Migration legacy → architecture moderne — <strong>+35% de volume d'événements</strong> gérés",
+          "Roadmap trimestrielle alignée Sales & CS — priorisation ROI et rétention client",
+          "Backlog & sprints en lien direct avec les développeurs — arbitrage features vs dette technique",
+          "Ateliers clients et prototypage Figma avec le Lead Designer"
+        ]
+      },
+      {
+        "title": "Responsable de Business Unit",
+        "period": "Mars 2016 → Juin 2019 · 3 ans+",
+        "company": "Castorama France · Creil",
+        "tagline": "Gestion d'un centre de profit de 6M€ · Leadership d'équipe",
+        "items": [
+          "Management de <strong>12 collaborateurs</strong> — recrutement, formation, culture du résultat",
+          "Pilotage <strong>P&L 6M€</strong>, KPIs vente et plans d'actions correctifs"
+        ]
+      }
+    ],
+    "skills": ["Roadmap & Backlog", "PRD & Specs", "User Research", "Analyse de données", "Figma", "Notion", "GitHub", "Management cross-fonctionnel"]
+  }
+}

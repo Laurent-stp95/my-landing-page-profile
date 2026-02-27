@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV — Laurent Del Braccio · Product Manager</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+  <!-- Analytics -->
+  <script data-goatcounter="https://ldb.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/cv.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Curseur personnalisé -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ========== NAV ========== -->
+  <nav>
+    <a href="index.html" class="nav-logo">ldb<span>.pm</span></a>
+    <button class="nav-burger" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html#about">À propos</a></li>
+      <li><a href="index.html#projects">Projets</a></li>
+      <li><a href="index.html#skills">Compétences</a></li>
+      <li><a href="cv.html" class="nav-active">CV</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ========== CV ========== -->
+  <main class="cv-page">
+
+    <!-- En-tête -->
+    <header class="cv-header">
+      <div class="cv-header-left">
+        <h1>Laurent Del Braccio</h1>
+        <p class="cv-role">Product Manager</p>
+        <p class="cv-tagline">+6 ans d'expérience SaaS B2B · Lead Squad · Management de 12 collaborateurs<br>Pilotage de refontes stratégiques · +35% de volume d'événements</p>
+      </div>
+      <div class="cv-header-right">
+        <div class="cv-contacts">
+          <a href="mailto:dbraccio.laurent@gmail.com" class="cv-contact-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            dbraccio.laurent@gmail.com
+          </a>
+          <span class="cv-contact-item">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Ile-de-France
+          </span>
+          <a href="https://linkedin.com/in/laurentdelbraccio" class="cv-contact-item" target="_blank">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            @laurentdelbraccio
+          </a>
+        </div>
+        <a href="./cv-laurent-DB.pdf" class="cv-download-btn" download onclick="window.goatcounter&&goatcounter.count({path:'click-cv',title:'CV Download',event:true})">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Télécharger PDF
+        </a>
+      </div>
+    </header>
+
+    <!-- Corps -->
+    <div class="cv-body">
+
+      <!-- ── Colonne principale : Expériences ── -->
+      <div class="cv-main">
+
+        <p class="cv-section-label">Expériences professionnelles</p>
+
+        <div class="cv-timeline">
+
+          <!-- Wisembly -->
+          <div class="cv-job">
+            <div class="cv-job-meta">
+              <span class="cv-job-title">Product Manager — Lead Squad</span>
+              <span class="cv-job-period">Juil. 2021 → aujourd'hui · 6 ans+</span>
+            </div>
+            <p class="cv-job-company">Wisembly by Mediactive Group · Paris 10</p>
+            <p class="cv-job-tagline">Refonte et scaling d'une solution SaaS B2B événementielle (All-in-one)</p>
+            <ul class="cv-job-list">
+              <li>Transformation complète de la plateforme SaaS (migration legacy → architecture moderne) — <strong>+35% de volume d'événements</strong> gérés, repositionnement "All-in-one" sur le marché</li>
+              <li>Collaboration en binôme avec le Lead Designer (user flows, prototypage Figma) et animation d'ateliers clients pour valider les hypothèses avant développement</li>
+              <li>Gestion du backlog et des sprints en lien direct avec les développeurs — arbitrage constant entre livraison de valeur et réduction de la dette technique</li>
+              <li>Construction et alignement de la roadmap trimestrielle avec Sales et Customer Success — priorisation basée sur l'impact business (ROI) et la rétention client</li>
+            </ul>
+          </div>
+
+          <!-- Castorama -->
+          <div class="cv-job">
+            <div class="cv-job-meta">
+              <span class="cv-job-title">Responsable de Business Unit</span>
+              <span class="cv-job-period">Mars 2016 → Juin 2019 · 3 ans+</span>
+            </div>
+            <p class="cv-job-company">Castorama France · Creil</p>
+            <p class="cv-job-tagline">Gestion d'un centre de profit de 6M€ · Leadership d'équipe</p>
+            <ul class="cv-job-list">
+              <li>Recrutement, formation et management direct de <strong>12 collaborateurs</strong> — culture du résultat et de l'autonomie</li>
+              <li>Pilotage d'un <strong>P&L de 6M€</strong>, analyse des KPIs de vente et plans d'actions correctifs</li>
+              <li>Participation au CODIR — mise en place d'un workflow de relance de devis déployé au niveau régional</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Colonne latérale : Compétences + Formations + Intérêts ── -->
+      <aside class="cv-aside">
+
+        <!-- Hard Skills + Outils groupés -->
+        <div class="cv-aside-section">
+          <p class="cv-section-label">Compétences</p>
+          <div class="cv-skills-block">
+
+            <div class="cv-skill-group">
+              <span class="cv-skill-group-label">Product</span>
+              <div class="cv-tags">
+                <span class="cv-tag">Roadmap & Backlog</span>
+                <span class="cv-tag">Product Management</span>
+                <span class="cv-tag">PRD & Specs</span>
+                <span class="cv-tag">User Research</span>
+                <span class="cv-tag">Analyse de données</span>
+                <span class="cv-tag">Management cross-fonctionnel</span>
+              </div>
+            </div>
+
+            <div class="cv-skill-group">
+              <span class="cv-skill-group-label">Outils</span>
+              <div class="cv-tags">
+                <span class="cv-tag">Figma</span>
+                <span class="cv-tag">GitHub</span>
+                <span class="cv-tag">Notion</span>
+                <span class="cv-tag">Claude AI</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="cv-aside-section">
+          <p class="cv-section-label">Soft Skills</p>
+          <div class="cv-tags">
+            <span class="cv-tag">Autonomie</span>
+            <span class="cv-tag">Rigueur</span>
+            <span class="cv-tag">Esprit d'équipe</span>
+            <span class="cv-tag">Adaptabilité</span>
+            <span class="cv-tag">Communication transverse</span>
+          </div>
+        </div>
+
+        <!-- Formations -->
+        <div class="cv-aside-section">
+          <p class="cv-section-label">Formations</p>
+          <div class="cv-formation-list">
+            <div class="cv-formation">
+              <span class="cv-formation-name">Formation Product Owner</span>
+              <span class="cv-formation-school">Join Lion · Janv.–Mars 2021 (2 mois)</span>
+            </div>
+            <div class="cv-formation">
+              <span class="cv-formation-name">Chef de projet digital</span>
+              <span class="cv-formation-school">Ifocop Paris 11 · 2020 (8 mois)</span>
+            </div>
+            <div class="cv-formation">
+              <span class="cv-formation-name">Technicien études du bâtiment</span>
+              <span class="cv-formation-school">Afpa Beauvais · 2011–2012</span>
+            </div>
+            <div class="cv-formation">
+              <span class="cv-formation-name">Brevet d'État Éducateur sportif 1er degré</span>
+              <span class="cv-formation-school">IEMS Paris · 2001–2003</span>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- ── Bande pleine largeur : Centres d'intérêt ── -->
+      <div class="cv-bottom">
+        <span class="cv-bottom-label">Intérêts</span>
+        <div class="cv-soft-skills">
+          <span class="cv-soft-skill">Bricolage</span>
+          <span class="cv-soft-skill">Football · 14 ans</span>
+          <span class="cv-soft-skill">Tennis</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-actions">
+      <a href="index.html" class="footer-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Retour au portfolio
+      </a>
+      <a href="https://linkedin.com/in/laurentdelbraccio" class="footer-btn" target="_blank" onclick="window.goatcounter&&goatcounter.count({path:'click-linkedin',title:'LinkedIn',event:true})">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+          <rect x="2" y="9" width="4" height="12"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+        LinkedIn
+      </a>
+    </div>
+    <div class="footer-info">
+      <span>© 2025 Laurent DEL BRACCIO — Product Manager</span>
+      <span>Built with passion & code</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/nav.js" defer></script>
+  <script src="js/parallax.js" defer></script>
+
+</body>
+</html>

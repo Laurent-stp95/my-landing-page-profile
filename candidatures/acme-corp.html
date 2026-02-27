@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidature — Acme Corp · Laurent Del Braccio</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- ⚙️ CONFIGURATION — à remplir via data/xxx.json + gen.js -->
+  <script>
+    const PAGE_CODE = '482719';
+    const PAGE_SLUG = 'acme-corp';
+  </script>
+
+  <!-- Protection : doit être AVANT le chargement du contenu -->
+  <script>
+    // Vérification rapide en session (évite le flash du splash si déjà déverrouillé)
+    if (sessionStorage.getItem('cand_unlocked_acme-corp') === '1') {
+      document.documentElement.classList.add('pre-unlocked');
+    }
+  </script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+  <!-- Analytics -->
+  <script data-goatcounter="https://ldb.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/nav.css">
+  <link rel="stylesheet" href="../css/cv.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/candidature.css">
+
+  <style>
+    /* Masquer la page pendant le chargement si non déverrouillée */
+    body:not(.cand-ready) .cand-page { visibility: hidden; }
+  </style>
+</head>
+<body>
+
+  <!-- Curseur personnalisé -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ========== SPLASH SCREEN ========== -->
+  <div class="cand-splash" id="candSplash">
+
+    <!-- Watermark entreprise -->
+    <div class="cand-splash-watermark">Acme Corp</div>
+
+    <div class="cand-splash-inner">
+      <span class="cand-splash-label">Candidature confidentielle</span>
+      <h1 class="cand-splash-title">Acme Corp</h1>
+      <p class="cand-splash-subtitle">Product Manager Senior</p>
+      <div class="cand-splash-divider"></div>
+      <div class="cand-splash-form">
+        <p class="cand-splash-instruction">Entrez le code à 6 chiffres reçu par email</p>
+        <div class="cand-code-input" id="candCodeInput">
+          <input class="cand-code-digit" type="number" maxlength="1" inputmode="numeric" autocomplete="off" aria-label="Chiffre 1">
+          <input class="cand-code-digit" type="number" maxlength="1" inputmode="numeric" autocomplete="off" aria-label="Chiffre 2">
+          <input class="cand-code-digit" type="number" maxlength="1" inputmode="numeric" autocomplete="off" aria-label="Chiffre 3">
+          <input class="cand-code-digit" type="number" maxlength="1" inputmode="numeric" autocomplete="off" aria-label="Chiffre 4">
+          <input class="cand-code-digit" type="number" maxlength="1" inputmode="numeric" autocomplete="off" aria-label="Chiffre 5">
+          <input class="cand-code-digit" type="number" maxlength="1" inputmode="numeric" autocomplete="off" aria-label="Chiffre 6">
+        </div>
+        <p class="cand-splash-error" id="candError" aria-live="polite"></p>
+        <button class="cand-splash-btn" id="candValidate">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Valider
+        </button>
+      </div>
+    </div>
+
+  </div>
+  <!-- END SPLASH -->
+
+  <!-- ========== NAV ========== -->
+  <nav>
+    <a href="../index.html" class="nav-logo">ldb<span>.pm</span></a>
+    <button class="nav-burger" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">À propos</a></li>
+      <li><a href="../index.html#projects">Projets</a></li>
+      <li><a href="../cv.html">CV</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ========== PAGE CANDIDATURE ========== -->
+  <main class="cand-page">
+
+    <!-- ── En-tête ── -->
+    <header class="cand-header" data-company="Acme Corp">
+      <div class="cand-header-line"></div>
+      <p class="cand-header-badge">Candidature personnalisée</p>
+      <h1 class="cand-company-name">Acme Corp</h1>
+      <p class="cand-job-title">Product Manager Senior</p>
+      <p class="cand-date">Candidature du 25 février 2026</p>
+    </header>
+
+    <!-- ── Section 1 : Lettre de motivation ── -->
+    <section class="cand-section">
+      <p class="cand-section-label cand-reveal">01 — Lettre de motivation</p>
+      <h2 class="cand-section-title cand-reveal">Pourquoi <em>Acme Corp</em></h2>
+
+      <blockquote class="cand-letter-hook cand-reveal">
+        Ce qui m'attire chez Acme Corp, c'est votre ambition de repenser l'expérience client B2B dans un marché qui stagne sur des outils vieillissants.
+      </blockquote>
+
+      <div class="cand-letter-body cand-reveal">
+        <p>Avec plus de 4 ans à piloter des refontes SaaS complexes chez Wisembly, j'ai appris à naviguer à l'intersection de la stratégie produit, des contraintes techniques et des besoins clients — exactement le profil que vous décrivez.</p><p>J'ai notamment mené la migration d'une architecture legacy vers une plateforme modulaire all-in-one, en coordonnant une squad pluridisciplinaire et en alignant Sales, CS et Dev autour d'une roadmap commune. Le résultat : +35% de volume d'événements gérés et un repositionnement marché réussi.</p><p>Je cherche aujourd'hui un environnement où l'ambition produit est réelle, où je peux avoir un impact mesurable rapidement. Ce que vous construisez chez Acme Corp correspond précisément à cela.</p>
+      </div>
+    </section>
+
+    <!-- ── Section 2 : Matching profil/offre ── -->
+    <section class="cand-section">
+      <p class="cand-section-label cand-reveal">02 — Correspondance profil / offre</p>
+      <h2 class="cand-section-title cand-reveal">Ce que vous cherchez, <em>ce que j'apporte</em></h2>
+
+      <!-- Score de correspondance -->
+      <div class="cand-match-score cand-reveal">
+        <span class="cand-score-label">Correspondance</span>
+        <div class="cand-score-bar-wrap">
+          <div class="cand-score-bar" style="--score-percent: 80%"></div>
+        </div>
+        <span class="cand-score-value">4 / 5 critères · 80%</span>
+      </div>
+
+      <!-- Table de matching -->
+      <div class="cand-match-table cand-reveal">
+        <div class="cand-match-header">
+          <span class="cand-match-col-label">Vous cherchez</span>
+          <span class="cand-match-col-label center">→</span>
+          <span class="cand-match-col-label" style="text-align:right">Ce que j'apporte</span>
+        </div>
+                <div class="cand-match-row">
+          <span class="cand-match-expected">5+ ans en Product Management</span>
+          <span class="cand-match-arrow">→</span>
+          <span class="cand-match-provided">4 ans PM SaaS B2B, Lead Squad chez Wisembly</span>
+        </div>
+        <div class="cand-match-row">
+          <span class="cand-match-expected">Expérience produit B2B SaaS</span>
+          <span class="cand-match-arrow">→</span>
+          <span class="cand-match-provided">Refonte all-in-one événementielle, +35% croissance</span>
+        </div>
+        <div class="cand-match-row">
+          <span class="cand-match-expected">Management d'équipe cross-fonctionnelle</span>
+          <span class="cand-match-arrow">→</span>
+          <span class="cand-match-provided">12 collaborateurs managés, coordination Dev/Design/CS/Sales</span>
+        </div>
+        <div class="cand-match-row">
+          <span class="cand-match-expected">Maîtrise Figma & outils agiles</span>
+          <span class="cand-match-arrow">→</span>
+          <span class="cand-match-provided">Figma quotidien, Notion, GitHub, sprints & backlog</span>
+        </div>
+        <div class="cand-match-row">
+          <span class="cand-match-expected">Anglais professionnel</span>
+          <span class="cand-match-arrow">→</span>
+          <span class="cand-match-provided">En cours de renforcement — niveau B2 actuel</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Section 3 : Benchmark entreprise ── -->
+    <section class="cand-section">
+      <p class="cand-section-label cand-reveal">03 — Ma lecture de Acme Corp</p>
+      <h2 class="cand-section-title cand-reveal">J'ai fait <em>mes recherches</em></h2>
+
+      <div class="cand-benchmark-grid cand-reveal">
+
+        <!-- Card enjeux produit -->
+        <div class="cand-bench-card">
+          <div class="cand-bench-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+            </svg>
+          </div>
+          <p class="cand-bench-title">Enjeux produit actuels</p>
+          <p class="cand-bench-text">D'après votre offre et vos publications LinkedIn, Acme Corp cherche à accélérer la rétention sur les comptes mid-market tout en scalant l'acquisition enterprise. C'est exactement la tension roadmap que j'ai gérée chez Wisembly : prioriser entre valeur immédiate pour les clients existants et features différenciantes pour les deals grands comptes.</p>
+        </div>
+
+        <!-- Card actualités -->
+        <div class="cand-bench-card">
+          <div class="cand-bench-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <p class="cand-bench-title">Actualités récentes</p>
+          <p class="cand-bench-text">Votre levée de série B (janvier 2026) et le recrutement simultané de 3 PM senior signalent une phase de structuration accélérée du pôle produit. C'est un moment clé — et exactement le type de contexte où j'ai démontré ma valeur : construire les fondations produit dans un environnement qui scale vite.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Section 4 : Résumé CV ciblé ── -->
+    <section class="cand-section">
+      <p class="cand-section-label cand-reveal">04 — Parcours ciblé</p>
+      <h2 class="cand-section-title cand-reveal">Les expériences <em>les plus pertinentes</em></h2>
+
+      <div class="cv-timeline cand-reveal">
+                <div class="cv-job">
+          <div class="cv-job-meta">
+            <span class="cv-job-title">Product Manager — Lead Squad</span>
+            <span class="cv-job-period">Juil. 2021 → aujourd'hui · 4 ans+</span>
+          </div>
+          <p class="cv-job-company">Wisembly by Mediactive Group · Paris 10</p>
+          <p class="cv-job-tagline">Refonte et scaling d'une solution SaaS B2B événementielle (All-in-one)</p>
+          <ul class="cv-job-list">
+              <li>Migration legacy → architecture moderne — <strong>+35% de volume d'événements</strong> gérés</li>
+              <li>Roadmap trimestrielle alignée Sales & CS — priorisation ROI et rétention client</li>
+              <li>Backlog & sprints en lien direct avec les développeurs — arbitrage features vs dette technique</li>
+              <li>Ateliers clients et prototypage Figma avec le Lead Designer</li>
+          </ul>
+        </div>
+
+        <div class="cv-job">
+          <div class="cv-job-meta">
+            <span class="cv-job-title">Responsable de Business Unit</span>
+            <span class="cv-job-period">Mars 2016 → Juin 2019 · 3 ans+</span>
+          </div>
+          <p class="cv-job-company">Castorama France · Creil</p>
+          <p class="cv-job-tagline">Gestion d'un centre de profit de 6M€ · Leadership d'équipe</p>
+          <ul class="cv-job-list">
+              <li>Management de <strong>12 collaborateurs</strong> — recrutement, formation, culture du résultat</li>
+              <li>Pilotage <strong>P&L 6M€</strong>, KPIs vente et plans d'actions correctifs</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cand-cv-skills cand-reveal">
+        <p class="cand-cv-skills-label">Compétences clés pour ce poste</p>
+        <div class="cv-tags">
+                    <span class="cv-tag">Roadmap & Backlog</span>
+          <span class="cv-tag">PRD & Specs</span>
+          <span class="cv-tag">User Research</span>
+          <span class="cv-tag">Analyse de données</span>
+          <span class="cv-tag">Figma</span>
+          <span class="cv-tag">Notion</span>
+          <span class="cv-tag">GitHub</span>
+          <span class="cv-tag">Management cross-fonctionnel</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA Footer ── -->
+    <div class="cand-footer-cta cand-reveal">
+      <p class="cand-footer-text">
+        Une question ? Échangeons directement.
+      </p>
+      <a href="mailto:dbraccio.laurent@gmail.com" class="footer-btn"
+         onclick="window.goatcounter&&goatcounter.count({path:'cand-email-acme-corp',title:'Email Candidature',event:true})">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        </svg>
+        dbraccio.laurent@gmail.com
+      </a>
+      <a href="../index.html" class="footer-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Voir le portfolio
+      </a>
+    </div>
+
+    <!-- ── Panel admin (caché, visible si ?admin=1) ── -->
+    <div class="cand-admin" id="candAdmin">
+      <p class="cand-admin-label">⚙ Admin — Informations de partage</p>
+      <div class="cand-admin-row">
+        <span class="cand-admin-code">482719</span>
+        <span class="cand-admin-link" id="candAdminLink">https://laurent-stp95.github.io/my-landing-page-profile/candidatures/acme-corp.html?admin=1</span>
+        <button class="cand-admin-copy" id="candAdminCopy">Copier</button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-actions">
+      <a href="../index.html" class="footer-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Retour au portfolio
+      </a>
+      <a href="../cv.html" class="footer-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 10h8M8 14h5"/>
+        </svg>
+        Voir le CV complet
+      </a>
+    </div>
+    <div class="footer-info">
+      <span>© 2025 Laurent DEL BRACCIO — Product Manager</span>
+      <span>Page personnalisée · Confidentielle</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/nav.js" defer></script>
+  <script src="../js/candidature.js"></script>
+
+  <script>
+    // Focus sur le premier digit au chargement
+    document.addEventListener('DOMContentLoaded', () => {
+      const firstDigit = document.querySelector('.cand-code-digit');
+      if (firstDigit && !document.documentElement.classList.contains('pre-unlocked')) {
+        setTimeout(() => firstDigit.focus(), 100);
+      }
+      document.body.classList.add('cand-ready');
+    });
+  </script>
+
+</body>
+</html>

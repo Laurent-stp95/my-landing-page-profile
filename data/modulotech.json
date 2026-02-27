@@ -1,0 +1,84 @@
+{
+  "company": "ModuloTech",
+  "company_slug": "modulotech",
+  "job_title": "Product Owner (H/F/NB)",
+  "date": "25 février 2026",
+  "code": "371854",
+  "letter": {
+    "hook": "Ce qui m'a immédiatement parlé chez ModuloTech, c'est la réalité terrain de vos produits — Kaze, PowerPanne, Fast & Fourrière ne sont pas des outils théoriques, ils réduisent concrètement les allers-retours et augmentent les taux de réussite dès la première intervention. C'est exactement le type d'impact mesurable que je cherche à générer.",
+    "body": "<p>Avec 4 ans de Product Management sur une plateforme SaaS B2B événementielle chez Wisembly, j'ai vécu en continu cette tension que vous décrivez dans l'offre : arbitrer entre les besoins métier des clients, les contraintes techniques de l'équipe dev et la valeur à livrer rapidement. C'est mon quotidien depuis 2021.</p><p>J'ai notamment piloté de bout en bout la refonte du parcours d'inscription participant — PRD, priorisation backlog, recette, coordination Design/Dev/CS — avec à la clé +35% de volume d'événements gérés sur la plateforme. La méthode : interviews clients réguliers, hypothèses validées avant développement, itérations courtes.</p><p>ModuloTech m'attire particulièrement pour son positionnement multi-produits sur des verticales métier très concrètes. Passer d'un produit événementiel à de la gestion d'interventions terrain, c'est changer de secteur mais pas de logique : des utilisateurs qui travaillent dans des conditions exigeantes, des workflows complexes à simplifier, un impact immédiat et mesurable sur leur quotidien.</p>"
+  },
+  "matching": {
+    "score": 85,
+    "total": 7,
+    "matched": 6,
+    "rows": [
+      {
+        "expected": "4+ ans d'expérience en Product Owner / PM",
+        "provided": "4 ans PM SaaS B2B, Lead Squad chez Wisembly (2021 → aujourd'hui)"
+      },
+      {
+        "expected": "Interviews clients & formalisation des besoins",
+        "provided": "Ateliers clients réguliers, PRD structurés, user stories exploitables par les devs"
+      },
+      {
+        "expected": "Gestion du backlog & priorisation",
+        "provided": "Backlog quotidien, arbitrage valeur / dette technique, roadmap trimestrielle"
+      },
+      {
+        "expected": "Coordination équipes métier, tech et clients",
+        "provided": "Binôme Lead Designer, alignment Sales/CS/Dev, reporting CODIR chez Castorama"
+      },
+      {
+        "expected": "Communication excellente & fédération d'équipe",
+        "provided": "Management de 12 collaborateurs, animation de rituels agiles, relation client directe"
+      },
+      {
+        "expected": "Sens analytique & prise de décision",
+        "provided": "Pilotage P&L 6M€, priorisation basée sur ROI et données CS/support"
+      },
+      {
+        "expected": "UX / Design Thinking (bonus)",
+        "provided": "Prototypage Figma avec Lead Designer, validation hypothèses avant dev",
+        "partial": true
+      }
+    ]
+  },
+  "benchmark": {
+    "challenges": {
+      "title": "Enjeux produit que j'ai identifiés",
+      "content": "Avec 3 produits distincts (Kaze, PowerPanne, Fast & Fourrière) et 1 000+ clients, le défi PO chez ModuloTech est double : maintenir la cohérence d'expérience entre les produits tout en répondant aux spécificités de chaque vertical métier. L'enjeu est de ne pas fragmenter le backlog en silos — et de garder une vision produit transverse. C'est un exercice d'arbitrage que je connais bien."
+    },
+    "news": {
+      "title": "Ce qui m'a décidé à postuler",
+      "content": "La mise en ligne de cette offre PO en CDI début mars 2026, avec un démarrage rapide, indique une phase de structuration du pôle produit. ModuloTech a 15 ans d'existence, 70 collaborateurs et 20M+ d'interventions réalisées — c'est une PME solide qui industrialise, pas une startup qui cherche encore son marché. C'est exactement le contexte où un PO expérimenté peut avoir un impact fort dès les premières semaines."
+    }
+  },
+  "cv": {
+    "jobs": [
+      {
+        "title": "Product Manager — Lead Squad",
+        "period": "Juil. 2021 → aujourd'hui · 4 ans+",
+        "company": "Wisembly by Mediactive Group · Paris 10",
+        "tagline": "Plateforme SaaS B2B événementielle — refonte complète et scaling",
+        "items": [
+          "Pilotage bout-en-bout de la refonte produit — PRD, backlog, sprints, recette — <strong>+35% de volume d'événements</strong>",
+          "Interviews clients réguliers avec CS pour valider hypothèses avant développement",
+          "Coordination Design / Dev / Sales / CS — roadmap trimestrielle alignée sur le ROI",
+          "Arbitrage quotidien entre livraison de valeur et réduction de la dette technique"
+        ]
+      },
+      {
+        "title": "Responsable de Business Unit",
+        "period": "Mars 2016 → Juin 2019 · 3 ans+",
+        "company": "Castorama France · Creil",
+        "tagline": "Management d'équipe & pilotage d'un centre de profit 6M€",
+        "items": [
+          "Management de <strong>12 collaborateurs</strong> — recrutement, formation, culture du résultat",
+          "Pilotage <strong>P&L 6M€</strong>, analyse KPIs et plans d'actions — participation au CODIR"
+        ]
+      }
+    ],
+    "skills": ["Backlog & Priorisation", "PRD & User Stories", "Interviews clients", "Roadmap trimestrielle", "Figma", "Coordination Dev/Design/CS", "Analyse de données", "Management cross-fonctionnel"]
+  }
+}

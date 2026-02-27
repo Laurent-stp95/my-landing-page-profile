@@ -10,8 +10,14 @@
     // Smooth scroll on nav link click
     navLinks.forEach(link => {
       link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        // Skip for page links (not anchor-only)
+        if (!href.startsWith('#')) {
+          navMenu.classList.remove('open');
+          return;
+        }
         e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
+        const targetId = href.substring(1);
         const target = document.getElementById(targetId);
         if (target) {
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });

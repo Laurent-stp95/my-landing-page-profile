@@ -1,0 +1,533 @@
+/* =============================================
+   CV PAGE
+   ============================================= */
+
+.cv-page {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 120px 6vw 6rem;
+}
+
+/* =============================================
+   EN-TÊTE
+   ============================================= */
+
+.cv-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: end;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+/* Numéro décoratif en arrière-plan */
+.cv-header::before {
+  content: 'PM';
+  position: absolute;
+  right: 0;
+  top: -1rem;
+  font-family: var(--serif);
+  font-size: clamp(6rem, 12vw, 10rem);
+  color: var(--bg-elevated);
+  letter-spacing: -0.05em;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+.cv-header-left {
+  position: relative;
+  z-index: 1;
+}
+
+.cv-header-left h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 0.6rem;
+}
+
+.cv-role {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+.cv-tagline {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+.cv-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cv-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  align-items: flex-end;
+}
+
+.cv-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease;
+}
+
+.cv-contact-item:hover { color: var(--accent); }
+
+.cv-contact-item svg {
+  flex-shrink: 0;
+  color: var(--text-subtle);
+}
+
+.cv-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.2rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.cv-download-btn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* =============================================
+   CORPS — Layout principal
+   ============================================= */
+
+.cv-body {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 0 5rem;
+}
+
+/* =============================================
+   LABELS DE SECTION
+   ============================================= */
+
+.cv-section-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cv-section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* =============================================
+   COLONNE PRINCIPALE — Expériences
+   ============================================= */
+
+.cv-main {
+  grid-column: 1;
+  grid-row: 1;
+  border-right: 1px solid var(--border);
+  padding-right: 5rem;
+}
+
+.cv-exp-section {
+  margin-bottom: 4rem;
+}
+
+/* Timeline */
+.cv-timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.cv-timeline::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--accent), var(--border) 60%, transparent);
+}
+
+.cv-job {
+  position: relative;
+  padding-left: 2.2rem;
+  padding-bottom: 3rem;
+}
+
+.cv-job:last-child { padding-bottom: 0; }
+
+/* Point orange sur la timeline */
+.cv-job::before {
+  content: '';
+  position: absolute;
+  left: -4.5px;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 0 1px var(--accent), 0 0 12px rgba(240, 152, 7, 0.3);
+}
+
+.cv-job-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.cv-job-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.cv-job-period {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--text-subtle);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.cv-job-company {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.cv-job-tagline {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.cv-job-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.cv-job-list li {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.cv-job-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--text-subtle);
+  font-size: 0.65rem;
+  top: 0.15em;
+}
+
+.cv-job-list strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* =============================================
+   COLONNE LATÉRALE — Compétences + Formations
+   ============================================= */
+
+.cv-aside {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.cv-aside-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Skills groupés par type avec indicateur visuel */
+.cv-skills-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.cv-skill-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cv-skill-group-label {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+}
+
+.cv-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.cv-tag {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.3rem 0.65rem;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.cv-tag:hover {
+  color: var(--accent);
+  border-color: var(--border-accent);
+  background: var(--accent-soft);
+}
+
+/* Formations — même traitement timeline que les expériences */
+.cv-formation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  position: relative;
+  padding-left: 1.4rem;
+}
+
+.cv-formation-list::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--border), transparent);
+}
+
+.cv-formation {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.cv-formation::before {
+  content: '';
+  position: absolute;
+  left: -1.65rem;
+  top: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--border-bright);
+  border: 1.5px solid var(--bg);
+}
+
+.cv-formation-name {
+  font-size: 0.82rem;
+  color: var(--text);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.cv-formation-school {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--text-subtle);
+  letter-spacing: 0.04em;
+}
+
+/* Centres d'intérêt */
+.cv-interests {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+/* =============================================
+   BANDE SOFT SKILLS — pleine largeur en bas
+   ============================================= */
+
+.cv-bottom {
+  grid-column: 1 / 3;
+  grid-row: 2;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.cv-bottom-label {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  flex-shrink: 0;
+}
+
+.cv-soft-skills {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cv-soft-skill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.cv-soft-skill::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 1024px) {
+  .cv-body {
+    grid-template-columns: 1fr 280px;
+    gap: 0 3rem;
+  }
+
+  .cv-main {
+    padding-right: 3rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .cv-page {
+    padding: 100px 5vw 4rem;
+  }
+
+  .cv-header {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .cv-header-right {
+    align-items: flex-start;
+  }
+
+  .cv-contacts {
+    align-items: flex-start;
+  }
+
+  .cv-header::before {
+    display: none;
+  }
+
+  .cv-body {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-main {
+    grid-column: 1;
+    grid-row: 1;
+    border-right: none;
+    padding-right: 0;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 3rem;
+  }
+
+  .cv-aside {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .cv-bottom {
+    grid-column: 1;
+    grid-row: 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .cv-job-meta {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .cv-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}

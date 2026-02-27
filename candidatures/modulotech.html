@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidature — ModuloTech · Laurent Del Braccio</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- ⚙️ CONFIGURATION — à remplir via data/xxx.json + gen.js -->
+  <script>
+    const PAGE_CODE = '371854';
+    const PAGE_SLUG = 'modulotech';
+  </script>
+
+  <!-- Protection : doit être AVANT le chargement du contenu -->
+  <script>
+    // Vérification rapide en session (évite le flash du splash si déjà déverrouillé)
+    if (sessionStorage.getItem('cand_unlocked_modulotech') === '1') {
+      document.documentElement.classList.add('pre-unlocked');
+    }
+  </script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+  <!-- Analytics -->
+  <script data-goatcounter="https://ldb.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/nav.css">
+  <link rel="stylesheet" href="../css/cv.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/candidature.css">
+
+  <style>
+    /* Masquer la page pendant le chargement si non déverrouillée */
+    body:not(.cand-ready) .cand-page { visibility: hidden; }
+  </style>
+</head>
+<body>
+
+  <!-- Curseur personnalisé -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ========== SPLASH SCREEN ========== -->
+  <div class="cand-splash" id="candSplash">
+
+    <!-- Watermark entreprise -->
+    <div class="cand-splash-watermark">ModuloTech</div>
+
+    <div class="cand-splash-inner">
+      <span class="cand-splash-label">Candidature confidentielle</span>
+      <h1 class="cand-splash-title">ModuloTech</h1>
+      <p class="cand-splash-subtitle">Product Owner (H/F/NB)</p>
+      <div class="cand-splash-divider"></div>
+      <div class="cand-splash-form">
+        <p class="cand-splash-instruction">Entrez le code à 6 chiffres reçu par email</p>
+        <div class="cand-code-input" id="candCodeInput">
+          <input class="cand-code-digit" type="number" maxlength="1" inputmode="numeric" autocomplete="off" aria-label="Chiffre 1">
+          <input class="cand-code-digit" type="number" maxlength="1" inputmode="numeric" autocomplete="off" aria-label="Chiffre 2">
+          <input class="cand-code-digit" type="number" maxlength="1" inputmode="numeric" autocomplete="off" aria-label="Chiffre 3">
+          <input class="cand-code-digit" type="number" maxlength="1" inputmode="numeric" autocomplete="off" aria-label="Chiffre 4">
+          <input class="cand-code-digit" type="number" maxlength="1" inputmode="numeric" autocomplete="off" aria-label="Chiffre 5">
+          <input class="cand-code-digit" type="number" maxlength="1" inputmode="numeric" autocomplete="off" aria-label="Chiffre 6">
+        </div>
+        <p class="cand-splash-error" id="candError" aria-live="polite"></p>
+        <button class="cand-splash-btn" id="candValidate">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Valider
+        </button>
+      </div>
+    </div>
+
+  </div>
+  <!-- END SPLASH -->
+
+  <!-- ========== NAV ========== -->
+  <nav>
+    <a href="../index.html" class="nav-logo">ldb<span>.pm</span></a>
+    <button class="nav-burger" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">À propos</a></li>
+      <li><a href="../index.html#projects">Projets</a></li>
+      <li><a href="../cv.html">CV</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ========== PAGE CANDIDATURE ========== -->
+  <main class="cand-page">
+
+    <!-- ── En-tête ── -->
+    <header class="cand-header" data-company="ModuloTech">
+      <div class="cand-header-line"></div>
+      <p class="cand-header-badge">Candidature personnalisée</p>
+      <h1 class="cand-company-name">ModuloTech</h1>
+      <p class="cand-job-title">Product Owner (H/F/NB)</p>
+      <p class="cand-date">Candidature du 25 février 2026</p>
+    </header>
+
+    <!-- ── Section 1 : Lettre de motivation ── -->
+    <section class="cand-section">
+      <p class="cand-section-label cand-reveal">01 — Lettre de motivation</p>
+      <h2 class="cand-section-title cand-reveal">Pourquoi <em>ModuloTech</em></h2>
+
+      <blockquote class="cand-letter-hook cand-reveal">
+        Ce qui m'a immédiatement parlé chez ModuloTech, c'est la réalité terrain de vos produits — Kaze, PowerPanne, Fast & Fourrière ne sont pas des outils théoriques, ils réduisent concrètement les allers-retours et augmentent les taux de réussite dès la première intervention. C'est exactement le type d'impact mesurable que je cherche à générer.
+      </blockquote>
+
+      <div class="cand-letter-body cand-reveal">
+        <p>Avec 4 ans de Product Management sur une plateforme SaaS B2B événementielle chez Wisembly, j'ai vécu en continu cette tension que vous décrivez dans l'offre : arbitrer entre les besoins métier des clients, les contraintes techniques de l'équipe dev et la valeur à livrer rapidement. C'est mon quotidien depuis 2021.</p><p>J'ai notamment piloté de bout en bout la refonte du parcours d'inscription participant — PRD, priorisation backlog, recette, coordination Design/Dev/CS — avec à la clé +35% de volume d'événements gérés sur la plateforme. La méthode : interviews clients réguliers, hypothèses validées avant développement, itérations courtes.</p><p>ModuloTech m'attire particulièrement pour son positionnement multi-produits sur des verticales métier très concrètes. Passer d'un produit événementiel à de la gestion d'interventions terrain, c'est changer de secteur mais pas de logique : des utilisateurs qui travaillent dans des conditions exigeantes, des workflows complexes à simplifier, un impact immédiat et mesurable sur leur quotidien.</p>
+      </div>
+    </section>
+
+    <!-- ── Section 2 : Matching profil/offre ── -->
+    <section class="cand-section">
+      <p class="cand-section-label cand-reveal">02 — Correspondance profil / offre</p>
+      <h2 class="cand-section-title cand-reveal">Ce que vous cherchez, <em>ce que j'apporte</em></h2>
+
+      <!-- Score de correspondance -->
+      <div class="cand-match-score cand-reveal">
+        <span class="cand-score-label">Correspondance</span>
+        <div class="cand-score-bar-wrap">
+          <div class="cand-score-bar" style="--score-percent: 85%"></div>
+        </div>
+        <span class="cand-score-value">6 / 7 critères · 85%</span>
+      </div>
+
+      <!-- Table de matching -->
+      <div class="cand-match-table cand-reveal">
+        <div class="cand-match-header">
+          <span class="cand-match-col-label">Vous cherchez</span>
+          <span class="cand-match-col-label center">→</span>
+          <span class="cand-match-col-label" style="text-align:right">Ce que j'apporte</span>
+        </div>
+                <div class="cand-match-row">
+          <span class="cand-match-expected">4+ ans d'expérience en Product Owner / PM</span>
+          <span class="cand-match-arrow">→</span>
+          <span class="cand-match-provided">4 ans PM SaaS B2B, Lead Squad chez Wisembly (2021 → aujourd'hui)</span>
+        </div>
+        <div class="cand-match-row">
+          <span class="cand-match-expected">Interviews clients & formalisation des besoins</span>
+          <span class="cand-match-arrow">→</span>
+          <span class="cand-match-provided">Ateliers clients réguliers, PRD structurés, user stories exploitables par les devs</span>
+        </div>
+        <div class="cand-match-row">
+          <span class="cand-match-expected">Gestion du backlog & priorisation</span>
+          <span class="cand-match-arrow">→</span>
+          <span class="cand-match-provided">Backlog quotidien, arbitrage valeur / dette technique, roadmap trimestrielle</span>
+        </div>
+        <div class="cand-match-row">
+          <span class="cand-match-expected">Coordination équipes métier, tech et clients</span>
+          <span class="cand-match-arrow">→</span>
+          <span class="cand-match-provided">Binôme Lead Designer, alignment Sales/CS/Dev, reporting CODIR chez Castorama</span>
+        </div>
+        <div class="cand-match-row">
+          <span class="cand-match-expected">Communication excellente & fédération d'équipe</span>
+          <span class="cand-match-arrow">→</span>
+          <span class="cand-match-provided">Management de 12 collaborateurs, animation de rituels agiles, relation client directe</span>
+        </div>
+        <div class="cand-match-row">
+          <span class="cand-match-expected">Sens analytique & prise de décision</span>
+          <span class="cand-match-arrow">→</span>
+          <span class="cand-match-provided">Pilotage P&L 6M€, priorisation basée sur ROI et données CS/support</span>
+        </div>
+        <div class="cand-match-row partial">
+          <span class="cand-match-expected">UX / Design Thinking (bonus)</span>
+          <span class="cand-match-arrow">→</span>
+          <span class="cand-match-provided">Prototypage Figma avec Lead Designer, validation hypothèses avant dev</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Section 3 : Benchmark entreprise ── -->
+    <section class="cand-section">
+      <p class="cand-section-label cand-reveal">03 — Ma lecture de ModuloTech</p>
+      <h2 class="cand-section-title cand-reveal">J'ai fait <em>mes recherches</em></h2>
+
+      <div class="cand-benchmark-grid cand-reveal">
+
+        <!-- Card enjeux produit -->
+        <div class="cand-bench-card">
+          <div class="cand-bench-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+            </svg>
+          </div>
+          <p class="cand-bench-title">Enjeux produit que j'ai identifiés</p>
+          <p class="cand-bench-text">Avec 3 produits distincts (Kaze, PowerPanne, Fast & Fourrière) et 1 000+ clients, le défi PO chez ModuloTech est double : maintenir la cohérence d'expérience entre les produits tout en répondant aux spécificités de chaque vertical métier. L'enjeu est de ne pas fragmenter le backlog en silos — et de garder une vision produit transverse. C'est un exercice d'arbitrage que je connais bien.</p>
+        </div>
+
+        <!-- Card actualités -->
+        <div class="cand-bench-card">
+          <div class="cand-bench-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <p class="cand-bench-title">Ce qui m'a décidé à postuler</p>
+          <p class="cand-bench-text">La mise en ligne de cette offre PO en CDI début mars 2026, avec un démarrage rapide, indique une phase de structuration du pôle produit. ModuloTech a 15 ans d'existence, 70 collaborateurs et 20M+ d'interventions réalisées — c'est une PME solide qui industrialise, pas une startup qui cherche encore son marché. C'est exactement le contexte où un PO expérimenté peut avoir un impact fort dès les premières semaines.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Section 4 : Résumé CV ciblé ── -->
+    <section class="cand-section">
+      <p class="cand-section-label cand-reveal">04 — Parcours ciblé</p>
+      <h2 class="cand-section-title cand-reveal">Les expériences <em>les plus pertinentes</em></h2>
+
+      <div class="cv-timeline cand-reveal">
+                <div class="cv-job">
+          <div class="cv-job-meta">
+            <span class="cv-job-title">Product Manager — Lead Squad</span>
+            <span class="cv-job-period">Juil. 2021 → aujourd'hui · 4 ans+</span>
+          </div>
+          <p class="cv-job-company">Wisembly by Mediactive Group · Paris 10</p>
+          <p class="cv-job-tagline">Plateforme SaaS B2B événementielle — refonte complète et scaling</p>
+          <ul class="cv-job-list">
+              <li>Pilotage bout-en-bout de la refonte produit — PRD, backlog, sprints, recette — <strong>+35% de volume d'événements</strong></li>
+              <li>Interviews clients réguliers avec CS pour valider hypothèses avant développement</li>
+              <li>Coordination Design / Dev / Sales / CS — roadmap trimestrielle alignée sur le ROI</li>
+              <li>Arbitrage quotidien entre livraison de valeur et réduction de la dette technique</li>
+          </ul>
+        </div>
+
+        <div class="cv-job">
+          <div class="cv-job-meta">
+            <span class="cv-job-title">Responsable de Business Unit</span>
+            <span class="cv-job-period">Mars 2016 → Juin 2019 · 3 ans+</span>
+          </div>
+          <p class="cv-job-company">Castorama France · Creil</p>
+          <p class="cv-job-tagline">Management d'équipe & pilotage d'un centre de profit 6M€</p>
+          <ul class="cv-job-list">
+              <li>Management de <strong>12 collaborateurs</strong> — recrutement, formation, culture du résultat</li>
+              <li>Pilotage <strong>P&L 6M€</strong>, analyse KPIs et plans d'actions — participation au CODIR</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cand-cv-skills cand-reveal">
+        <p class="cand-cv-skills-label">Compétences clés pour ce poste</p>
+        <div class="cv-tags">
+                    <span class="cv-tag">Backlog & Priorisation</span>
+          <span class="cv-tag">PRD & User Stories</span>
+          <span class="cv-tag">Interviews clients</span>
+          <span class="cv-tag">Roadmap trimestrielle</span>
+          <span class="cv-tag">Figma</span>
+          <span class="cv-tag">Coordination Dev/Design/CS</span>
+          <span class="cv-tag">Analyse de données</span>
+          <span class="cv-tag">Management cross-fonctionnel</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA Footer ── -->
+    <div class="cand-footer-cta cand-reveal">
+      <p class="cand-footer-text">
+        Une question ? Échangeons directement.
+      </p>
+      <a href="mailto:dbraccio.laurent@gmail.com" class="footer-btn"
+         onclick="window.goatcounter&&goatcounter.count({path:'cand-email-modulotech',title:'Email Candidature',event:true})">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        </svg>
+        dbraccio.laurent@gmail.com
+      </a>
+      <a href="../index.html" class="footer-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Voir le portfolio
+      </a>
+    </div>
+
+    <!-- ── Panel admin (caché, visible si ?admin=1) ── -->
+    <div class="cand-admin" id="candAdmin">
+      <p class="cand-admin-label">⚙ Admin — Informations de partage</p>
+      <div class="cand-admin-row">
+        <span class="cand-admin-code">371854</span>
+        <span class="cand-admin-link" id="candAdminLink">https://laurent-stp95.github.io/my-landing-page-profile/candidatures/modulotech.html?admin=1</span>
+        <button class="cand-admin-copy" id="candAdminCopy">Copier</button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-info footer-info--right">
+      <span>© 2025 Laurent DEL BRACCIO — Product Manager</span>
+      <span>Page personnalisée · Confidentielle</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/nav.js" defer></script>
+  <script src="../js/candidature.js"></script>
+
+  <script>
+    // Focus sur le premier digit au chargement
+    document.addEventListener('DOMContentLoaded', () => {
+      const firstDigit = document.querySelector('.cand-code-digit');
+      if (firstDigit && !document.documentElement.classList.contains('pre-unlocked')) {
+        setTimeout(() => firstDigit.focus(), 100);
+      }
+      document.body.classList.add('cand-ready');
+    });
+  </script>
+
+</body>
+</html>

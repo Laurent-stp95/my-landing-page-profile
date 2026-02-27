@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Candidature — {{COMPANY}} · Laurent Del Braccio</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- ⚙️ CONFIGURATION — à remplir via data/xxx.json + gen.js -->
+  <script>
+    const PAGE_CODE = '{{CODE}}';
+    const PAGE_SLUG = '{{COMPANY_SLUG}}';
+  </script>
+
+  <!-- Protection : doit être AVANT le chargement du contenu -->
+  <script>
+    // Vérification rapide en session (évite le flash du splash si déjà déverrouillé)
+    if (sessionStorage.getItem('cand_unlocked_{{COMPANY_SLUG}}') === '1') {
+      document.documentElement.classList.add('pre-unlocked');
+    }
+  </script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+  <!-- Analytics -->
+  <script data-goatcounter="https://ldb.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/nav.css">
+  <link rel="stylesheet" href="../css/cv.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/candidature.css">
+
+  <style>
+    /* Masquer la page pendant le chargement si non déverrouillée */
+    body:not(.cand-ready) .cand-page { visibility: hidden; }
+  </style>
+</head>
+<body>
+
+  <!-- Curseur personnalisé -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ========== SPLASH SCREEN ========== -->
+  <div class="cand-splash" id="candSplash">
+
+    <!-- Watermark entreprise -->
+    <div class="cand-splash-watermark">{{COMPANY}}</div>
+
+    <div class="cand-splash-inner">
+      <span class="cand-splash-label">Candidature confidentielle</span>
+      <h1 class="cand-splash-title">{{COMPANY}}</h1>
+      <p class="cand-splash-subtitle">{{JOB_TITLE}}</p>
+      <div class="cand-splash-divider"></div>
+      <div class="cand-splash-form">
+        <p class="cand-splash-instruction">Entrez le code à 6 chiffres reçu par email</p>
+        <div class="cand-code-input" id="candCodeInput">
+          <input class="cand-code-digit" type="number" maxlength="1" inputmode="numeric" autocomplete="off" aria-label="Chiffre 1">
+          <input class="cand-code-digit" type="number" maxlength="1" inputmode="numeric" autocomplete="off" aria-label="Chiffre 2">
+          <input class="cand-code-digit" type="number" maxlength="1" inputmode="numeric" autocomplete="off" aria-label="Chiffre 3">
+          <input class="cand-code-digit" type="number" maxlength="1" inputmode="numeric" autocomplete="off" aria-label="Chiffre 4">
+          <input class="cand-code-digit" type="number" maxlength="1" inputmode="numeric" autocomplete="off" aria-label="Chiffre 5">
+          <input class="cand-code-digit" type="number" maxlength="1" inputmode="numeric" autocomplete="off" aria-label="Chiffre 6">
+        </div>
+        <p class="cand-splash-error" id="candError" aria-live="polite"></p>
+        <button class="cand-splash-btn" id="candValidate">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Valider
+        </button>
+      </div>
+    </div>
+
+  </div>
+  <!-- END SPLASH -->
+
+  <!-- ========== NAV ========== -->
+  <nav>
+    <a href="../index.html" class="nav-logo">ldb<span>.pm</span></a>
+    <button class="nav-burger" aria-label="Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">À propos</a></li>
+      <li><a href="../index.html#projects">Projets</a></li>
+      <li><a href="../cv.html">CV</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ========== PAGE CANDIDATURE ========== -->
+  <main class="cand-page">
+
+    <!-- ── En-tête ── -->
+    <header class="cand-header" data-company="{{COMPANY}}">
+      <div class="cand-header-line"></div>
+      <p class="cand-header-badge">Candidature personnalisée</p>
+      <h1 class="cand-company-name">{{COMPANY}}</h1>
+      <p class="cand-job-title">{{JOB_TITLE}}</p>
+      <p class="cand-date">Candidature du {{DATE}}</p>
+    </header>
+
+    <!-- ── Section 1 : Lettre de motivation ── -->
+    <section class="cand-section">
+      <p class="cand-section-label cand-reveal">01 — Lettre de motivation</p>
+      <h2 class="cand-section-title cand-reveal">Pourquoi <em>{{COMPANY}}</em></h2>
+
+      <blockquote class="cand-letter-hook cand-reveal">
+        {{LETTER_HOOK}}
+      </blockquote>
+
+      <div class="cand-letter-body cand-reveal">
+        {{LETTER_BODY}}
+      </div>
+    </section>
+
+    <!-- ── Section 2 : Matching profil/offre ── -->
+    <section class="cand-section">
+      <p class="cand-section-label cand-reveal">02 — Correspondance profil / offre</p>
+      <h2 class="cand-section-title cand-reveal">Ce que vous cherchez, <em>ce que j'apporte</em></h2>
+
+      <!-- Score de correspondance -->
+      <div class="cand-match-score cand-reveal">
+        <span class="cand-score-label">Correspondance</span>
+        <div class="cand-score-bar-wrap">
+          <div class="cand-score-bar" style="--score-percent: {{MATCH_SCORE}}%"></div>
+        </div>
+        <span class="cand-score-value">{{MATCH_MATCHED}} / {{MATCH_TOTAL}} critères · {{MATCH_SCORE}}%</span>
+      </div>
+
+      <!-- Table de matching -->
+      <div class="cand-match-table cand-reveal">
+        <div class="cand-match-header">
+          <span class="cand-match-col-label">Vous cherchez</span>
+          <span class="cand-match-col-label center">→</span>
+          <span class="cand-match-col-label" style="text-align:right">Ce que j'apporte</span>
+        </div>
+        {{MATCHING_ROWS}}
+      </div>
+    </section>
+
+    <!-- ── Section 3 : Benchmark entreprise ── -->
+    <section class="cand-section">
+      <p class="cand-section-label cand-reveal">03 — Ma lecture de {{COMPANY}}</p>
+      <h2 class="cand-section-title cand-reveal">J'ai fait <em>mes recherches</em></h2>
+
+      <div class="cand-benchmark-grid cand-reveal">
+
+        <!-- Card enjeux produit -->
+        <div class="cand-bench-card">
+          <div class="cand-bench-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+            </svg>
+          </div>
+          <p class="cand-bench-title">{{BENCH_CHALLENGES_TITLE}}</p>
+          <p class="cand-bench-text">{{BENCH_CHALLENGES_CONTENT}}</p>
+        </div>
+
+        <!-- Card actualités -->
+        <div class="cand-bench-card">
+          <div class="cand-bench-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <p class="cand-bench-title">{{BENCH_NEWS_TITLE}}</p>
+          <p class="cand-bench-text">{{BENCH_NEWS_CONTENT}}</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Section 4 : Résumé CV ciblé ── -->
+    <section class="cand-section">
+      <p class="cand-section-label cand-reveal">04 — Parcours ciblé</p>
+      <h2 class="cand-section-title cand-reveal">Les expériences <em>les plus pertinentes</em></h2>
+
+      <div class="cv-timeline cand-reveal">
+        {{CV_JOBS}}
+      </div>
+
+      <div class="cand-cv-skills cand-reveal">
+        <p class="cand-cv-skills-label">Compétences clés pour ce poste</p>
+        <div class="cv-tags">
+          {{CV_SKILLS}}
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA Footer ── -->
+    <div class="cand-footer-cta cand-reveal">
+      <p class="cand-footer-text">
+        Une question ? Échangeons directement.
+      </p>
+      <a href="mailto:dbraccio.laurent@gmail.com" class="footer-btn"
+         onclick="window.goatcounter&&goatcounter.count({path:'cand-email-{{COMPANY_SLUG}}',title:'Email Candidature',event:true})">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        </svg>
+        dbraccio.laurent@gmail.com
+      </a>
+      <a href="../index.html" class="footer-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Voir le portfolio
+      </a>
+    </div>
+
+    <!-- ── Panel admin (caché, visible si ?admin=1) ── -->
+    <div class="cand-admin" id="candAdmin">
+      <p class="cand-admin-label">⚙ Admin — Informations de partage</p>
+      <div class="cand-admin-row">
+        <span class="cand-admin-code">{{CODE}}</span>
+        <span class="cand-admin-link" id="candAdminLink">{{ADMIN_URL}}</span>
+        <button class="cand-admin-copy" id="candAdminCopy">Copier</button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-info footer-info--right">
+      <span>© 2025 Laurent DEL BRACCIO — Product Manager</span>
+      <span>Page personnalisée · Confidentielle</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/nav.js" defer></script>
+  <script src="../js/candidature.js"></script>
+
+  <script>
+    // Focus sur le premier digit au chargement
+    document.addEventListener('DOMContentLoaded', () => {
+      const firstDigit = document.querySelector('.cand-code-digit');
+      if (firstDigit && !document.documentElement.classList.contains('pre-unlocked')) {
+        setTimeout(() => firstDigit.focus(), 100);
+      }
+      document.body.classList.add('cand-ready');
+    });
+  </script>
+
+</body>
+</html>
