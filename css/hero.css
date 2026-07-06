@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 6vw;
+    padding: 8rem 6vw 4rem;
     position: relative;
     overflow: hidden;
   }
@@ -310,6 +310,158 @@
     font-size: 0.7rem;
     color: var(--text-subtle);
     letter-spacing: 0.1em;
+  }
+
+  /* =============================================
+     BUILD TERMINAL — discovery → delivery
+     ============================================= */
+  .build-terminal {
+    margin-top: 3rem;
+    width: 100%;
+    max-width: 720px;
+    background: var(--bg);
+    border: 1px solid var(--border-bright);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 24px 60px -30px rgba(10, 10, 10, 0.28);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.3s forwards;
+  }
+
+  @keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Title bar */
+  .term-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.7rem 1rem;
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .term-dots {
+    display: flex;
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  .term-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--border-bright);
+  }
+
+  .term-title {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--text-subtle);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+  }
+
+  .term-phase {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text);
+    border: 1px solid var(--border-bright);
+    padding: 0.2rem 0.55rem;
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .term-phase[data-phase="ship"] {
+    color: var(--bg);
+    background: var(--text);
+    border-color: var(--text);
+  }
+
+  /* Body */
+  .term-body {
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    line-height: 1.85;
+    padding: 1.4rem 1.5rem;
+    min-height: 260px;
+    color: var(--text-muted);
+  }
+
+  .term-line {
+    display: block;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  /* Prompt lines ($ ...) — noir, poids */
+  .term-line.is-prompt {
+    color: var(--text);
+    font-weight: 500;
+  }
+  .term-line.is-prompt::before {
+    content: '$ ';
+    color: var(--text-subtle);
+  }
+
+  /* Output lines (> ...) — gris */
+  .term-line.is-output {
+    color: var(--text-muted);
+    padding-left: 1.1rem;
+  }
+  .term-line.is-output::before {
+    content: '› ';
+    color: var(--text-subtle);
+    margin-left: -1.1rem;
+  }
+
+  /* Ship line — encadré succès monochrome */
+  .term-line.is-ship {
+    color: var(--text);
+    font-weight: 600;
+  }
+  .term-line.is-ship::before {
+    content: '✓ ';
+    color: var(--text);
+  }
+
+  /* Curseur clignotant */
+  .term-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1.05em;
+    background: var(--text);
+    vertical-align: text-bottom;
+    margin-left: 2px;
+    animation: termBlink 1s step-end infinite;
+  }
+
+  @keyframes termBlink {
+    0%, 50% { opacity: 1; }
+    50.01%, 100% { opacity: 0; }
+  }
+
+  /* Reduced-motion : tout visible, pas d'animation d'entrée */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-rotator,
+    .hero-disciplines,
+    .rotator-counter,
+    .build-terminal,
+    .title-word {
+      opacity: 1 !important;
+      transform: none !important;
+      animation: none !important;
+    }
+    .term-cursor { animation: none; opacity: 0; }
   }
 
   /* =============================================
