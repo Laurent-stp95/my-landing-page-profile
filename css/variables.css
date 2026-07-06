@@ -1,41 +1,41 @@
 /* =============================================
    DESIGN TOKENS
-   Thème clair éditorial — white / neutral grey / black
-   Accent orange spot. Positionnement Product Builder.
+   Thème monochrome Swiss/Bauhaus — white / neutral grey / black
+   Zéro couleur : l'accent est le noir. La typo est la star.
    ============================================= */
 
 :root {
-  /* --- Backgrounds (blanc chaud neutre) --- */
+  /* --- Backgrounds (blanc / gris froids neutres) --- */
   --bg: #ffffff;
-  --bg-elevated: #fbfbfa;
-  --bg-subtle: #f4f4f2;
+  --bg-elevated: #f7f7f8;
+  --bg-subtle: #f0f0f2;
 
-  /* --- Text Colors (noir → gris neutres) --- */
-  --text: #111111;        /* ~18:1 sur --bg */
-  --text-muted: #565656;  /* ~7.3:1 sur --bg */
-  --text-subtle: #8a8a8a; /* ~4.6:1 sur --bg */
+  /* --- Text Colors (noir → gris froids) --- */
+  --text: #0a0a0a;        /* ~20:1 sur --bg */
+  --text-muted: #52525b;  /* ~8:1 sur --bg */
+  --text-subtle: #8b8b93; /* ~4.5:1 sur --bg */
 
-  /* --- Accent Orange (spot, contrasté sur blanc) --- */
-  --accent: #e8590c;
-  --accent-hover: #d24d05;
-  --accent-dim: #b8480c;  /* texte accent lisible sur blanc */
-  --accent-soft: rgba(232, 89, 12, 0.08);
-  --accent-glow: rgba(232, 89, 12, 0.14);
+  /* --- Accent = NOIR PUR (poids, underline, fill) --- */
+  --accent: #0a0a0a;
+  --accent-hover: #000000;
+  --accent-dim: #3f3f46;  /* gris foncé pour variantes */
+  --accent-soft: rgba(10, 10, 10, 0.05);
+  --accent-glow: rgba(10, 10, 10, 0.06);
 
-  /* --- Disciplines (les 3 casquettes du builder) --- */
-  --disc-product: #e8590c; /* orange — product */
-  --disc-design:  #6d5ae6; /* violet — design */
-  --disc-code:    #0f9d6b; /* vert — code/data */
+  /* --- Disciplines : nuances de gris (pas de couleur) --- */
+  --disc-product: #0a0a0a; /* noir */
+  --disc-design:  #71717a; /* gris moyen */
+  --disc-code:    #a1a1aa; /* gris clair */
 
-  /* --- Borders (gris clairs neutres) --- */
-  --border: #e6e6e3;
-  --border-subtle: #efefec;
-  --border-bright: #dad9d5;
-  --border-accent: rgba(232, 89, 12, 0.45);
+  /* --- Borders (gris froids clairs) --- */
+  --border: #e4e4e7;
+  --border-subtle: #efeff1;
+  --border-bright: #d4d4d8;
+  --border-accent: #0a0a0a;
 
   /* --- Surface States --- */
-  --surface-hover: rgba(232, 89, 12, 0.04);
-  --surface-active: rgba(232, 89, 12, 0.07);
+  --surface-hover: rgba(10, 10, 10, 0.03);
+  --surface-active: rgba(10, 10, 10, 0.06);
 
   /* --- Typography --- */
   --serif: 'Instrument Serif', Georgia, serif;
