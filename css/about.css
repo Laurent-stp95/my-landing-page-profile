@@ -39,6 +39,37 @@
   margin: 0;
 }
 
+/* Process builder — design → poc → ship */
+.about-process {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin: 0.4rem 0 0 0;
+  padding: 0;
+}
+
+.about-process li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+.proc-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.proc-dot--design  { background: var(--disc-design); }
+.proc-dot--code    { background: var(--disc-code); }
+.proc-dot--product { background: var(--disc-product); }
+
 /* Aside — stats + footnote */
 .about-col-aside {
   display: flex;

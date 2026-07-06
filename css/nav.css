@@ -12,8 +12,8 @@
     align-items: center;
     z-index: 100;
     backdrop-filter: blur(20px);
-    background: rgba(10, 10, 10, 0.7);
-    border-bottom: 1px solid var(--border-bright);
+    background: rgba(255, 255, 255, 0.78);
+    border-bottom: 1px solid var(--border);
   }
   
   .nav-logo {
@@ -55,6 +55,21 @@
   
   .nav-links a:hover {
     color: var(--accent);
+  }
+
+  /* CTA contact — bouton plein accent */
+  .nav-links a.nav-cta {
+    color: #fff;
+    background: var(--accent);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+
+  .nav-links a.nav-cta:hover {
+    color: #fff;
+    background: var(--accent-hover);
+    transform: translateY(-1px);
   }
 
   .nav-links a:focus-visible,

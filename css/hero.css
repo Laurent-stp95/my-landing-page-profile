@@ -56,10 +56,10 @@
     content: '';
     position: absolute;
     inset: 0;
-    opacity: 0.06;
+    opacity: 0.5;
     background-image:
-      linear-gradient(90deg, var(--accent-glow) 1px, transparent 1px),
-      linear-gradient(var(--accent-glow) 1px, transparent 1px);
+      linear-gradient(90deg, var(--border) 1px, transparent 1px),
+      linear-gradient(var(--border) 1px, transparent 1px);
     background-size: 120px 120px;
     z-index: 0;
     pointer-events: none;
@@ -235,9 +235,54 @@
   
 
   
+  /* --- Chips disciplines — owner multi-casquettes --- */
+  .hero-disciplines {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    opacity: 0;
+    animation: fadeIn 0.8s ease 1s forwards;
+  }
+
+  .disc-chip {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    padding: 0.4rem 0.85rem;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-bright);
+    color: var(--text-muted);
+    background: var(--bg);
+    transition: color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    cursor: default;
+    --dot: var(--text-subtle);
+  }
+
+  /* Pastille couleur par discipline (visible dès le repos) */
+  .disc-chip::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    background: var(--dot);
+  }
+
+  .disc-chip--product { --dot: var(--disc-product); }
+  .disc-chip--design  { --dot: var(--disc-design); }
+  .disc-chip--code,
+  .disc-chip--data    { --dot: var(--disc-code); }
+
+  /* Hover : texte + bordure prennent la couleur de discipline */
+  .disc-chip:hover { transform: translateY(-2px); color: var(--dot); border-color: var(--dot); }
+
   /* F — Compteur de mots */
   .rotator-counter {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     display: flex;
     align-items: center;
     gap: 0.4rem;
