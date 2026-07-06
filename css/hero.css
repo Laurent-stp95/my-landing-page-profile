@@ -315,12 +315,18 @@
     flex-shrink: 0;
   }
 
-  .term-dot {
+  .term-dot-close,
+  .term-dot-minimize,
+  .term-dot-maximize {
     width: 11px;
     height: 11px;
     border-radius: 50%;
     background: var(--border-bright);
   }
+
+  .term-dot-close    { background: #ff5c5f; }
+  .term-dot-minimize { background: #fac800; }
+  .term-dot-maximize { background: #34c759; }
 
   .term-title {
     font-family: var(--mono);
