@@ -285,6 +285,7 @@
   .build-terminal {
     width: 100%;
     max-width: 100%;
+    min-width: 0;
     background: var(--bg);
     border: 1px solid var(--border-bright);
     border-radius: var(--radius-md);
@@ -359,20 +360,24 @@
     border-color: var(--text);
   }
 
-  /* Body */
+  /* Body — hauteur fixe pour éviter le reflow pendant le typing */
   .term-body {
     font-family: var(--mono);
     font-size: 0.82rem;
     line-height: 1.85;
     padding: 1.4rem 1.5rem;
-    min-height: 260px;
+    height: 360px;
+    overflow: hidden;
     color: var(--text-muted);
+    box-sizing: border-box;
+    max-width: 100%;
   }
 
   .term-line {
     display: block;
     white-space: pre-wrap;
     word-break: break-word;
+    overflow-wrap: anywhere;
   }
 
   /* Prompt lines ($ ...) — noir, poids */
@@ -479,13 +484,14 @@
 
     /* Empile : texte puis terminal */
     .hero-content {
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
       gap: 2.5rem;
       align-items: start;
     }
 
     .build-terminal {
-      max-width: 720px;
+      max-width: 100%;
+      min-width: 0;
     }
 
     .hero h1 {
@@ -535,7 +541,7 @@
     .term-body {
       font-size: 0.72rem;
       padding: 1.1rem 1.1rem;
-      min-height: 220px;
+      height: 400px;
     }
 
     .term-title { font-size: 0.62rem; }
@@ -547,21 +553,24 @@
     .hero-rotator {
       flex-direction: column;
       align-items: flex-start;
-      gap: 0.3rem;
+      gap: 0.15rem;
       margin-top: 1.2rem;
     }
 
     .rotator-static {
-      font-size: 28px;
-    }
-
-    .rotator-word {
-      font-size: 28px;
+      font-size: 1.75rem;
+      line-height: 1.25;
     }
 
     .rotator-words {
       min-width: 200px;
-      height: 34px; /* 28px × 1.2 */
+      font-size: 1.75rem;
+      height: 1.25em;
+    }
+
+    .rotator-word {
+      font-size: 1em;
+      line-height: 1.25;
     }
 
     .hero-geo {
