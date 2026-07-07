@@ -1,41 +1,41 @@
 /* =============================================
    DESIGN TOKENS
-   Thème monochrome Swiss/Bauhaus — white / neutral grey / black
-   Zéro couleur : l'accent est le noir. La typo est la star.
+   Thème clair — white / neutral grey / black + accent BLEU
+   Texte noir (lisibilité max), bleu sur liens/CTA/accents.
    ============================================= */
 
 :root {
   /* --- Backgrounds (blanc / gris froids neutres) --- */
   --bg: #ffffff;
-  --bg-elevated: #f7f7f8;
-  --bg-subtle: #f0f0f2;
+  --bg-elevated: #f6f8fc;
+  --bg-subtle: #eef2f9;
 
   /* --- Text Colors (noir → gris froids) --- */
   --text: #0a0a0a;        /* ~20:1 sur --bg */
   --text-muted: #52525b;  /* ~8:1 sur --bg */
   --text-subtle: #8b8b93; /* ~4.5:1 sur --bg */
 
-  /* --- Accent = NOIR PUR (poids, underline, fill) --- */
-  --accent: #0a0a0a;
-  --accent-hover: #000000;
-  --accent-dim: #3f3f46;  /* gris foncé pour variantes */
-  --accent-soft: rgba(10, 10, 10, 0.05);
-  --accent-glow: rgba(10, 10, 10, 0.06);
+  /* --- Accent = BLEU (liens, CTA, prompts, badges) --- */
+  --accent: #2563eb;       /* ~5.2:1 sur blanc */
+  --accent-hover: #1d4ed8; /* plus foncé au survol */
+  --accent-dim: #1e40af;   /* bleu foncé pour texte fin */
+  --accent-soft: rgba(37, 99, 235, 0.08);
+  --accent-glow: rgba(37, 99, 235, 0.12);
 
-  /* --- Disciplines : nuances de gris (pas de couleur) --- */
-  --disc-product: #0a0a0a; /* noir */
-  --disc-design:  #71717a; /* gris moyen */
-  --disc-code:    #a1a1aa; /* gris clair */
+  /* --- Disciplines : bleu (product) + nuances de gris --- */
+  --disc-product: #2563eb; /* bleu — product */
+  --disc-design:  #64748b; /* gris ardoise moyen */
+  --disc-code:    #94a3b8; /* gris ardoise clair */
 
-  /* --- Borders (gris froids clairs) --- */
-  --border: #e4e4e7;
-  --border-subtle: #efeff1;
-  --border-bright: #d4d4d8;
-  --border-accent: #0a0a0a;
+  /* --- Borders (gris froids clairs, légère teinte bleue) --- */
+  --border: #e2e8f0;
+  --border-subtle: #eef2f7;
+  --border-bright: #cbd5e1;
+  --border-accent: #2563eb;
 
   /* --- Surface States --- */
-  --surface-hover: rgba(10, 10, 10, 0.03);
-  --surface-active: rgba(10, 10, 10, 0.06);
+  --surface-hover: rgba(37, 99, 235, 0.04);
+  --surface-active: rgba(37, 99, 235, 0.08);
 
   /* --- Typography --- */
   --serif: 'Instrument Serif', Georgia, serif;

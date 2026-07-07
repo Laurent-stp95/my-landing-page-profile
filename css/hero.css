@@ -355,9 +355,9 @@
   }
 
   .term-phase[data-phase="ship"] {
-    color: var(--bg);
-    background: var(--text);
-    border-color: var(--text);
+    color: #fff;
+    background: var(--accent);
+    border-color: var(--accent);
   }
 
   /* Body — hauteur fixe pour éviter le reflow pendant le typing */
@@ -387,7 +387,8 @@
   }
   .term-line.is-prompt::before {
     content: '$ ';
-    color: var(--text-subtle);
+    color: var(--accent);
+    font-weight: 700;
   }
 
   /* Output lines (> ...) — gris */
@@ -408,7 +409,8 @@
   }
   .term-line.is-ship::before {
     content: '✓ ';
-    color: var(--text);
+    color: var(--accent);
+    font-weight: 700;
   }
 
   /* Curseur clignotant */
