@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laurent — Product Manager</title>
+  <title>Laurent Del Braccio — Product Builder</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -56,7 +56,7 @@
       <li><a href="#projects">Projets</a></li>
       <li><a href="#skills">Compétences</a></li>
       <li><a href="cv.html">CV</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
   </nav>
 
@@ -64,35 +64,49 @@
   <section class="hero">
     <div class="hero-grain"></div>
     <div class="hero-scan"></div>
-    <div class="hero-architecture">
-      <svg class="arch-svg arch-1" viewBox="0 0 280 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect class="arch-path" x="1" y="1" width="278" height="378" rx="4"/>
-      </svg>
-      <svg class="arch-svg arch-2" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle class="arch-path" cx="100" cy="100" r="99"/>
-      </svg>
-      <svg class="arch-svg arch-3" viewBox="0 0 150 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect class="arch-path" x="1" y="1" width="148" height="248" rx="2"/>
-      </svg>
-    </div>
     <div class="hero-content">
-      <h1>
-        <span class="title-line"><span class="title-word">Laurent</span></span>
-        <span class="title-line"><span class="title-word">Del Braccio</span>
-      </h1>
-      <div class="hero-rotator">
-        <span class="rotator-static">Product Manager —</span>
-        <span class="rotator-words" id="rotatorWords">
-          <span class="rotator-word active">Vision produit</span>
-          <span class="rotator-word">Impact business</span>
-          <span class="rotator-word">Code & Design</span>
-        </span>
+      <div class="hero-text">
+        <h1>
+          <span class="title-line"><span class="title-word">Laurent</span></span>
+          <span class="title-line"><span class="title-word">Del Braccio</span>
+        </h1>
+        <div class="hero-rotator">
+          <span class="rotator-static">Product Builder —</span>
+          <span class="rotator-words" id="rotatorWords">
+            <span class="rotator-word active">Vision & ship</span>
+            <span class="rotator-word">Design & POC</span>
+            <span class="rotator-word">Code & data</span>
+          </span>
+        </div>
+
+        <!-- Chips disciplines — signal owner multi-casquettes -->
+        <div class="hero-disciplines" id="heroDisciplines">
+          <span class="disc-chip disc-chip--product">Product</span>
+          <span class="disc-chip disc-chip--design">Design</span>
+          <span class="disc-chip disc-chip--code">Code</span>
+          <span class="disc-chip disc-chip--data">Data</span>
+        </div>
+
+        <!-- F — Compteur de mots -->
+        <div class="rotator-counter" id="rotatorCounter">
+          <span class="counter-current">01</span>
+          <span class="counter-sep">/</span>
+          <span class="counter-total">03</span>
+        </div>
       </div>
-      <!-- F — Compteur de mots -->
-      <div class="rotator-counter" id="rotatorCounter">
-        <span class="counter-current">01</span>
-        <span class="counter-sep">/</span>
-        <span class="counter-total">03</span>
+
+      <!-- ===== Terminal — build feature discovery → delivery ===== -->
+      <div class="build-terminal" id="buildTerminal" aria-hidden="true">
+        <div class="term-bar">
+          <span class="term-dots">
+            <span class="term-dot-close"></span>
+            <span class="term-dot-minimize"></span>
+            <span class="term-dot-maximize"></span>
+          </span>
+          <span class="term-title">build-feature — inscription participant</span>
+          <span class="term-phase" id="termPhase">discovery</span>
+        </div>
+        <div class="term-body" id="termBody"></div>
       </div>
     </div>
   </section>
@@ -100,15 +114,20 @@
   <!-- ========== ABOUT ========== -->
   <section class="about" id="about">
     <p class="section-label reveal">01 — À propos</p>
-    <h2 class="section-title reveal">Product Manager — <em>vision, organisation, design et code.</em></h2>
+    <h2 class="section-title reveal">Product Builder — <em>je conçois, prototype et construis.</em></h2>
     <div class="about-body reveal">
       <div class="about-col-text">
         <blockquote class="about-quote">
-          Je parle le même langage que les designers et les développeurs. Je code, ce qui me permet de collaborer directement avec les équipes techniques sans friction ni perte de traduction.
+          J'assume le produit de bout en bout : de la vision au design, du POC au code livré. Je ne me contente pas de piloter — je construis. Design dans Figma, prototypes fonctionnels, analyse de code : je parle le langage des designers et des devs parce que je fais le travail avec eux.
         </blockquote>
         <p class="about-text">
-          Moins d'allers-retours, des specs qui tiennent la route, et une vision produit qui reste intacte jusqu'en production. Avant le produit, 15 ans de commerce terrain — une lecture directe des usages métier que les interviews seules ne donnent pas.
+          Moins d'allers-retours, des specs qui tiennent la route, une vision produit intacte jusqu'en production — parce que je peux moi-même la prototyper. Avant le produit, 15 ans de commerce terrain : une lecture directe des usages métier que les interviews seules ne donnent pas.
         </p>
+        <ul class="about-process">
+          <li><span class="proc-dot proc-dot--design"></span>Design &amp; specs — Figma, wireframes, PRD</li>
+          <li><span class="proc-dot proc-dot--code"></span>POC &amp; prototypes — code fonctionnel, pas des slides</li>
+          <li><span class="proc-dot proc-dot--product"></span>Ship &amp; mesure — recette, analytics, itération</li>
+        </ul>
       </div>
       <div class="about-col-aside">
         <div class="about-stats">
@@ -362,13 +381,14 @@
       </a>
     </div>
     <div class="footer-info">
-      <span>© 2025 Laurent DEL BRACCIO — Product Manager</span>
-      <span>Built with passion & code</span>
+      <span>© 2026 Laurent DEL BRACCIO — Product Builder</span>
+      <span>Conçu, codé & shippé par mes soins</span>
     </div>
   </footer>
 
   <!-- Scripts -->
   <script src="js/hero.js" defer></script>
+  <script src="js/terminal.js" defer></script>
   <script src="js/nav.js" defer></script>
   <script src="js/scroll-reveal.js" defer></script>
   <script src="js/parallax.js" defer></script>

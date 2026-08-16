@@ -1,42 +1,48 @@
 /* =============================================
    DESIGN TOKENS
-   Palette harmonieuse basée sur l'orange
+   Thème clair — white / neutral grey / black + accent BLEU
+   Texte noir (lisibilité max), bleu sur liens/CTA/accents.
    ============================================= */
 
 :root {
-  /* --- Backgrounds (tons brun-orange) --- */
-  --bg: #0d0a08;
-  --bg-elevated: #171310;
-  --bg-subtle: #1f1916;
+  /* --- Backgrounds (blanc / gris froids neutres) --- */
+  --bg: #ffffff;
+  --bg-elevated: #f6f8fc;
+  --bg-subtle: #eef2f9;
 
-  /* --- Text Colors (gris chauds) --- */
-  --text: #f0ebe4;        /* ~16.8:1 sur --bg */
-  --text-muted: #a89e96;  /* ~7.2:1 sur --bg  */
-  --text-subtle: #8c8079; /* ~5.2:1 sur --bg  */
+  /* --- Text Colors (noir → gris froids) --- */
+  --text: #0a0a0a;        /* ~20:1 sur --bg */
+  --text-muted: #52525b;  /* ~8:1 sur --bg */
+  --text-subtle: #8b8b93; /* ~4.5:1 sur --bg */
 
-  /* --- Accent Orange (couleur principale) --- */
-  --accent: #f09807;
-  --accent-hover: #ffa51f;
-  --accent-dim: #d98a06;  /* ~4.8:1 sur --bg-elevated */
-  --accent-soft: rgba(240, 152, 7, 0.12);
-  --accent-glow: rgba(240, 152, 7, 0.2);
+  /* --- Accent = BLEU (liens, CTA, prompts, badges) --- */
+  --accent: #2563eb;       /* ~5.2:1 sur blanc */
+  --accent-hover: #1d4ed8; /* plus foncé au survol */
+  --accent-dim: #1e40af;   /* bleu foncé pour texte fin */
+  --accent-soft: rgba(37, 99, 235, 0.08);
+  --accent-glow: rgba(37, 99, 235, 0.12);
 
-  /* --- Borders (teintes chaudes) --- */
-  --border: #231f1c;
-  --border-subtle: #1a1612;
-  --border-bright: #2d2621;
-  --border-accent: rgba(240, 151, 7, 0.528);
+  /* --- Disciplines : bleu (product) + nuances de gris --- */
+  --disc-product: #2563eb; /* bleu — product */
+  --disc-design:  #64748b; /* gris ardoise moyen */
+  --disc-code:    #94a3b8; /* gris ardoise clair */
+
+  /* --- Borders (gris froids clairs, légère teinte bleue) --- */
+  --border: #e2e8f0;
+  --border-subtle: #eef2f7;
+  --border-bright: #cbd5e1;
+  --border-accent: #2563eb;
 
   /* --- Surface States --- */
-  --surface-hover: rgba(240, 152, 7, 0.05);
-  --surface-active: rgba(240, 152, 7, 0.08);
+  --surface-hover: rgba(37, 99, 235, 0.04);
+  --surface-active: rgba(37, 99, 235, 0.08);
 
   /* --- Typography --- */
   --serif: 'Instrument Serif', Georgia, serif;
   --sans: 'DM Sans', sans-serif;
   --mono: 'JetBrains Mono', monospace;
 
-  /* --- Spacing (optionnel) --- */
+  /* --- Spacing --- */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
