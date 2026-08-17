@@ -49,6 +49,9 @@
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
 
+  /* --- Layout --- */
+  --nav-h-mobile: 64px; /* hauteur réelle de la nav fixe < 900px */
+
   /* --- Border Radius --- */
   --radius-sm: 4px;
   --radius-md: 8px;

@@ -535,7 +535,10 @@
   @media (max-width: 768px) {
     .hero {
       min-height: 90vh;
-      padding: 6rem 5vw 3rem;
+      /* Contenu plus haut que le viewport sur mobile : on ancre en haut
+         plutôt que centrer, sinon le h1 passe sous la nav fixe */
+      justify-content: flex-start;
+      padding: calc(var(--nav-h-mobile) + 2rem) 5vw 3rem;
     }
 
     .build-terminal { max-width: 100%; }
