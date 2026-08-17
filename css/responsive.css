@@ -7,9 +7,10 @@
       padding: 3.5rem 5vw;
     }
 
-    /* Hero mobile */
+    /* Hero mobile — padding-top = nav fixe, sinon le h1 passe dessous */
     .hero {
-      padding: 0 5vw;
+      padding: calc(var(--nav-h-mobile) + 2rem) 5vw 3rem;
+      justify-content: flex-start;
     }
   
     .hero h1 {
@@ -123,6 +124,10 @@
     }
   
     /* Nav mobile */
+    nav {
+      padding: 1.15rem 5vw; /* ≈ --nav-h-mobile (64px) avec le logo 0.95rem */
+    }
+
     .nav-links {
       display: none;
       position: absolute;
