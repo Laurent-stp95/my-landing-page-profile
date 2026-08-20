@@ -20,7 +20,9 @@
     font-family: var(--sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
+    /* clip (et non hidden) : évite de créer un conteneur de scroll
+       imbriqué qui provoque un rebond/bounce vertical au scroll */
+    overflow-x: clip;
     line-height: 1.6;
   }
 
