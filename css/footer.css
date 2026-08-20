@@ -1,92 +1,108 @@
 /* =============================================
-   FOOTER
+   FOOTER — Contact CTA + barre légale (Apple)
    ============================================= */
 
 footer {
-  padding: 2rem 3rem;
-  border-top: 1px solid var(--border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
+  border-top: none;
 }
 
-/* Footer actions (buttons) */
+/* --- CTA contact --- */
+.footer-cta {
+  padding: 7rem 6vw;
+  max-width: 1240px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-cta .section-label {
+  margin-bottom: 0.75rem;
+}
+
+.footer-title {
+  font-family: var(--sans);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text);
+  margin: 0 0 2.25rem 0;
+  max-width: 16ch;
+}
+
+/* --- Boutons --- */
 .footer-actions {
   display: flex;
-  gap: 0.8rem;
+  gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .footer-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.6rem 1.2rem;
+  padding: 0.7rem 1.5rem;
   font-family: var(--sans);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 500;
+  letter-spacing: -0.01em;
   color: var(--text);
   background: var(--bg-elevated);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border: none;
+  border-radius: var(--radius-full);
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: background 0.2s ease, color 0.2s ease;
   cursor: pointer;
 }
 
 .footer-btn:hover {
-  background: var(--surface-hover);
-  border-color: var(--border-accent);
-  color: var(--accent);
-  transform: translateY(-2px);
+  background: #ebebef;
+  color: var(--text);
+}
+
+/* Bouton primaire — pilule bleue Apple */
+.footer-btn--primary {
+  color: #fff;
+  background: var(--accent);
+}
+
+.footer-btn--primary:hover {
+  color: #fff;
+  background: var(--accent-hover);
 }
 
 .footer-btn svg {
   flex-shrink: 0;
-  transition: transform 0.3s ease;
 }
 
-.footer-btn:hover svg {
-  transform: scale(1.1);
-}
-
-/* Footer info (text) */
-.footer-info {
+/* --- Barre légale --- */
+.footer-bar {
+  border-top: 1px solid var(--border);
+  padding: 1.75rem 6vw;
+  max-width: 1240px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  text-align: right;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.footer-info span {
+.footer-bar span {
   font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-.footer-info span a {
-  color: var(--accent);
-  text-decoration: none;
+  color: var(--text-subtle);
 }
 
 /* =============================================
    RESPONSIVE — FOOTER
    ============================================= */
 
-/* Tablet */
-@media (max-width: 1024px) {
-  footer {
-    padding: 2rem;
-  }
-}
-
-/* Mobile */
 @media (max-width: 768px) {
-  footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-    padding: 2rem 5vw;
+  .footer-cta {
+    padding: 5rem 5vw;
   }
 
   .footer-actions {
@@ -99,13 +115,10 @@ footer {
     justify-content: center;
   }
 
-  .footer-info {
-    width: 100%;
-    text-align: left;
+  .footer-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 5vw;
     gap: 0.4rem;
-  }
-
-  .footer-info span {
-    font-size: 0.75rem;
   }
 }

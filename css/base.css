@@ -8,46 +8,6 @@
     box-sizing: border-box;
   }
 
-  /* E — Curseur personnalisé */
-  body { cursor: none; }
-
-  .cursor-dot {
-    position: fixed;
-    width: 6px;
-    height: 6px;
-    background: var(--accent);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 10000;
-    transform: translate(-50%, -50%);
-    transition: transform 0.1s ease, opacity 0.2s ease;
-  }
-
-  .cursor-ring {
-    position: fixed;
-    width: 32px;
-    height: 32px;
-    border: 1.5px solid var(--accent);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    opacity: 0.5;
-    transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease, transform 0.12s ease;
-  }
-
-  .cursor-ring.hover {
-    width: 48px;
-    height: 48px;
-    opacity: 0.8;
-    border-color: var(--accent-hover);
-  }
-
-  @media (hover: none) {
-    body { cursor: auto; }
-    .cursor-dot, .cursor-ring { display: none; }
-  }
-  
   html {
     scroll-behavior: smooth;
     scrollbar-width: thin;
@@ -58,21 +18,14 @@
     background: var(--bg);
     color: var(--text);
     font-family: var(--sans);
-    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* clip (et non hidden) : évite de créer un conteneur de scroll
+       imbriqué qui provoque un rebond/bounce vertical au scroll */
+    overflow-x: clip;
     line-height: 1.6;
   }
-  
-  /* Grain overlay */
-  body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.02'/%3E%3C/svg%3E");
-    mix-blend-mode: multiply;
-    pointer-events: none;
-    z-index: 9999;
-  }
-  
+
   /* Section common */
   section {
     padding: 6rem 6vw;
@@ -80,23 +33,24 @@
   }
   
   .section-label {
-    font-family: var(--mono);
-    font-size: 0.7rem;
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    font-weight: 500;
     color: var(--accent);
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
+    letter-spacing: 0;
+    margin-bottom: 0.75rem;
   }
-  
+
   .section-title {
-    font-family: var(--serif);
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    font-family: var(--sans);
+    font-size: clamp(2rem, 4.5vw, 3.25rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
     margin-bottom: 3rem;
   }
-  
+
   .section-title em {
-    font-style: italic;
-    color: var(--accent);
+    font-style: normal;
+    color: var(--text-muted);
   }
