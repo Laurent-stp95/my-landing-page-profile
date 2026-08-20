@@ -42,10 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
       overlay.classList.add('is-active');
       overlay.style.pointerEvents = 'all';
 
-      // Naviguer après la fin de l'animation (1.1s) avec le marqueur d'origine
+      // Naviguer après la fin de l'animation (0.75s) avec le marqueur d'origine
       setTimeout(() => {
         window.location.href = 'cv.html?from=index';
-      }, 1080);
+      }, 730);
     });
   });
 });

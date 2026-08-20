@@ -3,7 +3,7 @@
    ============================================= */
 
 .about {
-  border-top: 1px solid var(--border);
+  border-top: none;
 }
 
 /* Grid 2 colonnes : texte | aside */
@@ -17,58 +17,75 @@
 .about-col-text {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 2rem;
 }
 
-/* Citation */
+/* Citation — grande phrase Apple, sans italique serif */
 .about-quote {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-family: var(--sans);
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.35;
   margin: 0;
-  padding-left: 1.4rem;
-  border-left: 2px solid var(--accent);
+  padding: 0;
+  border: none;
 }
 
 .about-text {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
-  line-height: 1.8;
+  line-height: 1.7;
   margin: 0;
 }
 
-/* Process builder — design → poc → ship */
+/* Process builder : design, poc, ship */
 .about-process {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 0.85rem;
   margin: 0.4rem 0 0 0;
   padding: 0;
 }
 
 .about-process li {
   display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  font-family: var(--mono);
-  font-size: 0.82rem;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-family: var(--sans);
+  font-size: 0.95rem;
   color: var(--text);
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
 }
 
 .proc-dot {
   width: 8px;
   height: 8px;
+  min-width: 8px;
+  min-height: 8px;
   border-radius: 50%;
   flex-shrink: 0;
+  /* aligné sur la ligne de base du texte */
+  position: relative;
+  top: -1px;
+  align-self: center;
 }
 
-.proc-dot--design  { background: var(--disc-design); }
-.proc-dot--code    { background: var(--disc-code); }
-.proc-dot--product { background: var(--disc-product); }
+.proc-dot--design  { background: var(--text-subtle); }
+.proc-dot--code    { background: var(--text-subtle); }
+.proc-dot--product { background: var(--accent); }
+
+.proc-label {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.proc-detail {
+  color: var(--text-muted);
+}
 
 /* Aside — stats + footnote */
 .about-col-aside {
@@ -92,28 +109,26 @@
 }
 
 .about-stat-value {
-  font-family: var(--mono);
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: var(--accent);
-  letter-spacing: -0.02em;
+  font-family: var(--sans);
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.03em;
   line-height: 1;
 }
 
 .about-stat-label {
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-subtle);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  letter-spacing: -0.01em;
+  color: var(--text-muted);
 }
 
 /* Footnote */
 .about-footnote {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--text-subtle);
-  line-height: 1.7;
-  font-style: italic;
+  line-height: 1.6;
   margin: 0;
   padding-top: 1.2rem;
   border-top: 1px solid var(--border-subtle);

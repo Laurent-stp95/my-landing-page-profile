@@ -2,11 +2,17 @@
    PAGE TRANSITION — Wipe entre index et cv.html
    ============================================= */
 
+/* Courbe Apple : douce, sans rebond */
+:root {
+  --transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-dur: 0.75s;
+}
+
 .page-transition {
   position: fixed;
   inset: 0;
   z-index: 8000;
-  background: var(--bg-elevated);
+  background: var(--text); /* ink Apple #1d1d1f */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,7 +20,7 @@
 
   /* Wipe : le voile monte depuis le bas */
   transform: translateY(100%);
-  transition: transform 1.1s cubic-bezier(0.65, 0, 0.35, 1);
+  transition: transform var(--transition-dur) var(--transition-ease);
 }
 
 /* État actif : couvre l'écran */
@@ -25,7 +31,7 @@
 /* Sortie sur cv.html : commence couvrant, remonte vers le haut */
 .page-transition--enter {
   transform: translateY(0%);
-  transition: transform 1.1s cubic-bezier(0.65, 0, 0.35, 1);
+  transition: transform var(--transition-dur) var(--transition-ease);
 }
 
 .page-transition--enter.is-done {
@@ -35,59 +41,39 @@
 /* Retour vers index.html : voile descend depuis le haut */
 .page-transition--exit {
   transform: translateY(-100%);
-  transition: transform 1.1s cubic-bezier(0.65, 0, 0.35, 1);
+  transition: transform var(--transition-dur) var(--transition-ease);
 }
 
 .page-transition--exit.is-active {
   transform: translateY(0%);
 }
 
-/* Label central */
+/* Label central — SF, sobre, léger fade + scale */
 .page-transition-label {
-  font-family: var(--serif);
-  font-size: clamp(4rem, 12vw, 9rem);
-  font-weight: 400;
-  color: var(--bg-subtle);
-  letter-spacing: -0.04em;
+  font-family: var(--sans);
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 600;
+  color: #f5f5f7;
+  letter-spacing: -0.03em;
   line-height: 1;
   user-select: none;
 
   opacity: 0;
-  transform: translateY(12px);
+  transform: scale(0.94);
   transition:
-    opacity 0.4s ease 0.35s,
-    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
+    opacity 0.4s ease 0.15s,
+    transform 0.55s var(--transition-ease) 0.15s;
 }
 
 .page-transition.is-active .page-transition-label,
 .page-transition--enter .page-transition-label,
 .page-transition--exit.is-active .page-transition-label {
   opacity: 1;
-  transform: translateY(0);
+  transform: scale(1);
 }
 
 .page-transition--enter.is-done .page-transition-label {
   opacity: 0;
-  transition-delay: 0s;
-}
-
-/* Ligne décorative orange sous le label */
-.page-transition-label::after {
-  content: '';
-  display: block;
-  width: 0%;
-  height: 2px;
-  background: var(--accent);
-  margin: 0.5rem auto 0;
-  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.55s;
-}
-
-.page-transition.is-active .page-transition-label::after,
-.page-transition--enter .page-transition-label::after {
-  width: 100%;
-}
-
-.page-transition--enter.is-done .page-transition-label::after {
-  width: 0%;
+  transform: scale(1.04);
   transition-delay: 0s;
 }

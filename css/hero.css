@@ -1,5 +1,5 @@
 /* =============================================
-   HERO — Fullscreen, parallax geo, word rotator
+   HERO — Apple Design System (word rotator + terminal)
    ============================================= */
 
    .hero {
@@ -10,122 +10,55 @@
     padding: 8rem 6vw 4rem;
     position: relative;
     overflow: hidden;
-  }
-  
-  /* Grain overlay */
-  .hero-grain {
-    position: absolute;
-    inset: 0;
-    opacity: 0.03;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  /* A — Scan line */
-  .hero-scan {
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent), transparent);
-    opacity: 0.12;
-    pointer-events: none;
-    z-index: 1;
-    animation: scanLine 8s linear infinite;
-  }
-
-  @keyframes scanLine {
-    0%   { top: -1px; opacity: 0; }
-    5%   { opacity: 0.12; }
-    95%  { opacity: 0.12; }
-    100% { top: 100%; opacity: 0; }
-  }
-  
-  /* Architectural grid background */
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    opacity: 0.5;
-    background-image:
-      linear-gradient(90deg, var(--border) 1px, transparent 1px),
-      linear-gradient(var(--border) 1px, transparent 1px);
-    background-size: 120px 120px;
-    z-index: 0;
-    pointer-events: none;
-    transform: translate(var(--grid-x, 0), var(--grid-y, 0));
-    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background: var(--bg);
   }
 
   .hero-content {
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: 1fr minmax(440px, 640px);
-    gap: 3vw;
+    grid-template-columns: 1fr minmax(440px, 620px);
+    gap: 4vw;
     align-items: center;
     width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
   }
 
   .hero-text {
     min-width: 0;
   }
 
-  /* D — Glow ambiant derrière le titre */
-  .hero-content::before {
-    content: '';
-    position: absolute;
-    top: -40%;
-    left: -10%;
-    width: 60%;
-    height: 200%;
-    background: radial-gradient(ellipse at 30% 40%, var(--accent-glow) 0%, transparent 65%);
-    pointer-events: none;
-    z-index: -1;
-    animation: glowBreathe 6s ease-in-out infinite;
-  }
-
-  @keyframes glowBreathe {
-    0%, 100% { opacity: 0.6; transform: scale(1); }
-    50%       { opacity: 1;   transform: scale(1.08); }
-  }
-  
-  
-  
-  /* --- Title --- */
+  /* --- Title — SF Pro, semibold, tracking serré Apple --- */
   .hero h1 {
-    font-family: var(--serif);
-    font-size: clamp(3.2rem, 8vw, 7.5rem);
-    font-weight: 400;
+    font-family: var(--sans);
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 600;
     line-height: 1.05;
     letter-spacing: -0.03em;
     color: var(--text);
     margin: 0;
   }
-  
+
   .title-line {
     display: block;
     overflow: hidden;
   }
-  
+
   .title-word {
     display: inline-block;
     transform: translateY(110%);
     animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
-  
+
   .title-line:nth-child(1) .title-word {
     animation-delay: 0.15s;
   }
-  
+
   .title-line:nth-child(2) .title-word {
     animation-delay: 0.3s;
   }
-  
-  
-  
-  
+
   /* --- Word Rotator --- */
   .hero-rotator {
     margin-top: 1.8rem;
@@ -139,9 +72,10 @@
 
   .rotator-static {
     font-family: var(--sans);
-    font-size: clamp(2rem, 3.2vw, 3.2rem);
-    font-weight: 300;
+    font-size: clamp(1.6rem, 2.6vw, 2.6rem);
+    font-weight: 500;
     line-height: 1.2;
+    letter-spacing: -0.02em;
     color: var(--text-muted);
     flex-shrink: 0;
   }
@@ -152,7 +86,18 @@
     min-width: 280px;
     overflow: visible;
     display: inline-block;
-    font-size: clamp(2rem, 3.2vw, 3.2rem);
+    font-size: clamp(1.6rem, 2.6vw, 2.6rem);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  /* Spacer invisible : donne une baseline au conteneur pour aligner
+     le mot (en position absolue) avec "Product Builder" */
+  .rotator-words::before {
+    content: '\00a0';
+    display: inline-block;
+    width: 0;
+    overflow: hidden;
   }
 
   .rotator-word {
@@ -160,10 +105,11 @@
     top: 0;
     left: 0;
     white-space: nowrap;
-    font-family: var(--serif);
-    font-style: italic;
+    font-family: var(--sans);
+    font-weight: 600;
     font-size: 1em;
     line-height: 1.2;
+    letter-spacing: -0.02em;
     color: var(--accent);
     visibility: hidden;
   }
@@ -197,12 +143,7 @@
                 transform 0.2s ease;
   }
 
-  
-
-  
-
-  
-  /* --- Chips disciplines — owner multi-casquettes --- */
+  /* --- Chips disciplines --- */
   .hero-disciplines {
     margin-top: 2rem;
     display: flex;
@@ -213,15 +154,15 @@
   }
 
   .disc-chip {
-    font-family: var(--mono);
-    font-size: 0.7rem;
+    font-family: var(--sans);
+    font-size: 0.82rem;
     font-weight: 500;
-    letter-spacing: 0.06em;
-    padding: 0.4rem 0.85rem;
+    letter-spacing: -0.01em;
+    padding: 0.4rem 0.9rem;
     border-radius: var(--radius-full);
-    border: 1px solid var(--border-bright);
+    border: 1px solid var(--border);
     color: var(--text-muted);
-    background: var(--bg);
+    background: var(--bg-elevated);
     transition: color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
     cursor: default;
     --dot: var(--text-subtle);
@@ -247,7 +188,7 @@
   /* Hover : texte + bordure prennent la couleur de discipline */
   .disc-chip:hover { transform: translateY(-2px); color: var(--dot); border-color: var(--dot); }
 
-  /* F — Compteur de mots */
+  /* Compteur de mots */
   .rotator-counter {
     margin-top: 2rem;
     display: flex;
@@ -258,39 +199,39 @@
   }
 
   .counter-current {
-    font-family: var(--mono);
-    font-size: 0.7rem;
-    font-weight: 500;
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 600;
     color: var(--accent);
-    letter-spacing: 0.1em;
+    font-variant-numeric: tabular-nums;
     transition: opacity 0.2s ease;
   }
 
   .counter-sep {
-    font-family: var(--mono);
-    font-size: 0.6rem;
+    font-family: var(--sans);
+    font-size: 0.7rem;
     color: var(--text-subtle);
   }
 
   .counter-total {
-    font-family: var(--mono);
-    font-size: 0.7rem;
+    font-family: var(--sans);
+    font-size: 0.8rem;
     color: var(--text-subtle);
-    letter-spacing: 0.1em;
+    font-variant-numeric: tabular-nums;
   }
 
   /* =============================================
-     BUILD TERMINAL — discovery → delivery
+     BUILD TERMINAL — discovery → delivery (keynote sombre Apple)
      ============================================= */
   .build-terminal {
     width: 100%;
     max-width: 100%;
     min-width: 0;
-    background: var(--bg);
-    border: 1px solid var(--border-bright);
-    border-radius: var(--radius-md);
+    background: #1d1d1f;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 24px 60px -30px rgba(10, 10, 10, 0.28);
+    box-shadow: 0 30px 70px -25px rgba(0, 0, 0, 0.45);
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.3s forwards;
@@ -306,8 +247,8 @@
     align-items: center;
     gap: 0.9rem;
     padding: 0.7rem 1rem;
-    background: var(--bg-elevated);
-    border-bottom: 1px solid var(--border);
+    background: #2a2a2c;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   .term-dots {
@@ -332,7 +273,7 @@
   .term-title {
     font-family: var(--mono);
     font-size: 0.72rem;
-    color: var(--text-subtle);
+    color: rgba(255, 255, 255, 0.45);
     letter-spacing: 0.02em;
     white-space: nowrap;
     overflow: hidden;
@@ -346,12 +287,12 @@
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--text);
-    border: 1px solid var(--border-bright);
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     padding: 0.2rem 0.55rem;
     border-radius: var(--radius-full);
     flex-shrink: 0;
-    transition: color 0.3s ease, border-color 0.3s ease;
+    transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
   }
 
   .term-phase[data-phase="ship"] {
@@ -368,7 +309,7 @@
     padding: 1.4rem 1.5rem;
     height: 360px;
     overflow: hidden;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.6);
     box-sizing: border-box;
     max-width: 100%;
   }
@@ -380,36 +321,36 @@
     overflow-wrap: anywhere;
   }
 
-  /* Prompt lines ($ ...) — noir, poids */
+  /* Prompt lines ($ ...) — blanc, poids */
   .term-line.is-prompt {
-    color: var(--text);
+    color: rgba(255, 255, 255, 0.92);
     font-weight: 500;
   }
   .term-line.is-prompt::before {
     content: '$ ';
-    color: var(--accent);
+    color: #2997ff;
     font-weight: 700;
   }
 
-  /* Output lines (> ...) — gris */
+  /* Output lines (> ...) — gris clair */
   .term-line.is-output {
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.55);
     padding-left: 1.1rem;
   }
   .term-line.is-output::before {
     content: '› ';
-    color: var(--text-subtle);
+    color: rgba(255, 255, 255, 0.35);
     margin-left: -1.1rem;
   }
 
-  /* Ship line — encadré succès monochrome */
+  /* Ship line — succès */
   .term-line.is-ship {
-    color: var(--text);
+    color: #fff;
     font-weight: 600;
   }
   .term-line.is-ship::before {
     content: '✓ ';
-    color: var(--accent);
+    color: #30d158;
     font-weight: 700;
   }
 
@@ -418,7 +359,7 @@
     display: inline-block;
     width: 8px;
     height: 1.05em;
-    background: var(--text);
+    background: rgba(255, 255, 255, 0.85);
     vertical-align: text-bottom;
     margin-left: 2px;
     animation: termBlink 1s step-end infinite;
@@ -446,33 +387,16 @@
   /* =============================================
      KEYFRAMES
      ============================================= */
-  
+
   @keyframes slideUp {
     from { transform: translateY(110%); }
     to { transform: translateY(0); }
   }
-  
+
   @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
   }
-  
-  @keyframes lineGrow {
-    from { transform: scaleX(0); }
-    to { transform: scaleX(1); }
-  }
-  
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 0.4; transform: scaleY(1); }
-    50% { opacity: 1; transform: scaleY(1.2); }
-  }
-  
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.8); }
-  }
-  
-  /* Keyframes kept minimal - geoPulse and geoGlow removed as no longer needed */
 
   /* =============================================
      RESPONSIVE — HERO
@@ -500,10 +424,7 @@
       font-size: clamp(2.5rem, 7vw, 5rem);
     }
 
-    .rotator-static {
-      font-size: 42px;
-    }
-
+    .rotator-static,
     .rotator-word {
       font-size: 42px;
     }
@@ -511,23 +432,6 @@
     .rotator-words {
       min-width: 300px;
       height: 51px; /* 42px × 1.2 */
-    }
-
-    .hero-geo {
-      width: clamp(200px, 25vw, 350px);
-      height: clamp(200px, 25vw, 350px);
-      right: 4vw;
-    }
-
-    .hero-scroll-hint,
-    .hero-meta {
-      left: 4vw;
-      right: 4vw;
-    }
-
-    .hero-tagline {
-      font-size: 1rem;
-      max-width: 500px;
     }
   }
 
@@ -577,45 +481,6 @@
       font-size: 1em;
       line-height: 1.25;
     }
-
-    .hero-geo {
-      width: 250px;
-      height: 250px;
-      right: -50px;
-      top: 40%;
-      opacity: 0.3;
-    }
-
-    .hero-geo::before {
-      inset: 20px;
-    }
-
-    .hero-geo::after {
-      inset: 50px;
-    }
-
-    .greeting-line {
-      width: 30px;
-    }
-
-    .greeting-text {
-      font-size: 0.65rem;
-    }
-
-    .hero-scroll-hint {
-      left: 5vw;
-      bottom: 2rem;
-    }
-
-    .hero-meta {
-      display: none; /* Hide on mobile to declutter */
-    }
-
-    .hero-tagline {
-      font-size: 0.95rem;
-      margin-top: 1.8rem;
-      max-width: 100%;
-    }
   }
 
   /* Small mobile (< 480px) */
@@ -628,38 +493,12 @@
       font-size: clamp(1.8rem, 12vw, 2.8rem);
     }
 
-    .rotator-static {
-      font-size: 20px;
-    }
-
+    .rotator-static,
     .rotator-word {
       font-size: 20px;
     }
 
     .rotator-words {
       min-width: 150px;
-    }
-
-    .hero-geo {
-      width: 180px;
-      height: 180px;
-      right: -40px;
-    }
-
-    .hero-greeting {
-      margin-bottom: 0.8rem;
-    }
-
-    .greeting-line {
-      width: 25px;
-    }
-
-    .greeting-text {
-      font-size: 0.6rem;
-    }
-
-    .hero-tagline {
-      font-size: 0.85rem;
-      margin-top: 1.5rem;
     }
   }

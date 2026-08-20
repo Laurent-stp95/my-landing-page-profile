@@ -1,59 +1,71 @@
 /* =============================================
-   HERO GSAP — Draw-on SVG shapes + respiration
+   HERO — Word rotator (letter-by-letter)
    ============================================= */
 
-document.addEventListener('DOMContentLoaded', () => {
+/* Word Rotator — Letter-by-letter animation */
+const words = document.querySelectorAll('.rotator-word');
 
-  // --- 1. Calculer les longueurs des paths pour stroke animation ---
-  const paths = document.querySelectorAll('.arch-path');
-  paths.forEach(path => {
-    const length = path.getTotalLength();
-    path.style.strokeDasharray = length;
-    path.style.strokeDashoffset = length;
+// Wrap each letter in a span for individual animation
+words.forEach(word => {
+  const text = word.textContent;
+  word.innerHTML = '';
+  text.split('').forEach(char => {
+    const span = document.createElement('span');
+    span.textContent = char === ' ' ? ' ' : char;
+    word.appendChild(span);
   });
-
-  // --- 2. Rotations initiales (remplace le rotate() CSS) ---
-  gsap.set('.arch-svg.arch-1', { rotation: 12, transformOrigin: 'center center' });
-  gsap.set('.arch-svg.arch-3', { rotation: -8, transformOrigin: 'center center' });
-
-  // --- 3. Timeline draw-on ---
-  const tl = gsap.timeline();
-
-  // Rendre les SVG visibles immédiatement (opacité gérée par la respiration ensuite)
-  tl.to('.arch-svg', { opacity: 1, duration: 0.01 })
-    // Draw-on en séquence décalée
-    .to('.arch-svg.arch-1 .arch-path', {
-      strokeDashoffset: 0,
-      duration: 1.6,
-      ease: 'power2.inOut'
-    }, 0)
-    .to('.arch-svg.arch-2 .arch-path', {
-      strokeDashoffset: 0,
-      duration: 1.4,
-      ease: 'power2.inOut'
-    }, 0.2)
-    .to('.arch-svg.arch-3 .arch-path', {
-      strokeDashoffset: 0,
-      duration: 1.2,
-      ease: 'power2.inOut'
-    }, 0.4);
-
-  // --- 4. Boucle de respiration après tracé ---
-  tl.call(() => {
-    gsap.to('.arch-svg', {
-      scale: 1.025,
-      opacity: 0.7,
-      duration: 4,
-      yoyo: true,
-      repeat: -1,
-      ease: 'sine.inOut',
-      stagger: 1.2
-    });
-  });
-
-  // --- 5. Classe loaded pour compatibilité ---
-  setTimeout(() => {
-    document.body.classList.add('loaded');
-  }, 100);
-
 });
+
+if (words.length > 1) {
+  let current = 0;
+
+  // Compteur
+  const counterCurrent = document.getElementById('rotatorCounter')?.querySelector('.counter-current');
+  const pad = (n) => String(n + 1).padStart(2, '0');
+
+  const setLetterDelays = (word, delayPerLetter) => {
+    const letters = word.querySelectorAll('span');
+    letters.forEach((letter, index) => {
+      letter.style.transitionDelay = `${index * delayPerLetter}ms`;
+    });
+  };
+
+  const rotateWord = () => {
+    // Exit current word
+    const prev = current;
+    setLetterDelays(words[prev], 20); // Fast exit
+    words[prev].classList.remove('active');
+    words[prev].classList.add('exit');
+
+    // Wait for exit animation before entering next
+    setTimeout(() => {
+      current = (current + 1) % words.length;
+
+      // Set delays BEFORE adding active class
+      setLetterDelays(words[current], 50); // 50ms between each letter
+
+      // Force reflow to ensure delays are applied before transition starts
+      void words[current].offsetWidth;
+
+      words[current].classList.remove('exit');
+      words[current].classList.add('active');
+
+      // Mise à jour compteur
+      if (counterCurrent) {
+        counterCurrent.style.opacity = '0';
+        setTimeout(() => {
+          counterCurrent.textContent = pad(current);
+          counterCurrent.style.opacity = '1';
+        }, 150);
+      }
+
+      // Clean up exit class after animation completes
+      setTimeout(() => {
+        words[prev].classList.remove('exit');
+      }, 500);
+    }, 400);
+  };
+
+  // Start rotation
+  setInterval(rotateWord, 4000);
+}
