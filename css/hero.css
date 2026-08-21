@@ -64,8 +64,8 @@
   .hero-rotator {
     margin-top: 1.8rem;
     display: flex;
-    align-items: baseline;
     flex-wrap: wrap;
+    align-items: baseline;
     gap: 0.6rem 1rem;
     opacity: 0;
     animation: fadeIn 0.8s ease 0.8s forwards;
@@ -83,7 +83,7 @@
 
   .rotator-words {
     position: relative;
-    height: 1.25em;
+    height: 1.2em;
     min-width: 280px;
     overflow: visible;
     display: inline-block;
@@ -94,11 +94,13 @@
 
   /* Spacer invisible : donne une baseline au conteneur pour aligner
      le mot (en position absolue) avec "Product Builder" */
+  /* Pas d'overflow:hidden ici : un inline-block avec overflow!=visible
+     aligne sa marge basse sur la baseline du parent au lieu de sa propre
+     baseline texte, ce qui décalait le mot de ~0.15em vers le bas. */
   .rotator-words::before {
     content: '\00a0';
     display: inline-block;
     width: 0;
-    overflow: hidden;
   }
 
   .rotator-word {
@@ -425,14 +427,16 @@
       font-size: clamp(2.5rem, 7vw, 5rem);
     }
 
+    /* Taille portée par les conteneurs : .rotator-word reste en 1em
+       pour que sa hauteur de ligne suive celle de .rotator-words */
     .rotator-static,
-    .rotator-word {
+    .rotator-words {
       font-size: 42px;
     }
 
     .rotator-words {
       min-width: 300px;
-      height: 51px; /* 42px × 1.2 */
+      height: 1.2em;
     }
   }
 
@@ -467,20 +471,15 @@
       margin-top: 1.2rem;
     }
 
-    .rotator-static {
+    .rotator-static,
+    .rotator-words {
       font-size: 1.75rem;
-      line-height: 1.25;
+      line-height: 1.2;
     }
 
     .rotator-words {
       min-width: 200px;
-      font-size: 1.75rem;
-      height: 1.25em;
-    }
-
-    .rotator-word {
-      font-size: 1em;
-      line-height: 1.25;
+      height: 1.2em;
     }
   }
 
@@ -495,7 +494,7 @@
     }
 
     .rotator-static,
-    .rotator-word {
+    .rotator-words {
       font-size: 20px;
     }
 
