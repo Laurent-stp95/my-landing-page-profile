@@ -1,64 +1,113 @@
 /* =============================================
-   SKILLS — Tableau deux colonnes éditorial
+   SKILLS — chaque compétence avec sa preuve
+   Desktop : Product à gauche (liste longue), Design & code
+   puis Outils / Façon de travailler à droite.
+   Mobile : tout s'empile.
    ============================================= */
 
 .skills {
   border-top: none;
 }
 
-.skills-compact {
+.skills-groups {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 4rem;
-  max-width: 900px;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  grid-template-areas:
+    "product build"
+    "product extra";
+  grid-template-rows: auto 1fr;
+  column-gap: 5rem;
+  row-gap: 3.5rem;
+  align-items: start;
 }
 
-/* Catégorie */
-.skill-category {
-  display: flex;
-  flex-direction: column;
-}
+.skill-group:nth-child(1) { grid-area: product; }
+.skill-group:nth-child(2) { grid-area: build; }
+.skills-extra             { grid-area: extra; }
 
-.category-title {
-  font-family: var(--sans);
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  color: var(--text);
+/* --- Titre de groupe --- */
+.skill-group-title {
   margin: 0;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--border);
+  font-family: var(--sans);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
 }
 
-/* Lignes */
-.skill-row {
+/* --- Lignes compétence + preuve --- */
+.skill-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.skill {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 0;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1.15rem 0;
   border-bottom: 1px solid var(--border-subtle);
-  cursor: default;
 }
 
-.skill-row:last-child {
+.skill:last-child {
   border-bottom: none;
 }
 
 .skill-name {
   font-family: var(--sans);
-  font-size: 1rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--text);
+}
+
+.skill-proof {
+  max-width: 56ch;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+/* --- Outils / Façon de travailler --- */
+.skills-extra {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.skills-extra-row dt {
+  margin: 0 0 0.35rem;
+  font-size: 0.875rem;
+  font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--text);
 }
 
-.skill-row:hover /* Responsive */
-@media (max-width: 768px) {
-  .skills-compact {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
+.skills-extra-row dd {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
 
-  .skill-name {
-    font-size: 1rem;
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 900px) {
+  .skills-groups {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "product"
+      "build"
+      "extra";
+    grid-template-rows: auto;
+    row-gap: 3rem;
   }
 }
