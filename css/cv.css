@@ -91,28 +91,6 @@
   color: var(--text-subtle);
 }
 
-.cv-download-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.4rem;
-  font-family: var(--sans);
-  font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  color: #fff;
-  background: var(--accent-solid);
-  border: none;
-  border-radius: var(--radius-full);
-  text-decoration: none;
-  transition: background 0.2s ease;
-  cursor: pointer;
-}
-
-.cv-download-btn:hover {
-  background: var(--accent-solid-hover);
-}
-
 /* =============================================
    CORPS — Layout principal
    ============================================= */
