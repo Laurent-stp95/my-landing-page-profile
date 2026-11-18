@@ -1,141 +1,267 @@
 /* =============================================
-   PROJECTS — Cartes Apple (narrative)
+   PROJECTS — études de cas orientées résultat
+   Une ligne par projet, séparée par un filet (pas de carte) :
+   scope → titre qui annonce le résultat → contexte en une phrase,
+   chiffres en grand à droite, détail Problème / Solution repliable.
    ============================================= */
 
 .projects {
   background: var(--bg);
+  --case-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.projects-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+/* Permet d'animer la hauteur du <details> (Chrome/Edge récents ;
+   ailleurs il s'ouvre sans transition) */
+:root {
+  interpolate-size: allow-keywords;
 }
 
-/* Card — surface Apple arrondie, ombre douce, lift au hover */
-.project-card {
-  background: var(--bg-elevated);
-  border: none;
-  border-radius: 22px;
-  padding: 2.75rem;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+.cases {
+  border-top: 1px solid var(--border);
 }
 
-.js .project-card {
-  opacity: 0;
-  transform: translateY(30px);
-  transition:
-    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.js .project-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.project-card:nth-child(1) { transition-delay: 0s; }
-.project-card:nth-child(2) { transition-delay: 0.1s; }
-.project-card:nth-child(3) { transition-delay: 0.2s; }
-
-/* --- Header : numéro + titre + scope tag --- */
-.project-card-header {
-  display: flex;
-  align-items: baseline;
-  gap: 1.2rem;
-  flex-wrap: nowrap;
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
+.case {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  grid-template-areas:
+    "main    metrics"
+    "details details";
+  column-gap: 5rem;
+  padding: 3.5rem 0 2.5rem;
   border-bottom: 1px solid var(--border);
 }
 
-.project-title {
-  font-family: var(--sans);
-  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--text);
-  line-height: 1.25;
-  margin: 0;
-  flex: 1;
+/* Apparition au scroll (classe .visible posée par scroll-reveal.js) */
+.js .case {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--case-ease), transform 0.7s var(--case-ease);
 }
 
-.project-scope {
+.js .case.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* --- Colonne principale --- */
+.case-main {
+  grid-area: main;
+  min-width: 0;
+}
+
+.case-scope {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--text-subtle);
+}
+
+.case-title {
+  margin: 0;
+  max-width: 22ch;
   font-family: var(--sans);
-  font-size: 0.8rem;
+  font-size: clamp(1.6rem, 2.8vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--text);
+}
+
+/* Le résultat, dans le titre, porte l'accent */
+.case-figure {
+  color: var(--accent-text);
+}
+
+.case-context {
+  margin: 1.25rem 0 0;
+  max-width: 52ch;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* --- Chiffres --- */
+.case-metrics {
+  grid-area: metrics;
+  margin: 0;
+  padding-top: 2.4rem; /* aligne le 1er chiffre sur le haut du titre */
+  display: flex;
+  flex-direction: column;
+}
+
+.case-metric {
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.case-metric:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.case-metric-value {
+  font-family: var(--sans);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+.case-metric--text .case-metric-value {
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.case-metric-label {
+  margin: 0.4rem 0 0;
+  max-width: 34ch;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+/* --- Détail repliable --- */
+.case-details {
+  grid-area: details;
+  margin-top: 1rem;
+}
+
+.case-details summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  font-size: 0.9375rem;
   font-weight: 500;
   letter-spacing: -0.01em;
   color: var(--accent-text);
-  background: var(--accent-soft);
-  border: none;
-  padding: 0.35rem 0.85rem;
-  border-radius: var(--radius-full);
-  white-space: nowrap;
-  flex-shrink: 0;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
 }
 
-/* --- Narrative 3 colonnes : Problème | Solution | Impact --- */
-.project-narrative {
+.case-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.case-details summary:hover .case-toggle-label {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.case-details summary:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.case-toggle-icon {
+  transition: transform 0.35s var(--case-ease);
+}
+
+.case-details[open] .case-toggle-icon {
+  transform: rotate(180deg);
+}
+
+.case-details::details-content {
+  height: 0;
+  overflow: clip;
+  transition: height 0.45s var(--case-ease), content-visibility 0.45s allow-discrete;
+}
+
+.case-details[open]::details-content {
+  height: auto;
+}
+
+.case-details-body {
   display: grid;
-  grid-template-columns: 1fr 2fr 1.5fr;
-  gap: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem;
+  padding: 1.5rem 0 1rem;
 }
 
-.narrative-block {
-  padding: 0 2rem;
-  border-left: 1px solid var(--border);
-}
-
-.narrative-block:first-child {
-  padding-left: 0;
-  border-left: none;
-}
-
-.narrative-label {
+.case-block-label {
+  margin: 0 0 0.6rem;
   font-family: var(--sans);
-  font-size: 0.8rem;
+  font-size: 0.9375rem;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: var(--accent-text);
-  margin: 0 0 0.9rem 0;
-}
-
-.narrative-text {
-  font-family: var(--sans);
-  font-size: 0.95rem;
-  color: var(--text-muted);
-  line-height: 1.65;
-  max-width: 65ch;
-  margin: 0;
-}
-
-/* --- Métriques impact --- */
-.impact-metrics {
-  display: flex;
-  flex-direction: column;
-  gap: 1.4rem;
-}
-
-.metric {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.metric-value {
-  font-family: var(--sans);
-  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
-  font-weight: 600;
   color: var(--text);
-  letter-spacing: -0.03em;
-  line-height: 1.1;
 }
 
-.metric-label {
-  font-family: var(--sans);
-  font-size: 0.85rem;
+.case-block p {
+  margin: 0;
+  max-width: 62ch;
+  font-size: 0.9875rem;
+  line-height: 1.65;
   color: var(--text-muted);
-  line-height: 1.5;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 900px) {
+  .case {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "main"
+      "metrics"
+      "details";
+    padding: 2.75rem 0 2rem;
+  }
+
+  .case-title {
+    max-width: none;
+  }
+
+  /* Chiffres côte à côte sous le titre */
+  .case-metrics {
+    flex-direction: row;
+    gap: 1.5rem;
+    margin-top: 1.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .case-metric,
+  .case-metric:first-child {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0;
+    border-top: none;
+  }
+
+  .case-metric-value {
+    font-size: clamp(1.5rem, 6.5vw, 2rem);
+  }
+
+  .case-metric--text .case-metric-value {
+    font-size: 1.125rem;
+  }
+
+  .case-metric-label {
+    font-size: 0.875rem;
+  }
+
+  .case-details {
+    margin-top: 1.25rem;
+  }
+
+  .case-details-body {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-details::details-content,
+  .case-toggle-icon {
+    transition: none;
+  }
 }
