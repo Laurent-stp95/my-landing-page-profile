@@ -45,6 +45,15 @@
   --ink-hover: #2b2b2b;
   --accent-soft: rgba(77, 73, 252, 0.08);
 
+  /* --- Pastels : réservés au contenu expressif (projets, étiquettes,
+     phases). Jamais sur un bouton ni sous du texte gris : texte noir. --- */
+  --tint-lime: #e4ff97;    /* livré, aboutissement */
+  --tint-lilac: #c4baff;   /* méthode, apprentissage */
+  --tint-aqua: #c7f8fb;    /* amélioration, prototype */
+  --tint-blush: #ffc9c1;   /* équipe, design */
+  --text-on-tint: #2b2b2b; /* texte secondaire sur pastel (≥ 7:1 partout) */
+  --rule-on-tint: rgba(0, 0, 0, 0.12);
+
   /* --- Filets --- */
   --border: #e2e2e2;
   --border-subtle: #ededed;

@@ -32,7 +32,10 @@ Un Product Manager qui construit lui-même : design dans Figma, prototypes fonct
 
 ## Brand Commitments
 
-- Nom affiché : Laurent Del Braccio, titre « Product Builder ». Logo texte `ldb.pm` avec `.pm` en accent bleu.
+- Nom affiché : Laurent Del Braccio, titre « Product Builder ». Logo texte `ldb.pm` avec `.pm` en accent indigo.
+- Direction visuelle choisie par Laurent (novembre 2026) à partir d'une analyse du style du site Figma : toile blanche, encre noire, un seul accent indigo, titres très fins, boutons en pilule, pastels réservés au contenu expressif. On reprend cette grammaire, jamais les marques de Figma (logo quatre couleurs, police figmaSans, anneau décoratif).
+- Thème clair uniquement (pas de mode sombre).
+- Polices hébergées sur le site (Inter, JetBrains Mono, licence OFL) : aucun service de polices tiers.
 - Ton sobre et factuel ; pas de gadget, pas de contenu trop personnel (centres d'intérêt et détails privés ne sont pas mis en avant).
 - L'expérience hors produit (retail) reste présente sur le CV mais en retrait ; elle n'apparaît pas sur l'accueil.
 
@@ -52,4 +55,4 @@ Un Product Manager qui construit lui-même : design dans Figma, prototypes fonct
 
 ## Accessibility & Inclusion
 
-WCAG 2.1 AA : contrastes, navigation clavier, respect de `prefers-reduced-motion`, mode sombre.
+WCAG 2.1 AA : contrastes, navigation clavier, lien d'évitement, respect de `prefers-reduced-motion`.

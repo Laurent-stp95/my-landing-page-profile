@@ -232,25 +232,25 @@
     flex: 1;
   }
 
+  /* Badge de phase : une couleur pastel par étape du build, texte noir */
   .term-phase {
     font-family: var(--mono);
     font-size: var(--fs-xs);
-    font-weight: var(--fw-medium);
-    letter-spacing: 0.14em;
+    font-weight: var(--fw-regular);
+    letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    padding: 0.2rem 0.55rem;
+    color: var(--text);
+    background: var(--tint-lilac);
+    padding: 0.2rem 0.6rem;
     border-radius: var(--radius-full);
     flex-shrink: 0;
-    transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    transition: background-color 0.35s ease;
   }
 
-  .term-phase[data-phase="ship"] {
-    color: #fff;
-    background: var(--accent-solid);
-    border-color: var(--accent-solid);
-  }
+  .term-phase[data-phase="discovery"] { background: var(--tint-lilac); }
+  .term-phase[data-phase="design"]    { background: var(--tint-blush); }
+  .term-phase[data-phase="poc"]       { background: var(--tint-aqua); }
+  .term-phase[data-phase="ship"]      { background: var(--tint-lime); }
 
   /* Body — hauteur fixe pour éviter le reflow pendant le typing */
   .term-body {
@@ -279,7 +279,7 @@
   }
   .term-line.is-prompt::before {
     content: '$ ';
-    color: #2997ff;
+    color: var(--tint-lilac);
     font-weight: var(--fw-strong);
   }
 

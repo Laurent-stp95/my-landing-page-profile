@@ -1,32 +1,22 @@
 ---
 name: ldb.pm
-description: Site personnel de Laurent Del Braccio, Product Builder — sobre, précis, écrit comme un produit livré.
+description: Site personnel de Laurent Del Braccio, Product Builder — toile blanche, encre noire, un seul indigo.
 colors:
-  ground: "#fbfbfd"
-  surface: "#f5f5f7"
-  ink: "#1d1d1f"
-  ink-muted: "#515154"
-  ink-subtle: "#6e6e73"
-  release-blue: "#0071e3"
-  release-blue-text: "#005bb8"
-  release-blue-solid: "#0066cc"
-  release-blue-solid-hover: "#0058b0"
-  release-blue-wash: "rgba(0, 113, 227, 0.08)"
+  canvas: "#ffffff"
+  soft-panel: "#e2e2e2"
+  ink: "#000000"
+  graphite: "#595959"
+  electric-indigo: "#4d49fc"
+  electric-indigo-hover: "#3b37e6"
   on-accent: "#ffffff"
-  hairline: "#d2d2d7"
-  hairline-soft: "#e8e8ed"
-  hairline-strong: "#c7c7cc"
-  surface-hover: "#ebebef"
-  surface-active: "rgba(0, 0, 0, 0.06)"
-  ground-dark: "#000000"
-  surface-dark: "#1d1d1f"
-  ink-dark: "#f5f5f7"
-  ink-muted-dark: "#c7c7cc"
-  ink-subtle-dark: "#a1a1a6"
-  release-blue-dark: "#2997ff"
-  release-blue-text-dark: "#4aa8ff"
-  hairline-dark: "#38383a"
-  hairline-soft-dark: "#2c2c2e"
+  ink-hover: "#2b2b2b"
+  hairline: "#e2e2e2"
+  hairline-soft: "#ededed"
+  tint-lime: "#e4ff97"
+  tint-lilac: "#c4baff"
+  tint-aqua: "#c7f8fb"
+  tint-blush: "#ffc9c1"
+  text-on-tint: "#2b2b2b"
   terminal: "#1d1d1f"
   terminal-close: "#ff5c5f"
   terminal-minimize: "#fac800"
@@ -34,283 +24,293 @@ colors:
   terminal-success: "#30d158"
 typography:
   display:
-    fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif"
-    fontSize: "clamp(2.5rem, 1rem + 6vw, 6rem)"
-    fontWeight: 600
+    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+    fontSize: "clamp(3rem, 1.6rem + 4.6vw, 4.5rem)"
+    fontWeight: 330
     lineHeight: 1.05
-    letterSpacing: "-0.03em"
+    letterSpacing: "-0.02em"
+    fontFeature: "kern"
   headline:
-    fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif"
-    fontSize: "clamp(2rem, 1.4rem + 2.4vw, 3.25rem)"
-    fontWeight: 600
+    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+    fontSize: "clamp(2.5rem, 1.6rem + 3vw, 3.5rem)"
+    fontWeight: 330
     lineHeight: 1.1
-    letterSpacing: "-0.025em"
+    letterSpacing: "-0.02em"
   title:
-    fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif"
-    fontSize: "clamp(1.6rem, 1.2rem + 1.4vw, 2.25rem)"
-    fontWeight: 600
+    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+    fontSize: "clamp(1.75rem, 1.25rem + 1.6vw, 2.5rem)"
+    fontWeight: 330
     lineHeight: 1.15
-    letterSpacing: "-0.025em"
+    letterSpacing: "-0.02em"
   lead:
-    fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif"
-    fontSize: "clamp(1.3rem, 1rem + 1vw, 1.75rem)"
-    fontWeight: 600
+    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+    fontSize: "clamp(1.375rem, 1rem + 1vw, 1.75rem)"
+    fontWeight: 330
     lineHeight: 1.35
     letterSpacing: "-0.02em"
   subhead:
-    fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif"
-    fontSize: "1.25rem"
-    fontWeight: 600
-    lineHeight: 1.3
-    letterSpacing: "-0.02em"
+    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+    fontSize: "1.5rem"
+    fontWeight: 400
+    lineHeight: 1.35
+    letterSpacing: "-0.01em"
   body-lg:
-    fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
     fontSize: "1.125rem"
-    fontWeight: 600
+    fontWeight: 520
     lineHeight: 1.4
-    letterSpacing: "-0.015em"
+    letterSpacing: "-0.01em"
   body:
-    fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif"
-    fontSize: "1rem"
+    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+    fontSize: "1.125rem"
     fontWeight: 400
     lineHeight: 1.6
     letterSpacing: "-0.01em"
   small:
-    fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif"
-    fontSize: "0.9375rem"
+    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+    fontSize: "1rem"
     fontWeight: 400
-    lineHeight: 1.55
+    lineHeight: 1.5
     letterSpacing: "-0.01em"
   label:
-    fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif"
-    fontSize: "0.875rem"
-    fontWeight: 500
+    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+    fontSize: "1rem"
+    fontWeight: 480
     lineHeight: 1.4
     letterSpacing: "-0.01em"
-  data:
-    fontFamily: "'JetBrains Mono', ui-monospace, SFMono-Regular, monospace"
-    fontSize: "0.8125rem"
+  meta:
+    fontFamily: "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
+    fontSize: "0.875rem"
     fontWeight: 400
     lineHeight: 1.4
     letterSpacing: "0em"
-    fontFeature: "tnum"
-  caption:
-    fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+  annotation:
+    fontFamily: "'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
     fontSize: "0.75rem"
-    fontWeight: 600
-    lineHeight: 1.2
-    letterSpacing: "0em"
+    fontWeight: 400
+    lineHeight: 1.3
+    letterSpacing: "0.04em"
+    fontFeature: "tnum"
 rounded:
-  sm: "4px"
-  md: "8px"
-  terminal: "18px"
-  full: "9999px"
+  fine: "2px"
+  small: "8px"
+  card: "16px"
+  pill: "9999px"
 spacing:
-  gutter: "6vw"
+  gutter: "max(6vw, (100% - 1200px) / 2)"
   gutter-mobile: "5vw"
-  section: "6rem"
+  page-max: "1200px"
+  section: "7.5rem"
   section-mobile: "3.5rem"
-  nav: "56px"
-  nav-mobile: "52px"
+  nav: "64px"
+  nav-mobile: "56px"
 components:
   button-primary:
-    backgroundColor: "{colors.release-blue-solid}"
+    backgroundColor: "{colors.electric-indigo}"
     textColor: "{colors.on-accent}"
-    rounded: "{rounded.full}"
-    padding: "0.7rem 1.5rem"
+    typography: "{typography.label}"
+    rounded: "{rounded.pill}"
+    padding: "10px 20px"
     height: "44px"
   button-primary-hover:
-    backgroundColor: "{colors.release-blue-solid-hover}"
-    textColor: "{colors.on-accent}"
-  button-secondary:
-    backgroundColor: "{colors.surface}"
+    backgroundColor: "{colors.electric-indigo-hover}"
+  button-ghost:
     textColor: "{colors.ink}"
-    rounded: "{rounded.full}"
-    padding: "0.7rem 1.5rem"
+    rounded: "{rounded.small}"
+    padding: "8px 18px"
     height: "44px"
-  button-secondary-hover:
-    backgroundColor: "{colors.surface-hover}"
-  nav-cta:
-    backgroundColor: "{colors.release-blue-solid}"
+  button-ghost-hover:
+    backgroundColor: "rgba(0, 0, 0, 0.05)"
+  nav-pill:
+    backgroundColor: "{colors.ink}"
     textColor: "{colors.on-accent}"
-    rounded: "{rounded.full}"
-    padding: "0 1rem"
-    height: "34px"
+    typography: "{typography.label}"
+    rounded: "{rounded.pill}"
+    padding: "0 18px"
+    height: "38px"
+  nav-pill-hover:
+    backgroundColor: "{colors.ink-hover}"
   tag-shipped:
-    backgroundColor: "{colors.release-blue-wash}"
-    textColor: "{colors.release-blue-text}"
-    typography: "{typography.caption}"
-    rounded: "{rounded.sm}"
-    padding: "0 0.55rem"
-    height: "1.5rem"
-  tag-improved:
-    backgroundColor: "{colors.surface-active}"
+    backgroundColor: "{colors.tint-lime}"
     textColor: "{colors.ink}"
-    rounded: "{rounded.sm}"
-    padding: "0 0.55rem"
-    height: "1.5rem"
-  tag-learned:
-    textColor: "{colors.ink-muted}"
-    rounded: "{rounded.sm}"
-    padding: "0 0.55rem"
-    height: "1.5rem"
-  badge-current:
-    backgroundColor: "{colors.release-blue-solid}"
-    textColor: "{colors.on-accent}"
-    rounded: "{rounded.full}"
+    rounded: "{rounded.small}"
     padding: "0 0.6rem"
     height: "1.5rem"
-  text-link:
-    textColor: "{colors.release-blue-text}"
-    typography: "{typography.label}"
-    height: "44px"
+  tag-improved:
+    backgroundColor: "{colors.tint-aqua}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.small}"
+    padding: "0 0.6rem"
+    height: "1.5rem"
+  tag-method:
+    backgroundColor: "{colors.tint-lilac}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.small}"
+    padding: "0 0.6rem"
+    height: "1.5rem"
+  tag-team:
+    backgroundColor: "{colors.tint-blush}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.small}"
+    padding: "0 0.6rem"
+    height: "1.5rem"
+  badge-current:
+    backgroundColor: "{colors.electric-indigo}"
+    textColor: "{colors.on-accent}"
+    rounded: "{rounded.pill}"
+    padding: "0 0.6rem"
+    height: "1.5rem"
+  metrics-card:
+    backgroundColor: "{colors.tint-lime}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.card}"
+    padding: "1.75rem 2rem"
 ---
 
 # Design System: ldb.pm
 
 ## Overview
 
-**Creative North Star: "La note de version"**
+**Creative North Star: "Le mur de galerie"**
 
-Le site s'écrit comme un produit livré. Chaque page se lit comme une note de version bien tenue : factuelle, datée, mesurée. Ce qui a été construit passe devant, les effets restent derrière. Le système vient d'une base Apple (blanc profond, gris neutres, typographie système, un seul bleu) et la pousse vers la précision d'une documentation soignée : des filets fins au lieu de cartes, des chiffres exacts mis en avant, des dates et des numéros de version composés en mono comme des données.
+Une toile blanche, de l'encre noire, et un seul projecteur indigo. L'interface s'efface pour que le travail parle : les titres sont très fins et sûrs d'eux, le texte courant est généreux (18 px), les actions sont des pilules. La couleur n'est jamais décorative dans l'interface ; elle apparaît là où il y a du contenu à montrer (les chiffres d'un projet, le type d'un changement, la phase d'un build), toujours en pastel et toujours sous du texte noir.
 
-L'ambiance visée est **précise**. Les alignements sont nets, chaque chiffre est réel et n'apparaît qu'une fois par ligne, la hiérarchie se fait par la taille et la graisse plutôt que par la couleur. La densité reste aérée : de grandes marges, des sections longues, une idée par bloc. Le mode sombre reprend exactement les mêmes rôles, avec des valeurs inversées.
+Cette direction a été choisie par Laurent à partir d'une analyse du style du site Figma. Le site en reprend la grammaire (toile blanche, accent unique, titres en graisse 330, pilules, une seule ombre, rythme de galerie) mais jamais les marques : pas de logo quatre couleurs, pas de police propriétaire, pas d'anneau décoratif. Le thème est clair uniquement.
 
-Le mouvement est rare et signé : une seule animation pensée par section, toujours en sortie exponentielle, et rien quand l'utilisateur a demandé moins de mouvement.
+Le rythme alterne de grandes bandes d'air (sections de 7,5rem) et des blocs serrés. Tout tient dans une colonne de 1200 px centrée. Le mouvement reste rare : une animation pensée par section, en sortie exponentielle, et rien quand l'utilisateur a demandé moins de mouvement.
 
 **Key Characteristics:**
-- Fond blanc profond, encre presque noire, un seul bleu pour l'action et le résultat.
-- Séparation par filets de 1 px, jamais par cartes imbriquées ni par aplats décoratifs.
-- Chiffres réels en grand, données (versions, dates) en mono à chasse fixe.
-- Pages plates : une seule ombre dans tout le système, sous le terminal.
-- Mouvement unique par section, courbe `cubic-bezier(0.16, 1, 0.3, 1)`, respect de `prefers-reduced-motion`.
+- Toile blanche (#ffffff), encre noire (#000000), un seul gris (graphite #595959).
+- Un seul indigo électrique pour l'action principale de l'écran.
+- Titres en Inter graisse 330 : l'autorité vient de la retenue, pas du gras.
+- Pastels (vert anis, lilas, bleu glacier, rose poudré) réservés au contenu, avec du texte noir.
+- Une seule ombre, sous le terminal du hero ; tout le reste est plat.
+- Rayons en quatre crans : 2 / 8 / 16 / pilule.
 
 ## Colors
 
-Une palette neutre et froide, portée par un unique bleu dont la rareté signale ce qui compte.
+Une interface achromatique, avec un projecteur indigo et des pastels pour le contenu.
 
 ### Primary
-- **Bleu de livraison** (release-blue) : le bleu de marque, utilisé pour les éléments graphiques sans texte blanc dessus : point de section actif dans la navigation, rail des étapes, indicateur du rail des versions. Sa variante **texte** (release-blue-text) colore les liens, le `.pm` du logo, les chiffres mis en avant dans les titres et les étiquettes « Livré » ; elle garde un contraste d'au moins 4,5:1 sur le fond et les surfaces. Sa variante **pleine** (release-blue-solid, survol release-blue-solid-hover) sert de fond aux boutons primaires, au bouton Contact et au badge « Version actuelle », avec du texte blanc (on-accent) à 5,6:1. Le **lavis** (release-blue-wash) est le fond des étiquettes « Livré ».
+- **Indigo électrique** (electric-indigo) : le fond du bouton principal de chaque écran (« Me contacter », « M'écrire », « Retour à l'accueil »), le badge « Version actuelle », le `.pm` du logo, le point de section dans la navigation, le rail des versions du CV et le dernier marqueur du rail « Je livre ». Contraste 5,7:1 sur blanc, en texte comme sous du texte blanc. Survol en electric-indigo-hover.
+
+### Tertiary (pastels de contenu)
+- **Vert anis** (tint-lime) : ce qui est livré. Étiquette « Livré », carte de chiffres du projet Inscription, phase « ship » du terminal, pastille de l'image de partage et de la page 404.
+- **Lilas** (tint-lilac) : la méthode et l'apprentissage. Étiquettes « Méthode » / « Appris », carte du projet Présentiel, phase « discovery ».
+- **Bleu glacier** (tint-aqua) : l'amélioration et le prototype. Étiquettes « Amélioré » / « Piloté », carte du projet SSO, phase « poc ».
+- **Rose poudré** (tint-blush) : l'équipe et le design. Étiquette « Encadré », phase « design ».
+
+Sur un pastel, le texte principal est noir et le texte secondaire est text-on-tint (≥ 7:1 sur les quatre teintes) ; les séparateurs internes utilisent un noir à 12 %.
 
 ### Neutral
-- **Blanc profond** (ground) : fond de toutes les pages.
-- **Gris surface** (surface) : boutons secondaires, chips et zones légèrement détachées du fond ; survol en surface-hover.
-- **Encre** (ink) : titres et texte principal.
-- **Encre atténuée** (ink-muted, 7,5:1) : paragraphes secondaires, légendes de chiffres, accroches en deux tons.
-- **Encre discrète** (ink-subtle, ≥ 4,5:1) : métadonnées, dates, scopes de projet, pied de page.
-- **Filet** (hairline) : séparateurs principaux et bordure de la navigation ; **filet doux** (hairline-soft) entre les lignes d'une même liste ; **filet marqué** (hairline-strong) pour les soulignements de liens au repos.
-- **Terminal** (terminal) : le fond du terminal du hero, sombre dans les deux modes. Ses trois pastilles de fenêtre (terminal-close, terminal-minimize, terminal-maximize) et la coche de la ligne finale (terminal-success) sont les seules couleurs hors palette, tolérées parce qu'elles appartiennent à l'objet représenté.
-
-### Mode sombre
-Mêmes rôles, valeurs inversées : fond noir (ground-dark), surfaces gris anthracite (surface-dark), encres claires (ink-dark, ink-muted-dark, ink-subtle-dark), bleu éclairci pour rester lisible (release-blue-dark, release-blue-text-dark) et filets sombres (hairline-dark, hairline-soft-dark). Le fond des boutons pleins (release-blue-solid) reste identique dans les deux modes.
+- **Toile** (canvas) : fond de toutes les pages.
+- **Encre** (ink) : titres, texte principal, contour des boutons fantômes, pilule de navigation, rail de la section À propos.
+- **Graphite** (graphite) : texte secondaire, scopes, métadonnées. C'est le seul gris de texte (7:1).
+- **Panneau doux** (soft-panel) : surface de repli rare.
+- **Filets** (hairline, hairline-soft) : séparateurs entre blocs et entre lignes.
+- **Terminal** : le fond du terminal du hero ; ses pastilles de fenêtre et sa coche verte sont les seules couleurs hors palette, tolérées parce qu'elles appartiennent à l'objet représenté.
 
 ### Named Rules
-**The One Blue Rule.** Une seule teinte d'accent sur tout le site. Le bleu marque une action, un lien, un état actif ou un résultat mesuré ; tout le reste est neutre. Si un écran contient plus de bleu que de texte d'encre, il y a trop de bleu.
+**The One Spotlight Rule.** Un seul bouton indigo par écran. L'indigo marque l'action principale ou un état actif ; jamais un titre, un chiffre, un lien de texte ou une décoration.
 
-**The Contrast Floor Rule.** Tout texte bleu utilise release-blue-text, jamais release-blue ; tout texte blanc pose sur release-blue-solid, jamais sur release-blue. Les deux variantes existent précisément pour tenir le AA.
+**The Content Carries Color Rule.** Les pastels habillent le contenu (chiffres d'un projet, type d'un changement, phase d'un build), jamais l'interface : ni bouton, ni navigation, ni fond de section. Toujours avec du texte noir.
+
+**The No Brand Borrowing Rule.** On reprend la grammaire du style de référence, jamais ses marques : pas de cyan, vert et orange du logo Figma, pas d'anneau à dégradé conique, pas de police figmaSans.
 
 ## Typography
 
-**Display Font:** pile système SF (SF Pro Display, avec Helvetica Neue, Helvetica et Arial en repli)
-**Body Font:** pile système SF (SF Pro Text, mêmes replis)
-**Label/Mono Font:** JetBrains Mono (avec ui-monospace et SFMono-Regular en repli), réservé aux données
+**Display Font:** Inter variable, hébergée sur le site (repli : polices système)
+**Body Font:** Inter variable
+**Label/Mono Font:** JetBrains Mono, hébergée sur le site, pour les annotations
 
-**Character:** Une seule famille sans empattement, très resserrée sur les grands titres et neutre en texte courant. La mono n'apparaît que là où l'information est une donnée : elle donne à la page son ton de note de version sans la déguiser en écran de code.
+**Character:** Une seule famille, très fine dans les grandes tailles et neutre en texte courant. La finesse est la signature : la hiérarchie se fait par la taille et l'espace, pas par le gras. La mono, légèrement espacée, sert d'annotation (versions, dates, phases), jamais de texte courant.
 
 ### Hierarchy
-Onze rôles, chacun exposé en variable CSS `--fs-<rôle>` dans `css/variables.css`. Les quatre plus grands sont fluides : ils grandissent avec la largeur d'écran entre deux bornes, sans réglage par point de rupture.
+Onze rôles, chacun exposé en variable CSS `--fs-<rôle>` (et `--fw-light / regular / medium / strong` pour les graisses 330 / 400 / 480 / 520) dans `css/variables.css`. Les quatre plus grands sont fluides.
 
-- **Display** (600, 2,5 → 6rem fluide, interligne 1,05, approche −0,03em) : le nom dans le hero et le titre « Notes de version ». Un seul par page.
-- **Headline** (600, 2 → 3,25rem fluide, 1,1, −0,025em) : titres de section et de la page 404. La seconde moitié peut passer en encre atténuée pour créer deux tons (« Un PM qui construit, *pas seulement qui pilote.* »).
-- **Title** (600, 1,6 → 2,25rem fluide, 1,15, −0,025em) : titres de projets et de la version actuelle, chiffres de projet, sous-titre « Product Builder » du hero, liens du menu mobile. Le résultat annoncé par un titre passe en bleu texte.
-- **Lead** (600, 1,3 → 1,75rem fluide, 1,35) : accroches de section en deux tons, verbes du rail des étapes. Mesure ≈ 34 caractères.
-- **Subhead** (600, 1,25rem) : titres de groupe (Product, Design & code, Versions précédentes), accroche du hero, ligne de signature du CV, chiffres textuels.
-- **Body-lg** (600, 1,125rem) : noms de compétences, titres de versions précédentes, logo, chiffres en ligne, accroche de la page 404.
-- **Body** (400, 1rem, 1,6) : paragraphes et contexte des projets. Mesure 52 à 65 caractères ; `text-wrap: pretty` sur paragraphes et légendes, `balance` sur les titres.
-- **Small** (400, 0,9375rem, 1,55) : preuves, légendes de chiffres, texte secondaire, boutons.
-- **Label** (500, 0,875rem) : navigation, scopes de projet, liens « Voir le détail », titres de colonnes.
-- **Data** (mono 400, 0,8125rem, chiffres tabulaires) : numéros de version, dates, durées, texte du terminal ; aussi la taille des mentions du pied de page (en sans).
-- **Caption** (600, 0,75rem) : étiquettes Livré / Amélioré / Méthode, badge « Version actuelle », libellés du terminal.
+- **Display** (330, 3 → 4,5rem fluide, interligne 1,05) : ton nom dans le hero, « Notes de version ». Un seul par page.
+- **Headline** (330, 2,5 → 3,5rem fluide, 1,1) : titres de section, titre de la 404. La seconde moitié peut passer en graphite (deux tons).
+- **Title** (330, 1,75 → 2,5rem fluide, 1,15) : titres de projets et de version, chiffres de projet, sous-titre du hero, liens du menu mobile. Le résultat dans un titre ressort en graisse 520, pas en couleur.
+- **Lead** (330, 1,375 → 1,75rem fluide, 1,35) : accroches de section en deux tons, verbes du rail.
+- **Subhead** (400, 1,5rem) : titres de groupe, accroche du hero, signature du CV.
+- **Body-lg** (520, 1,125rem) : noms de compétences, titres de lignes, chiffres en ligne.
+- **Body** (400, 1,125rem, 1,6) : texte courant. Mesure 52 à 65 caractères.
+- **Small** (400, 1rem) : preuves, légendes, texte secondaire.
+- **Label** (480, 1rem) : navigation, boutons, liens d'action.
+- **Meta** (400, 0,875rem) : mentions du pied de page, petites métadonnées.
+- **Annotation** (mono 400, 0,75rem, espacement +0,04em, chiffres tabulaires) : versions, dates, étiquettes, badge de phase, texte du terminal.
 
 ### Named Rules
-**The Data in Mono Rule.** La mono est réservée aux données : versions, dates, durées, lignes du terminal. Jamais pour un titre, une accroche ou une étiquette décorative.
+**The Whisper Weight Rule.** Les titres (display, headline, title, lead) sont en graisse 330. Aucun texte au-delà de 520, sauf les glyphes du terminal.
 
-**The Scale Only Rule.** Aucune taille de texte en dur : chaque `font-size` utilise une variable `--fs-*`. Un besoin nouveau se traite en ajoutant un rôle à l'échelle (et à ce document), pas une valeur isolée.
+**The Sixteen Floor Rule.** Aucun texte de lecture sous 16 px. Les tailles 12 et 14 px sont réservées aux annotations mono et aux mentions.
 
-**The No Eyebrow Rule.** Aucun sur-titre ni label en petites capitales au-dessus d'un titre, et pas de numéro de section (01, 02…). Le titre porte seul son poids.
+**The Scale Only Rule.** Aucune taille ni graisse en dur : chaque `font-size` utilise `--fs-*` et chaque `font-weight` utilise `--fw-*`.
+
+**The Tracking Range Rule.** Approche entre −0,02em (grands titres) et +0,05em (mono) ; rien au-delà.
 
 ## Layout
 
-Une colonne de lecture large, alignée à gauche, avec des marges latérales de 6vw (5vw sous 900 px) et des sections de 6rem de haut en bas (3,5rem sur mobile). Le contenu tient dans environ 1240 px sur l'accueil et 1100 px sur la page CV ; la navigation s'aligne sur ces mêmes bords. La navigation fixe fait 56 px (52 px sur mobile) et tous les ancrages en tiennent compte.
+Une colonne de 1200 px centrée dans une toile fluide, avec une marge minimale de 6vw (5vw sous 900 px). Sections de 7,5rem de haut en bas, 3,5rem sur mobile. La navigation fixe fait 64 px (56 px sur mobile), sans filet ni ombre ; elle devient légèrement translucide et floutée dès que la page défile.
 
-Les mises en page à deux colonnes sont asymétriques : projet (≈ 1,35fr) contre chiffres (≈ 1fr), Product contre Design & code, rail des versions (180 px) contre flux. Sous 900 px, tout s'empile en une colonne, les chiffres passent côte à côte sous le titre et le rail des versions disparaît. Points de rupture observés : 1024 px (hero empilé), 900 px (bascule principale), 768 px (boutons pleine largeur), 480 px (titres réduits).
-
-Le rythme vertical suit une règle simple : plus d'espace au-dessus d'un titre qu'en dessous, des groupes serrés à l'intérieur et une séparation généreuse entre blocs.
+Les compositions à deux colonnes sont asymétriques : texte du projet à gauche, carte de chiffres pastel à droite ; Product contre Design & code ; rail des versions (180 px) contre flux du CV. Sous 900 px, tout s'empile, les chiffres d'un projet passent côte à côte dans leur carte, le rail des versions disparaît. Les titres, les sections et le contact sont alignés à gauche ; rien n'est centré sauf les boutons pleine largeur du mobile.
 
 ## Elevation & Depth
 
-Le système est plat. La profondeur vient des filets de 1 px, du contraste entre fond et surface, et du flou de la navigation une fois la page défilée (`backdrop-filter: saturate(180%) blur(20px)` sur un fond semi-opaque). Il n'existe qu'une seule ombre, sous le terminal du hero, qui en fait un objet posé sur la page.
+Le système est plat. La profondeur vient de l'air, du contraste de graisse et des cartes pastel posées à plat. Une seule ombre existe, sous le terminal du hero, qui joue le rôle de l'objet flottant.
 
 ### Shadow Vocabulary
-- **Ombre d'objet** (`box-shadow: 0 30px 70px -25px rgba(0, 0, 0, 0.45)`) : uniquement le terminal du hero.
+- **Ombre flottante** (`box-shadow: 0 24px 70px 0 rgba(0, 0, 0, 0.1)`) : le terminal du hero uniquement.
 
 ### Named Rules
-**The Flat Page Rule.** Pas d'ombre sur les cartes, les boutons ni les sections. Si un élément doit se détacher, il change de surface ou gagne un filet ; il ne flotte pas.
-
-**The Hairline Rule.** On sépare par des filets de 1 px (hairline entre blocs, hairline-soft entre lignes d'une liste), jamais par des cartes imbriquées. Les projets sont des lignes, pas des cartes.
+**The Single Float Rule.** Une seule ombre sur tout le site, sous le terminal. Les cartes pastel, les boutons et les sections restent plats.
 
 ## Shapes
 
-Deux familles de formes. Les éléments d'action sont des pilules complètes (rayon 9999 px) : boutons, bouton Contact, badge « Version actuelle ». Les étiquettes de données sont presque carrées (rayon 4 px) : étiquettes Livré / Amélioré / Méthode, focus des liens. Les rayons de 8 px restent ponctuels (focus de la navigation, survols discrets), et le terminal seul porte un grand rayon de 18 px. Les marqueurs sont des cercles parfaits : point de section de 4 px, marqueurs du rail de 15 px avec contour de 2 px, le dernier plein.
+Quatre crans de rayon, sans mélange : 2 px pour les détails fins (focus des liens), 8 px pour les boutons fantômes et les étiquettes, 16 px pour les cartes (chiffres de projet, terminal), pilule pour les actions principales, la pilule de navigation, les badges et le badge de phase. Les marqueurs sont des cercles parfaits : point de navigation de 4 px, marqueurs du rail de 15 px.
 
 ## Components
 
 ### Buttons
-Affirmés et calmes : une pilule pleine pour l'action principale, une pilule grise pour le reste.
-- **Shape:** pilule complète (9999 px), hauteur minimale 44 px.
-- **Primary:** fond bleu plein, texte blanc, padding 0,7rem × 1,5rem, graisse 500 ; icône facultative de 18 px à gauche.
-- **Hover / Focus:** le fond fonce (release-blue-solid-hover) en 0,2 s ; focus visible par un contour de 2 px en bleu texte décalé de 3 px.
-- **Secondary:** fond surface, texte encre, survol en surface-hover. Sur mobile, les boutons d'un même groupe passent en pleine largeur et s'empilent.
+- **Principal :** pilule indigo, texte blanc, graisse 480, 16 px, padding 10 × 20 px, hauteur minimale 44 px. Survol plus sombre. Un seul par écran.
+- **Fantôme :** fond transparent, contour noir de 1 px, coins de 8 px, graisse 400, padding 8 × 18 px. Survol : voile noir à 5 %. C'est l'alternative à tout bouton principal ; jamais de fond coloré.
+- **Pilule de navigation (Contact) :** fond noir, texte blanc, pilule de 38 px.
+- **Focus :** contour indigo de 2 px décalé de 3 px.
 
 ### Navigation
-- **Barre :** fixe, transparente en haut de page, givrée avec un filet dès 8 px de défilement. Logo `ldb.pm` à gauche (le `.pm` en bleu texte), liens en label encre atténuée, bouton Contact en pilule compacte de 34 px.
-- **Section active :** un unique point bleu de 4 px glisse sous le lien actif au défilement, et d'une page à l'autre grâce à la View Transition.
-- **Mobile :** panneau plein écran, liens en titre (1,75rem, 600) séparés par des filets doux, apparition décalée de 40 ms par lien, Contact en bouton pleine largeur en bas, LinkedIn en lien secondaire. Le burger à deux traits devient une croix ; le reste de la page devient inerte et le focus reste dans le panneau.
+- **Barre :** 64 px, blanche, sans filet. Logo `ldb.pm` à gauche (`.pm` en indigo), liens en label graphite, Contact en pilule noire.
+- **Section active :** un unique point indigo de 4 px glisse sous le lien actif, au défilement et d'une page à l'autre (View Transition).
+- **Mobile :** panneau plein écran blanc, liens en title, Contact en pilule pleine largeur, LinkedIn en lien secondaire ; le burger devient une croix, le reste de la page devient inerte.
 
-### Release-note tags
-Les types de changement d'une note de version : un rôle égale une couleur, toujours la même.
-- **Livré :** lavis bleu, texte bleu texte.
-- **Amélioré :** surface active, texte encre.
-- **Méthode / Appris / Encadré :** sans fond, contour de 1 px en filet, texte encre atténuée.
-- Hauteur 1,5rem, rayon 4 px, label 0,75rem graisse 600.
+### Metrics card (projets)
+Les chiffres de chaque projet sont posés sur une carte pastel de 16 px de rayon, sans ombre : vert anis, lilas puis bleu glacier dans l'ordre des projets. Valeurs en title graisse 330, légendes en small text-on-tint, séparateurs noirs à 12 %.
 
-### Case rows (projets)
-Une ligne par projet séparée par un filet : scope en encre discrète, titre qui annonce le résultat (le chiffre en bleu texte), contexte en une phrase, chiffres en grand (600, jusqu'à 2,5rem, chiffres tabulaires) dans une colonne à droite, puis un lien « Voir le détail » qui déplie Problème / Solution sur place (hauteur animée là où le navigateur le permet).
-
-### Build flow rail (À propos)
-Trois étapes reliées par un rail horizontal de 1 px ; au premier affichage, le rail se remplit en bleu de gauche à droite et chaque marqueur s'allume quand le remplissage l'atteint. Le dernier marqueur est plein. Sur mobile, le rail devient vertical, par segments.
-
-### Release notes (page CV)
-Version actuelle détaillée (badge « Version actuelle », titre, liste de changements typés avec chiffres), versions précédentes en une ligne (version en mono, titre, lieu, période), une seule dépliable. Sur desktop, un rail de versions collant suit la version visible avec un trait bleu de 2 px.
+### Release-note tags (CV)
+Un type de changement égale un pastel : Livré (vert anis), Amélioré et Piloté (bleu glacier), Méthode et Appris (lilas), Encadré (rose poudré). Coins de 8 px, hauteur 1,5rem, texte noir 12 px graisse 480.
 
 ### Build terminal (hero)
-Fenêtre sombre dans les deux modes (rayon 18 px, seule ombre du système), barre de titre avec trois pastilles, badge de phase en mono capitales. Les lignes se tapent à 18 ms par caractère : invite en blanc précédée d'un `$` bleu, sorties en gris, ligne finale validée d'une coche verte. L'animation se met en pause hors écran et s'affiche d'un bloc si le mouvement est réduit.
+Fenêtre sombre de 16 px de rayon, seule ombre du système. Badge de phase en pilule pastel, en mono majuscule légèrement espacée, dont la couleur suit l'étape : discovery (lilas), design (rose poudré), poc (bleu glacier), ship (vert anis). L'animation se met en pause hors écran.
+
+### Build flow rail (À propos)
+Trois étapes reliées par un rail noir qui se remplit de gauche à droite à l'apparition ; marqueurs à contour noir, le dernier plein et indigo.
+
+### Release notes (CV)
+Version actuelle avec badge indigo, titre en title graisse 330, changements typés par étiquettes pastel ; versions précédentes en une ligne avec la version en annotation mono ; rail des versions collant avec un trait indigo de 2 px.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** réserver le bleu aux actions, liens, états actifs et résultats mesurés (The One Blue Rule).
-- **Do** utiliser release-blue-text pour tout texte bleu et release-blue-solid sous tout texte blanc.
-- **Do** séparer par des filets de 1 px et aligner chiffres et dates en chiffres tabulaires.
-- **Do** composer les numéros de version, dates et durées en mono, et seulement eux.
-- **Do** n'afficher que des chiffres réels, chacun une seule fois par ligne, avec sa légende.
-- **Do** animer avec `cubic-bezier(0.16, 1, 0.3, 1)`, une seule animation pensée par section, et prévoir l'état final sous `prefers-reduced-motion`.
-- **Do** garder des cibles d'au moins 44 px pour les actions et un contour de focus visible de 2 px.
+- **Do** garder un seul bouton indigo par écran et des boutons fantômes noirs pour le reste.
+- **Do** composer les titres en Inter graisse 330 et faire ressortir un résultat par la graisse 520.
+- **Do** mettre la couleur sur le contenu : carte de chiffres, étiquette, phase, toujours en pastel avec du texte noir.
+- **Do** respecter les quatre rayons (2 / 8 / 16 / pilule) et l'unique ombre du terminal.
+- **Do** écrire les annotations (versions, dates, phases) en JetBrains Mono 12 px espacée de +0,04em.
+- **Do** garder le texte de lecture à 16 px minimum et les cibles d'action à 44 px.
 
 ### Don't:
-- **Don't** empiler des cartes grises ni imbriquer des conteneurs : les projets et compétences sont des lignes.
-- **Don't** ajouter de sur-titre, de label en petites capitales ou de numéro de section au-dessus d'un titre.
-- **Don't** ajouter d'ombre hors du terminal, ni de dégradé sur du texte.
-- **Don't** introduire une deuxième couleur d'accent ou une police d'affichage supplémentaire.
-- **Don't** utiliser la mono comme costume « technique » pour des titres ou des étiquettes.
-- **Don't** montrer de photo, de capture produit ou de témoignage inventés.
+- **Don't** colorer un titre, un chiffre ou un lien de texte en indigo.
+- **Don't** mettre un fond coloré sur un bouton secondaire, ni un pastel sur un bouton ou dans la navigation.
+- **Don't** ajouter une ombre aux cartes, ni un dégradé où que ce soit.
+- **Don't** dépasser la graisse 520 dans le texte, ni passer sous −0,02em d'approche.
+- **Don't** reprendre les marques de Figma : logo quatre couleurs, cyan / vert / orange, anneau conique, figmaSans.
+- **Don't** réintroduire un mode sombre sans une décision explicite.

@@ -1,228 +1,218 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-18T14:31:12Z",
+  "generatedAt": "2026-11-18T14:56:00Z",
   "title": "Design System: ldb.pm",
   "extensions": {
     "colorMeta": {
-      "release-blue": {
+      "electric-indigo": {
         "role": "primary",
-        "displayName": "Bleu de livraison",
-        "canonical": "#0071e3",
+        "displayName": "Indigo électrique",
+        "canonical": "#4d49fc",
         "tonalRamp": [
-          "#0c2640",
-          "#0e4071",
-          "#0c5bac",
-          "#0377ec",
-          "#3193f7",
-          "#74b2f1",
-          "#b0d1f2",
-          "#ebf2fa"
+          "#0e0d40",
+          "#121070",
+          "#120ea9",
+          "#0c07e9",
+          "#3834f4",
+          "#7976ef",
+          "#b3b1f1",
+          "#ebebfa"
         ]
       },
-      "release-blue-text": {
-        "role": "primary",
-        "displayName": "Bleu texte",
-        "canonical": "#005bb8",
-        "tonalRamp": [
-          "#0c2640",
-          "#0e3f71",
-          "#0c5bac",
-          "#0377ec",
-          "#3193f7",
-          "#74b2f1",
-          "#b0d1f2",
-          "#ebf2fa"
-        ]
-      },
-      "release-blue-solid": {
-        "role": "primary",
-        "displayName": "Bleu plein",
-        "canonical": "#0066cc",
-        "tonalRamp": [
-          "#0c2640",
-          "#0e4071",
-          "#0c5cac",
-          "#0378ec",
-          "#3194f7",
-          "#74b2f1",
-          "#b0d1f2",
-          "#ebf2fa"
-        ]
-      },
-      "ground": {
+      "canvas": {
         "role": "neutral",
-        "displayName": "Blanc profond",
-        "canonical": "#fbfbfd",
+        "displayName": "Toile",
+        "canonical": "#ffffff",
         "tonalRamp": [
-          "#1e1e2f",
-          "#2f2f50",
-          "#414177",
-          "#51519f",
-          "#7373b5",
-          "#9e9ec7",
-          "#c6c6dc",
-          "#f0f0f5"
-        ]
-      },
-      "surface": {
-        "role": "neutral",
-        "displayName": "Gris surface",
-        "canonical": "#f5f5f7",
-        "tonalRamp": [
-          "#232329",
-          "#3a3a45",
-          "#535365",
-          "#6b6b85",
-          "#89899f",
-          "#acacb9",
-          "#cdcdd5",
-          "#f1f1f3"
+          "#262626",
+          "#404040",
+          "#5c5c5c",
+          "#787878",
+          "#949494",
+          "#b2b2b2",
+          "#d1d1d1",
+          "#f2f2f2"
         ]
       },
       "ink": {
         "role": "neutral",
         "displayName": "Encre",
-        "canonical": "#1d1d1f",
+        "canonical": "#000000",
         "tonalRamp": [
-          "#252527",
-          "#3e3e41",
-          "#59595e",
-          "#74747c",
-          "#919197",
-          "#b0b0b5",
-          "#d0d0d2",
-          "#f2f2f3"
-        ]
-      },
-      "ink-muted": {
-        "role": "neutral",
-        "displayName": "Encre atténuée",
-        "canonical": "#515154",
-        "tonalRamp": [
-          "#262627",
-          "#3f3f41",
-          "#5a5a5d",
-          "#76767a",
-          "#929296",
-          "#b1b1b4",
-          "#d1d1d2",
+          "#262626",
+          "#404040",
+          "#5c5c5c",
+          "#787878",
+          "#949494",
+          "#b2b2b2",
+          "#d1d1d1",
           "#f2f2f2"
         ]
       },
-      "ink-subtle": {
+      "graphite": {
         "role": "neutral",
-        "displayName": "Encre discrète",
-        "canonical": "#6e6e73",
+        "displayName": "Graphite",
+        "canonical": "#595959",
         "tonalRamp": [
-          "#262627",
-          "#3f3f41",
-          "#5a5a5e",
-          "#75757a",
-          "#929296",
-          "#b1b1b4",
-          "#d0d0d2",
+          "#262626",
+          "#404040",
+          "#5c5c5c",
+          "#787878",
+          "#949494",
+          "#b2b2b2",
+          "#d1d1d1",
           "#f2f2f2"
         ]
       },
       "hairline": {
         "role": "neutral",
         "displayName": "Filet",
-        "canonical": "#d2d2d7",
+        "canonical": "#e2e2e2",
         "tonalRamp": [
-          "#252528",
-          "#3d3d43",
-          "#575761",
-          "#71717f",
-          "#8e8e9a",
-          "#afafb6",
-          "#cfcfd3",
-          "#f2f2f3"
+          "#262626",
+          "#404040",
+          "#5c5c5c",
+          "#787878",
+          "#949494",
+          "#b2b2b2",
+          "#d1d1d1",
+          "#f2f2f2"
+        ]
+      },
+      "tint-lime": {
+        "role": "tertiary",
+        "displayName": "Vert anis",
+        "canonical": "#e4ff97",
+        "tonalRamp": [
+          "#33400c",
+          "#58710e",
+          "#82ac0c",
+          "#b0ec03",
+          "#c4f731",
+          "#d1f174",
+          "#e1f2b0",
+          "#f6faeb"
+        ]
+      },
+      "tint-lilac": {
+        "role": "tertiary",
+        "displayName": "Lilas",
+        "canonical": "#c4baff",
+        "tonalRamp": [
+          "#140c40",
+          "#1d0e71",
+          "#230cac",
+          "#2503ec",
+          "#4d31f7",
+          "#8674f1",
+          "#bab0f2",
+          "#edebfa"
+        ]
+      },
+      "tint-aqua": {
+        "role": "tertiary",
+        "displayName": "Bleu glacier",
+        "canonical": "#c7f8fb",
+        "tonalRamp": [
+          "#103a3d",
+          "#15666b",
+          "#1699a1",
+          "#13d1dd",
+          "#3ee0ea",
+          "#7ce3e9",
+          "#b5eaed",
+          "#ecf8f9"
+        ]
+      },
+      "tint-blush": {
+        "role": "tertiary",
+        "displayName": "Rose poudré",
+        "canonical": "#ffc9c1",
+        "tonalRamp": [
+          "#40130c",
+          "#711b0e",
+          "#ac200c",
+          "#ec2103",
+          "#f74a31",
+          "#f18474",
+          "#f2b9b0",
+          "#faedeb"
         ]
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Nom dans le hero, titre « Notes de version ». Un seul par page. --fs-display"
+        "purpose": "Nom, « Notes de version ». Un par page."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Titres de section et de la 404, souvent en deux tons. --fs-headline"
+        "purpose": "Titres de section, 404."
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Titres de projet et de version, chiffres, sous-titre du hero. --fs-title"
+        "purpose": "Titres de projet et de version, chiffres."
       },
       "lead": {
         "displayName": "Lead",
-        "purpose": "Accroches de section, verbes du rail. --fs-lead"
+        "purpose": "Accroches, verbes du rail."
       },
       "subhead": {
         "displayName": "Subhead",
-        "purpose": "Titres de groupe, accroche du hero, signature du CV. --fs-subhead"
+        "purpose": "Titres de groupe, accroche du hero."
       },
       "body-lg": {
-        "displayName": "Body large",
-        "purpose": "Noms de compétences, titres de versions, logo, chiffres en ligne. --fs-body-lg"
+        "displayName": "Body-lg",
+        "purpose": "Noms et titres de lignes, graisse 520."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Texte courant, mesure 52–65 caractères. --fs-body"
+        "purpose": "Texte courant 18 px."
       },
       "small": {
         "displayName": "Small",
-        "purpose": "Preuves, légendes, texte secondaire, boutons. --fs-small"
+        "purpose": "Preuves, légendes."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Navigation, scopes, liens d action. --fs-label"
+        "purpose": "Navigation, boutons."
       },
-      "data": {
-        "displayName": "Data (mono)",
-        "purpose": "Versions, dates, durées, terminal. --fs-sm"
+      "meta": {
+        "displayName": "Meta",
+        "purpose": "Mentions, métadonnées."
       },
-      "caption": {
-        "displayName": "Caption",
-        "purpose": "Étiquettes de note de version, badge, libellés du terminal. --fs-xs"
+      "annotation": {
+        "displayName": "Annotation",
+        "purpose": "Mono : versions, dates, étiquettes, phases."
       }
     },
     "shadows": [
       {
-        "name": "object",
-        "value": "0 30px 70px -25px rgba(0, 0, 0, 0.45)",
-        "purpose": "Seule ombre du système : le terminal du hero."
+        "name": "float",
+        "value": "0 24px 70px 0 rgba(0, 0, 0, 0.1)",
+        "purpose": "Seule ombre : le terminal du hero."
       }
     ],
     "motion": [
       {
         "name": "ease-out-expo",
         "value": "cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "Courbe par défaut : apparitions, rail, point de navigation, dépliants."
+        "purpose": "Courbe par défaut."
       },
       {
-        "name": "reveal",
-        "value": "0.7s ease-out-expo, translateY(24–30px) → 0",
-        "purpose": "Apparition des blocs au défilement."
-      },
-      {
-        "name": "page-transition-out",
-        "value": "0.22s ease-in, opacity 1 → 0, translateY(0 → -12px)",
-        "purpose": "Page sortante (View Transition)."
-      },
-      {
-        "name": "page-transition-in",
-        "value": "0.4s ease-out-expo, délai 0.06s, opacity 0 → 1, translateY(12px → 0)",
-        "purpose": "Page entrante (View Transition)."
+        "name": "page-transition",
+        "value": "out 0.22s ease-in −12px · in 0.4s ease-out-expo +12px",
+        "purpose": "View Transition entre pages."
       },
       {
         "name": "nav-dot",
         "value": "0.45s ease-out-expo",
-        "purpose": "Glissement du point de section, sur la page et entre les pages."
+        "purpose": "Point de section."
       },
       {
         "name": "flow-rail",
-        "value": "1.4s ease-out-expo, scaleX 0 → 1",
-        "purpose": "Remplissage du rail des étapes (À propos)."
+        "value": "1.4s ease-out-expo",
+        "purpose": "Remplissage du rail À propos."
       }
     ],
     "breakpoints": [
@@ -246,125 +236,130 @@
   },
   "components": [
     {
-      "name": "Bouton primaire",
+      "name": "Bouton principal",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "Action principale (M'écrire, Retour à l'accueil).",
-      "html": "<a class=\"ds-btn-primary\" href=\"#\">M'écrire</a>",
-      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:.7rem 1.5rem;border-radius:9999px;font:500 .9375rem/1 -apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;letter-spacing:-.01em;color:var(--on-accent,#fff);background:var(--accent-solid,#0066cc);text-decoration:none;transition:background-color .2s ease}.ds-btn-primary:hover{background:var(--accent-solid-hover,#0058b0)}.ds-btn-primary:focus-visible{outline:2px solid var(--accent-text,#005bb8);outline-offset:3px}"
+      "description": "La seule pilule indigo de l'écran.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Me contacter</a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;min-height:44px;padding:10px 20px;border-radius:9999px;font-family:var(--sans,Inter,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif);font-size:1rem;font-weight:480;letter-spacing:-.01em;color:#fff;background:var(--accent-solid,#4d49fc);text-decoration:none;transition:background-color .2s}.ds-btn-primary:hover{background:var(--accent-solid-hover,#3b37e6)}.ds-btn-primary:focus-visible{outline:2px solid #4d49fc;outline-offset:3px}"
     },
     {
-      "name": "Bouton secondaire",
+      "name": "Bouton fantôme",
       "kind": "button",
-      "refersTo": "button-secondary",
-      "description": "Actions secondaires (LinkedIn, Mon CV, Voir mes projets).",
-      "html": "<a class=\"ds-btn-secondary\" href=\"#\">Voir mes projets</a>",
-      "css": ".ds-btn-secondary{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:.7rem 1.5rem;border-radius:9999px;font:500 .9375rem/1 -apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;letter-spacing:-.01em;color:var(--text,#1d1d1f);background:var(--bg-elevated,#f5f5f7);text-decoration:none;transition:background-color .2s ease}.ds-btn-secondary:hover{background:var(--btn-secondary-hover,#ebebef)}.ds-btn-secondary:focus-visible{outline:2px solid var(--accent-text,#005bb8);outline-offset:3px}"
+      "refersTo": "button-ghost",
+      "description": "Toutes les actions secondaires.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Voir mes projets</a>",
+      "css": ".ds-btn-ghost{display:inline-flex;align-items:center;min-height:44px;padding:8px 18px;border:1px solid #000;border-radius:8px;font-family:var(--sans,Inter,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif);font-size:1rem;font-weight:400;letter-spacing:-.01em;color:#000;background:transparent;text-decoration:none;transition:background-color .2s}.ds-btn-ghost:hover{background:rgba(0,0,0,.05)}.ds-btn-ghost:focus-visible{outline:2px solid #4d49fc;outline-offset:3px}"
     },
     {
       "name": "Navigation",
       "kind": "nav",
-      "refersTo": "nav-cta",
-      "description": "Barre fixe : logo, liens, point de section actif, Contact en pilule compacte.",
-      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-logo\" href=\"#\">ldb<span>.pm</span></a><ul><li><a href=\"#\">À propos</a></li><li><a href=\"#\" class=\"is-active\">Projets</a></li><li><a href=\"#\">CV</a></li><li><a href=\"#\" class=\"ds-nav-cta\">Contact</a></li></ul></nav>",
-      "css": ".ds-nav{display:flex;justify-content:space-between;align-items:center;height:56px;padding:0 1.5rem;border-bottom:1px solid var(--nav-border,rgba(0,0,0,.08));background:var(--nav-bg,rgba(251,251,253,.8));font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif}.ds-nav-logo{font-weight:600;font-size:1.1rem;letter-spacing:-.02em;color:var(--text,#1d1d1f);text-decoration:none}.ds-nav-logo span{color:var(--accent-text,#005bb8)}.ds-nav ul{display:flex;align-items:center;gap:.25rem;list-style:none;margin:0;padding:0}.ds-nav a:not(.ds-nav-logo){position:relative;display:inline-flex;align-items:center;min-height:44px;padding:0 .85rem;font-size:.875rem;color:var(--text-muted,#515154);text-decoration:none;transition:color .2s}.ds-nav a:hover,.ds-nav a.is-active{color:var(--text,#1d1d1f)}.ds-nav a.is-active::after{content:'';position:absolute;left:50%;bottom:6px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--accent,#0071e3)}.ds-nav a.ds-nav-cta{min-height:34px;margin-left:.75rem;padding:0 1rem;border-radius:9999px;font-weight:500;color:var(--on-accent,#fff);background:var(--accent-solid,#0066cc)}.ds-nav a.ds-nav-cta:hover{color:var(--on-accent,#fff);background:var(--accent-solid-hover,#0058b0)}"
+      "refersTo": "nav-pill",
+      "description": "Barre blanche de 64 px, point indigo sous le lien actif, Contact en pilule noire.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-logo\" href=\"#\">ldb<span>.pm</span></a><ul><li><a href=\"#\">À propos</a></li><li><a href=\"#\" class=\"is-active\">Projets</a></li><li><a href=\"#\">CV</a></li><li><a href=\"#\" class=\"ds-pill\">Contact</a></li></ul></nav>",
+      "css": ".ds-nav{display:flex;justify-content:space-between;align-items:center;height:64px;padding:0 1.5rem;background:#fff;font-family:var(--sans,Inter,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif);}.ds-logo{font-size:1.125rem;color:#000;text-decoration:none}.ds-logo span{color:#4d49fc}.ds-nav ul{display:flex;align-items:center;gap:.25rem;list-style:none;margin:0;padding:0}.ds-nav a:not(.ds-logo){position:relative;display:inline-flex;align-items:center;min-height:44px;padding:0 .85rem;font-size:1rem;color:#595959;text-decoration:none}.ds-nav a.is-active{color:#000}.ds-nav a.is-active::after{content:'';position:absolute;left:50%;bottom:4px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:#4d49fc}.ds-nav a.ds-pill{min-height:38px;margin-left:.75rem;padding:0 18px;border-radius:9999px;font-weight:480;color:#fff;background:#000}.ds-nav a.ds-pill:hover{background:#2b2b2b}"
     },
     {
       "name": "Étiquettes de note de version",
       "kind": "chip",
       "refersTo": "tag-shipped",
-      "description": "Types de changement : Livré, Amélioré, Méthode.",
-      "html": "<span class=\"ds-tag ds-tag--ship\">Livré</span> <span class=\"ds-tag ds-tag--improve\">Amélioré</span> <span class=\"ds-tag ds-tag--learn\">Méthode</span>",
-      "css": ".ds-tag{display:inline-flex;align-items:center;height:1.5rem;padding:0 .55rem;border-radius:4px;font:600 .75rem/1 -apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;white-space:nowrap}.ds-tag--ship{color:var(--accent-text,#005bb8);background:var(--accent-soft,rgba(0,113,227,.08))}.ds-tag--improve{color:var(--text,#1d1d1f);background:var(--surface-active,rgba(0,0,0,.06))}.ds-tag--learn{color:var(--text-muted,#515154);box-shadow:inset 0 0 0 1px var(--border,#d2d2d7)}"
+      "description": "Un type de changement, un pastel, texte noir.",
+      "html": "<span class=\"ds-tag ds-lime\">Livré</span> <span class=\"ds-tag ds-aqua\">Amélioré</span> <span class=\"ds-tag ds-lilac\">Méthode</span> <span class=\"ds-tag ds-blush\">Encadré</span>",
+      "css": ".ds-tag{display:inline-flex;align-items:center;height:1.5rem;padding:0 .6rem;border-radius:8px;font-family:var(--sans,Inter,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif);font-size:.75rem;font-weight:480;color:#000}.ds-lime{background:#e4ff97}.ds-aqua{background:#c7f8fb}.ds-lilac{background:#c4baff}.ds-blush{background:#ffc9c1}"
     },
     {
       "name": "Badge version actuelle",
       "kind": "chip",
       "refersTo": "badge-current",
-      "description": "Marque la version en cours dans les notes de version.",
+      "description": "État actif dans les notes de version.",
       "html": "<span class=\"ds-badge\">Version actuelle</span>",
-      "css": ".ds-badge{display:inline-flex;align-items:center;gap:.4rem;height:1.5rem;padding:0 .6rem;border-radius:9999px;font:600 .75rem/1 -apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;color:var(--on-accent,#fff);background:var(--accent-solid,#0066cc)}.ds-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor}"
+      "css": ".ds-badge{display:inline-flex;align-items:center;gap:.4rem;height:1.5rem;padding:0 .6rem;border-radius:9999px;font-family:var(--sans,Inter,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif);font-size:.75rem;font-weight:520;color:#fff;background:#4d49fc}.ds-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:currentColor}"
     },
     {
-      "name": "Ligne de note de version",
-      "kind": "custom",
-      "refersTo": "tag-shipped",
-      "description": "Étiquette, texte du changement et chiffre mesuré, séparés par un filet doux.",
-      "html": "<div class=\"ds-rn-item\"><span class=\"ds-rn-tag\">Livré</span><span class=\"ds-rn-text\">Inscription repensée : formulaires paramétrables, import CSV</span><span class=\"ds-rn-figure\">+35,3 %</span></div>",
-      "css": ".ds-rn-item{display:grid;grid-template-columns:5.5rem minmax(0,1fr) auto;align-items:baseline;column-gap:1rem;padding:.95rem 0;border-top:1px solid var(--border-subtle,#e8e8ed);font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif}.ds-rn-tag{justify-self:start;display:inline-flex;align-items:center;height:1.5rem;padding:0 .55rem;border-radius:4px;font-size:.75rem;font-weight:600;color:var(--accent-text,#005bb8);background:var(--accent-soft,rgba(0,113,227,.08))}.ds-rn-text{font-size:1rem;line-height:1.55;color:var(--text,#1d1d1f)}.ds-rn-figure{font-size:1.125rem;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:var(--text,#1d1d1f);white-space:nowrap}"
+      "name": "Carte de chiffres",
+      "kind": "card",
+      "refersTo": "metrics-card",
+      "description": "Les chiffres d'un projet sur sa couleur pastel.",
+      "html": "<div class=\"ds-metrics\"><div class=\"ds-v\">2 704 → 3 658</div><div class=\"ds-l\">événements créés, soit +35,3 %</div><div class=\"ds-sep\"></div><div class=\"ds-v\">−40 %</div><div class=\"ds-l\">de tickets support liés à l'inscription</div></div>",
+      "css": ".ds-metrics{padding:1.75rem 2rem;border-radius:16px;background:#e4ff97;font-family:var(--sans,Inter,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif);}.ds-v{font-size:2.25rem;font-weight:330;letter-spacing:-.02em;line-height:1.05;font-variant-numeric:tabular-nums;color:#000}.ds-l{margin-top:.4rem;font-size:1rem;color:#2b2b2b}.ds-sep{height:1px;margin:1.25rem 0;background:rgba(0,0,0,.12)}"
     },
     {
-      "name": "Chiffre de projet",
+      "name": "Titre de section",
       "kind": "custom",
       "refersTo": "",
-      "description": "Résultat mesuré d'un projet, avec sa légende.",
-      "html": "<div class=\"ds-metric\"><div class=\"ds-metric-value\">−40 %</div><div class=\"ds-metric-label\">de tickets support liés à l'inscription</div></div>",
-      "css": ".ds-metric{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif}.ds-metric-value{font-size:2.5rem;font-weight:600;line-height:1.05;letter-spacing:-.035em;font-variant-numeric:tabular-nums;color:var(--text,#1d1d1f)}.ds-metric-label{margin-top:.4rem;max-width:34ch;font-size:.9375rem;line-height:1.5;color:var(--text-muted,#515154)}"
+      "description": "Headline en graisse 330, deux tons.",
+      "html": "<h2 class=\"ds-h\">Cas d'usage &amp; <em>impact mesuré</em></h2>",
+      "css": ".ds-h{margin:0;font-family:var(--sans,Inter,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif);font-size:3.5rem;font-weight:330;line-height:1.1;letter-spacing:-.02em;color:#000}.ds-h em{font-style:normal;color:#595959}"
     }
   ],
   "narrative": {
-    "northStar": "La note de version",
-    "overview": "Le site s'écrit comme un produit livré. Chaque page se lit comme une note de version bien tenue : factuelle, datée, mesurée. Ce qui a été construit passe devant, les effets restent derrière. Le système vient d'une base Apple (blanc profond, gris neutres, typographie système, un seul bleu) et la pousse vers la précision d'une documentation soignée : des filets fins au lieu de cartes, des chiffres exacts mis en avant, des dates et des numéros de version composés en mono comme des données.\n\nL'ambiance visée est **précise**. Les alignements sont nets, chaque chiffre est réel et n'apparaît qu'une fois par ligne, la hiérarchie se fait par la taille et la graisse plutôt que par la couleur. La densité reste aérée : de grandes marges, des sections longues, une idée par bloc. Le mode sombre reprend exactement les mêmes rôles, avec des valeurs inversées.\n\nLe mouvement est rare et signé : une seule animation pensée par section, toujours en sortie exponentielle, et rien quand l'utilisateur a demandé moins de mouvement.",
+    "northStar": "Le mur de galerie",
+    "overview": "Une toile blanche, de l'encre noire, et un seul projecteur indigo. L'interface s'efface pour que le travail parle : les titres sont très fins et sûrs d'eux, le texte courant est généreux (18 px), les actions sont des pilules. La couleur n'est jamais décorative dans l'interface ; elle apparaît là où il y a du contenu à montrer (les chiffres d'un projet, le type d'un changement, la phase d'un build), toujours en pastel et toujours sous du texte noir.\n\nCette direction a été choisie par Laurent à partir d'une analyse du style du site Figma. Le site en reprend la grammaire (toile blanche, accent unique, titres en graisse 330, pilules, une seule ombre, rythme de galerie) mais jamais les marques : pas de logo quatre couleurs, pas de police propriétaire, pas d'anneau décoratif. Le thème est clair uniquement.\n\nLe rythme alterne de grandes bandes d'air (sections de 7,5rem) et des blocs serrés. Tout tient dans une colonne de 1200 px centrée. Le mouvement reste rare : une animation pensée par section, en sortie exponentielle, et rien quand l'utilisateur a demandé moins de mouvement.",
     "keyCharacteristics": [
-      "Fond blanc profond, encre presque noire, un seul bleu pour l'action et le résultat.",
-      "Séparation par filets de 1 px, jamais par cartes imbriquées ni par aplats décoratifs.",
-      "Chiffres réels en grand, données (versions, dates) en mono à chasse fixe.",
-      "Pages plates : une seule ombre dans tout le système, sous le terminal.",
-      "Mouvement unique par section, courbe `cubic-bezier(0.16, 1, 0.3, 1)`, respect de `prefers-reduced-motion`."
+      "Toile blanche (#ffffff), encre noire (#000000), un seul gris (graphite #595959).",
+      "Un seul indigo électrique pour l'action principale de l'écran.",
+      "Titres en Inter graisse 330 : l'autorité vient de la retenue, pas du gras.",
+      "Pastels (vert anis, lilas, bleu glacier, rose poudré) réservés au contenu, avec du texte noir.",
+      "Une seule ombre, sous le terminal du hero ; tout le reste est plat.",
+      "Rayons en quatre crans : 2 / 8 / 16 / pilule."
     ],
     "rules": [
       {
-        "name": "The One Blue Rule",
-        "body": "Une seule teinte d'accent sur tout le site. Le bleu marque une action, un lien, un état actif ou un résultat mesuré ; tout le reste est neutre. Si un écran contient plus de bleu que de texte d'encre, il y a trop de bleu.",
+        "name": "The One Spotlight Rule",
+        "body": "Un seul bouton indigo par écran. L'indigo marque l'action principale ou un état actif ; jamais un titre, un chiffre, un lien de texte ou une décoration.",
         "section": "colors"
       },
       {
-        "name": "The Contrast Floor Rule",
-        "body": "Tout texte bleu utilise release-blue-text, jamais release-blue ; tout texte blanc pose sur release-blue-solid, jamais sur release-blue. Les deux variantes existent précisément pour tenir le AA.",
+        "name": "The Content Carries Color Rule",
+        "body": "Les pastels habillent le contenu (chiffres d'un projet, type d'un changement, phase d'un build), jamais l'interface : ni bouton, ni navigation, ni fond de section. Toujours avec du texte noir.",
         "section": "colors"
       },
       {
-        "name": "The Data in Mono Rule",
-        "body": "La mono est réservée aux données : versions, dates, durées, lignes du terminal. Jamais pour un titre, une accroche ou une étiquette décorative.",
+        "name": "The No Brand Borrowing Rule",
+        "body": "On reprend la grammaire du style de référence, jamais ses marques : pas de cyan, vert et orange du logo Figma, pas d'anneau à dégradé conique, pas de police figmaSans.",
+        "section": "colors"
+      },
+      {
+        "name": "The Whisper Weight Rule",
+        "body": "Les titres (display, headline, title, lead) sont en graisse 330. Aucun texte au-delà de 520, sauf les glyphes du terminal.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sixteen Floor Rule",
+        "body": "Aucun texte de lecture sous 16 px. Les tailles 12 et 14 px sont réservées aux annotations mono et aux mentions.",
         "section": "typography"
       },
       {
         "name": "The Scale Only Rule",
-        "body": "Aucune taille de texte en dur : chaque `font-size` utilise une variable `--fs-*`. Un besoin nouveau se traite en ajoutant un rôle à l'échelle (et à ce document), pas une valeur isolée.",
+        "body": "Aucune taille ni graisse en dur : chaque `font-size` utilise `--fs-*` et chaque `font-weight` utilise `--fw-*`.",
         "section": "typography"
       },
       {
-        "name": "The No Eyebrow Rule",
-        "body": "Aucun sur-titre ni label en petites capitales au-dessus d'un titre, et pas de numéro de section (01, 02…). Le titre porte seul son poids.",
+        "name": "The Tracking Range Rule",
+        "body": "Approche entre −0,02em (grands titres) et +0,05em (mono) ; rien au-delà.",
         "section": "typography"
       },
       {
-        "name": "The Flat Page Rule",
-        "body": "Pas d'ombre sur les cartes, les boutons ni les sections. Si un élément doit se détacher, il change de surface ou gagne un filet ; il ne flotte pas.",
-        "section": "elevation"
-      },
-      {
-        "name": "The Hairline Rule",
-        "body": "On sépare par des filets de 1 px (hairline entre blocs, hairline-soft entre lignes d'une liste), jamais par des cartes imbriquées. Les projets sont des lignes, pas des cartes.",
+        "name": "The Single Float Rule",
+        "body": "Une seule ombre sur tout le site, sous le terminal. Les cartes pastel, les boutons et les sections restent plats.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "**Do** réserver le bleu aux actions, liens, états actifs et résultats mesurés (The One Blue Rule).",
-      "**Do** utiliser release-blue-text pour tout texte bleu et release-blue-solid sous tout texte blanc.",
-      "**Do** séparer par des filets de 1 px et aligner chiffres et dates en chiffres tabulaires.",
-      "**Do** composer les numéros de version, dates et durées en mono, et seulement eux.",
-      "**Do** n'afficher que des chiffres réels, chacun une seule fois par ligne, avec sa légende.",
-      "**Do** animer avec `cubic-bezier(0.16, 1, 0.3, 1)`, une seule animation pensée par section, et prévoir l'état final sous `prefers-reduced-motion`.",
-      "**Do** garder des cibles d'au moins 44 px pour les actions et un contour de focus visible de 2 px."
+      "**Do** garder un seul bouton indigo par écran et des boutons fantômes noirs pour le reste.",
+      "**Do** composer les titres en Inter graisse 330 et faire ressortir un résultat par la graisse 520.",
+      "**Do** mettre la couleur sur le contenu : carte de chiffres, étiquette, phase, toujours en pastel avec du texte noir.",
+      "**Do** respecter les quatre rayons (2 / 8 / 16 / pilule) et l'unique ombre du terminal.",
+      "**Do** écrire les annotations (versions, dates, phases) en JetBrains Mono 12 px espacée de +0,04em.",
+      "**Do** garder le texte de lecture à 16 px minimum et les cibles d'action à 44 px."
     ],
     "donts": [
-      "**Don't** empiler des cartes grises ni imbriquer des conteneurs : les projets et compétences sont des lignes.",
-      "**Don't** ajouter de sur-titre, de label en petites capitales ou de numéro de section au-dessus d'un titre.",
-      "**Don't** ajouter d'ombre hors du terminal, ni de dégradé sur du texte.",
-      "**Don't** introduire une deuxième couleur d'accent ou une police d'affichage supplémentaire.",
-      "**Don't** utiliser la mono comme costume « technique » pour des titres ou des étiquettes.",
-      "**Don't** montrer de photo, de capture produit ou de témoignage inventés."
+      "**Don't** colorer un titre, un chiffre ou un lien de texte en indigo.",
+      "**Don't** mettre un fond coloré sur un bouton secondaire, ni un pastel sur un bouton ou dans la navigation.",
+      "**Don't** ajouter une ombre aux cartes, ni un dégradé où que ce soit.",
+      "**Don't** dépasser la graisse 520 dans le texte, ni passer sous −0,02em d'approche.",
+      "**Don't** reprendre les marques de Figma : logo quatre couleurs, cyan / vert / orange, anneau conique, figmaSans.",
+      "**Don't** réintroduire un mode sombre sans une décision explicite."
     ]
   }
 }
