@@ -1,167 +1,295 @@
 /* =============================================
-   ABOUT
+   ABOUT — "Un PM qui construit"
+   Titre → accroche → rail en 3 étapes (concevoir, prototyper, livrer)
+   → preuve (rôle actuel) + lien CV.
+   Moment signature : le rail se remplit de gauche à droite et
+   les étapes s'allument tour à tour quand la section apparaît.
    ============================================= */
 
 .about {
   border-top: none;
+  --flow-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Grid 2 colonnes : texte | aside */
-.about-body {
-  display: grid;
-  grid-template-columns: 1fr 280px;
-  gap: 4rem;
-  align-items: start;
+.about .section-title {
+  max-width: 18ch;
+  margin-bottom: 2rem;
 }
 
-.about-col-text {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-/* Citation — grande phrase Apple, sans italique serif */
-.about-quote {
+/* --- Accroche : 1re phrase en encre, suite en gris (deux tons Apple) --- */
+.about-lead {
+  max-width: 34ch;
+  margin: 0 0 4.5rem;
   font-family: var(--sans);
-  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  font-size: clamp(1.3rem, 2.1vw, 1.75rem);
   font-weight: 600;
+  line-height: 1.35;
   letter-spacing: -0.02em;
   color: var(--text);
-  line-height: 1.35;
-  margin: 0;
-  padding: 0;
-  border: none;
 }
 
-.about-text {
-  font-size: 1.05rem;
-  color: var(--text-muted);
-  line-height: 1.7;
-  max-width: 65ch;
-  margin: 0;
-}
-
-/* Process builder : design, poc, ship */
-.about-process {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  margin: 0.4rem 0 0 0;
-  padding: 0;
-}
-
-.about-process li {
-  display: flex;
-  align-items: baseline;
-  gap: 0.75rem;
-  font-family: var(--sans);
-  font-size: 0.95rem;
-  color: var(--text);
-  letter-spacing: -0.01em;
-  line-height: 1.5;
-}
-
-.proc-dot {
-  width: 8px;
-  height: 8px;
-  min-width: 8px;
-  min-height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  /* aligné sur la ligne de base du texte */
-  position: relative;
-  top: -1px;
-  align-self: center;
-}
-
-.proc-dot--design  { background: var(--text-subtle); }
-.proc-dot--code    { background: var(--text-subtle); }
-.proc-dot--product { background: var(--accent); }
-
-.proc-label {
-  font-weight: 600;
-  color: var(--text);
-}
-
-.proc-detail {
-  color: var(--text-muted);
-}
-
-/* Aside — stats + footnote */
-.about-col-aside {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding-left: 2rem;
-  border-left: 1px solid var(--border);
-}
-
-.about-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 1.4rem;
-}
-
-.about-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.about-stat-value {
-  font-family: var(--sans);
-  font-size: 2.4rem;
-  font-weight: 600;
-  color: var(--text);
-  letter-spacing: -0.03em;
-  line-height: 1;
-}
-
-.about-stat-label {
-  font-family: var(--sans);
-  font-size: 0.85rem;
-  letter-spacing: -0.01em;
-  color: var(--text-muted);
-}
-
-/* Footnote */
-.about-footnote {
-  font-size: 0.9rem;
+.about-lead span {
   color: var(--text-subtle);
-  line-height: 1.6;
+}
+
+/* --- Rail en 3 étapes --- */
+.about-flow {
+  position: relative;
+  list-style: none;
   margin: 0;
-  padding-top: 1.2rem;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3rem;
+  --rail-y: 7px; /* centre des marqueurs */
+}
+
+/* Rail de fond + remplissage accent */
+.about-flow::before,
+.about-flow::after {
+  content: '';
+  position: absolute;
+  top: var(--rail-y);
+  left: 7px;
+  /* s'arrête sur le marqueur de la 3e colonne */
+  right: calc((100% - 6rem) / 3);
+  height: 1px;
+  background: var(--border);
+}
+
+.about-flow::after {
+  height: 2px;
+  margin-top: -0.5px;
+  background: var(--accent);
+  transform-origin: left center;
+  transform: scaleX(1);
+}
+
+.flow-step {
+  position: relative;
+  padding-top: 2.5rem;
+  max-width: 34ch;
+}
+
+.flow-marker {
+  position: absolute;
+  z-index: 1; /* au-dessus du rail */
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  box-sizing: border-box;
+}
+
+/* La dernière étape (livrer) est pleine : c'est l'aboutissement */
+.flow-step:last-child .flow-marker {
+  background: var(--accent);
+}
+
+.flow-verb {
+  margin: 0 0 0.75rem;
+  font-family: var(--sans);
+  font-size: clamp(1.4rem, 2vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--text);
+}
+
+.flow-text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.flow-tools {
+  margin: 1rem 0 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  color: var(--text-subtle);
+}
+
+/* --- Animation d'entrée du rail (JS actif + mouvement autorisé) --- */
+@media (prefers-reduced-motion: no-preference) {
+  .js .about-flow::after {
+    transform: scaleX(0);
+    transition: transform 1.4s var(--flow-ease) 0.25s;
+  }
+
+  .js .about-flow.visible::after {
+    transform: scaleX(1);
+  }
+
+  .js .about-flow .flow-marker {
+    border-color: var(--border-bright);
+    transform: scale(0.6);
+    transition: border-color 0.3s ease, background-color 0.3s ease,
+                transform 0.5s var(--flow-ease);
+  }
+
+  .js .about-flow .flow-step:last-child .flow-marker {
+    background: var(--bg);
+  }
+
+  .js .about-flow.visible .flow-marker {
+    border-color: var(--accent);
+    transform: scale(1);
+  }
+
+  .js .about-flow.visible .flow-step:last-child .flow-marker {
+    background: var(--accent);
+  }
+
+  /* Les étapes s'allument quand le remplissage les atteint */
+  .js .about-flow.visible .flow-step:nth-child(1) .flow-marker { transition-delay: 0.25s; }
+  .js .about-flow.visible .flow-step:nth-child(2) .flow-marker { transition-delay: 0.7s; }
+  .js .about-flow.visible .flow-step:nth-child(3) .flow-marker { transition-delay: 1.15s; }
+
+  .js .about-flow .flow-verb,
+  .js .about-flow .flow-text,
+  .js .about-flow .flow-tools {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.6s ease, transform 0.8s var(--flow-ease);
+  }
+
+  .js .about-flow.visible .flow-verb,
+  .js .about-flow.visible .flow-text,
+  .js .about-flow.visible .flow-tools {
+    opacity: 1;
+    transform: none;
+  }
+
+  .js .about-flow.visible .flow-step:nth-child(1) > * { transition-delay: 0.3s; }
+  .js .about-flow.visible .flow-step:nth-child(2) > * { transition-delay: 0.75s; }
+  .js .about-flow.visible .flow-step:nth-child(3) > * { transition-delay: 1.2s; }
+
+  /* Le conteneur ne glisse pas : seul le contenu bouge */
+  .js .about-flow.reveal {
+    transform: none;
+  }
+}
+
+/* --- Preuve + lien CV --- */
+.about-proof {
+  margin-top: 4.5rem;
+  padding-top: 2rem;
   border-top: 1px solid var(--border-subtle);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 3rem;
+}
+
+.about-role {
+  margin: 0;
+  max-width: 60ch;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.about-role strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.about-cv-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--accent-text);
+  text-decoration: none;
+}
+
+.about-cv-link svg {
+  transition: transform 0.3s var(--flow-ease);
+}
+
+.about-cv-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.about-cv-link:hover svg {
+  transform: translateX(3px);
+}
+
+.about-cv-link:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
 }
 
 /* =============================================
-   RESPONSIVE
+   RESPONSIVE — rail vertical sur mobile
    ============================================= */
 
 @media (max-width: 900px) {
-  .about-body {
+  .about-lead {
+    margin-bottom: 3rem;
+  }
+
+  .about-flow {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2.25rem;
+    padding-left: 2rem;
   }
 
-  .about-col-aside {
-    padding-left: 0;
-    border-left: none;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border);
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 2rem;
-    align-items: flex-start;
+  /* Rail vertical : un segment par étape, du marqueur au suivant */
+  .about-flow::before,
+  .about-flow::after {
+    display: none;
   }
 
-  .about-stats {
-    flex-direction: row;
-    gap: 2rem;
+  .flow-step:not(:last-child)::before,
+  .flow-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: calc(-2rem + 7px);
+    top: calc(0.45rem + 7px);
+    bottom: calc(-2.25rem - 0.45rem - 7px);
+    width: 1px;
+    background: var(--border);
   }
 
-  .about-footnote {
-    flex: 1 1 100%;
+  .flow-step:not(:last-child)::after {
+    width: 2px;
+    margin-left: -0.5px;
+    background: var(--accent);
+    transform-origin: center top;
   }
+
+  .flow-step {
+    padding-top: 0;
+  }
+
+  .flow-marker {
+    top: 0.45rem;
+    left: -2rem;
+  }
+
+  .about-proof {
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 900px) and (prefers-reduced-motion: no-preference) {
+  .js .about-flow .flow-step::after {
+    transform: scaleY(0);
+    transition: transform 0.6s var(--flow-ease);
+  }
+  .js .about-flow.visible .flow-step::after { transform: scaleY(1); }
+  .js .about-flow.visible .flow-step:nth-child(1)::after { transition-delay: 0.3s; }
+  .js .about-flow.visible .flow-step:nth-child(2)::after { transition-delay: 0.75s; }
 }
