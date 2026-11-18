@@ -21,7 +21,7 @@ Un Product Manager qui construit lui-même : design dans Figma, prototypes fonct
 ## Operating Context
 
 - Site statique HTML / CSS / JS, sans framework ni build, publié sur GitHub Pages.
-- Pages : accueil (hero, à propos, projets, compétences, contact), page CV (`cv.html`), pages candidature protégées par code (`candidatures/`).
+- Pages : accueil (hero, à propos, projets, compétences, contact), page CV en « notes de version » (`cv.html`), page 404.
 - Mesure d'audience avec GoatCounter (clics LinkedIn, CV, e-mail).
 
 ## Capabilities and Constraints
