@@ -1,88 +1,97 @@
 /* =============================================
    DESIGN TOKENS — voir DESIGN.md
-   Blanc profond, gris neutres, un seul bleu.
-   Typo système SF, mono pour les données. Contrastes AA.
+   Toile blanche, encre noire, un seul indigo.
+   Inter variable (titres très fins), JetBrains Mono pour les données.
+   Thème clair uniquement.
    ============================================= */
 
-:root {
-  color-scheme: light dark;
-  /* --- Backgrounds (blanc profond Apple / gris neutres) --- */
-  --bg: #fbfbfd;
-  --bg-elevated: #f5f5f7;
-
-  /* --- Text Colors (Apple ink → gris neutres) --- */
-  --text: #1d1d1f;        /* ink Apple */
-  --text-muted: #515154;  /* secondaire, 7.5:1 */
-  --text-subtle: #6e6e73; /* tertiaire, ≥4.5:1 sur --bg et --bg-elevated */
-
-  /* --- Accent = BLEU Apple (liens, CTA, badges) --- */
-  --accent: #0071e3;       /* bleu boutons Apple */
-  --accent-text: #005bb8;  /* texte accent, ≥4.5:1 sur --bg, --bg-elevated et --accent-soft */
-  --accent-solid: #0066cc; /* fond de bouton, texte blanc 5.6:1 */
-  --accent-solid-hover: #0058b0;
-  --on-accent: #ffffff;    /* texte sur fond --accent-solid */
-  --accent-soft: rgba(0, 113, 227, 0.08);
-
-  /* --- Borders (gris neutres Apple) --- */
-  --border: #d2d2d7;
-  --border-subtle: #e8e8ed;
-  --border-bright: #c7c7cc;
-
-  /* --- Surface States --- */
-  --btn-secondary-hover: #ebebef;
-  --nav-bg: rgba(251, 251, 253, 0.8);
-  --nav-border: rgba(0, 0, 0, 0.08);
-  --surface-active: rgba(0, 0, 0, 0.06);
-
-  /* --- Typography --- */
-  /* Stack système SF (Apple) ; mono pour les données (versions, dates,
-     terminal). */
-  --sf: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text',
-        'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --sans: var(--sf);
-  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
-
-  /* Échelle typographique (voir DESIGN.md › Typography) */
-  --fs-xs: 0.75rem;        /* étiquettes, badges, terminal */
-  --fs-sm: 0.8125rem;      /* données : versions, dates ; mentions */
-  --fs-label: 0.875rem;    /* navigation, scopes, labels */
-  --fs-small: 0.9375rem;   /* texte secondaire, preuves, légendes, boutons */
-  --fs-body: 1rem;         /* texte courant */
-  --fs-body-lg: 1.125rem;  /* noms de compétences, logo, chiffres en ligne */
-  --fs-subhead: 1.25rem;   /* sous-titres de groupe, accroche du hero */
-  --fs-lead: clamp(1.3rem, 1rem + 1vw, 1.75rem);          /* accroches */
-  --fs-title: clamp(1.6rem, 1.2rem + 1.4vw, 2.25rem);     /* titres de projet, chiffres */
-  --fs-headline: clamp(2rem, 1.4rem + 2.4vw, 3.25rem);    /* titres de section */
-  --fs-display: clamp(2.5rem, 1rem + 6vw, 6rem);          /* un par page */
-
-  /* --- Layout --- */
-  --nav-h: 56px;        /* hauteur de la nav fixe (desktop) */
-  --nav-h-mobile: 52px; /* hauteur de la nav fixe (mobile) */
-
-  /* --- Border Radius --- */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-full: 9999px;
+/* --- Polices hébergées sur le site (OFL, voir assets/fonts/) --- */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('../assets/fonts/inter-latin-wght-normal.woff2') format('woff2-variations'),
+       url('../assets/fonts/inter-latin-wght-normal.woff2') format('woff2');
 }
 
-/* --- Mode sombre : mêmes rôles, valeurs inversées. Le terminal du hero
-   reste sombre dans les deux modes. --- */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #000000;
-    --bg-elevated: #1d1d1f;
-    --text: #f5f5f7;
-    --text-muted: #c7c7cc;
-    --text-subtle: #a1a1a6;
-    --accent: #2997ff;
-    --accent-text: #4aa8ff;
-    --accent-soft: rgba(41, 151, 255, 0.16);
-    --border: #38383a;
-    --border-subtle: #2c2c2e;
-    --border-bright: #48484a;
-    --btn-secondary-hover: #2c2c2e;
-    --nav-bg: rgba(0, 0, 0, 0.72);
-    --nav-border: rgba(255, 255, 255, 0.1);
-    --surface-active: rgba(255, 255, 255, 0.1);
-  }
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('../assets/fonts/jetbrains-mono-latin-400-normal.woff2') format('woff2');
+}
+
+:root {
+  color-scheme: light;
+
+  /* --- Surfaces --- */
+  --bg: #ffffff;           /* toile */
+  --bg-elevated: #e2e2e2;  /* panneau doux */
+
+  /* --- Encre --- */
+  --text: #000000;         /* encre */
+  --text-muted: #595959;   /* graphite, 7:1 */
+  --text-subtle: #595959;  /* graphite : un seul gris de texte */
+
+  /* --- Accent : indigo électrique, la seule couleur de l'interface --- */
+  --accent: #4d49fc;
+  --accent-text: #4d49fc;        /* 5.7:1 sur blanc */
+  --accent-solid: #4d49fc;       /* fond du bouton principal, texte blanc 5.7:1 */
+  --accent-solid-hover: #3b37e6;
+  --on-accent: #ffffff;
+  --on-ink: #ffffff;             /* texte sur fond noir (pilule de navigation) */
+  --ink-hover: #2b2b2b;
+  --accent-soft: rgba(77, 73, 252, 0.08);
+
+  /* --- Filets --- */
+  --border: #e2e2e2;
+  --border-subtle: #ededed;
+  --border-bright: #000000;      /* contour des boutons fantômes */
+
+  /* --- États --- */
+  --btn-secondary-hover: rgba(0, 0, 0, 0.05);
+  --nav-bg: rgba(255, 255, 255, 0.88);
+  --nav-border: transparent;
+  --surface-active: rgba(0, 0, 0, 0.05);
+
+  /* --- Ombre unique : l'objet flottant du hero --- */
+  --shadow-float: 0 24px 70px 0 rgba(0, 0, 0, 0.1);
+
+  /* --- Typographie --- */
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --sf: var(--sans);
+  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Graisses : la finesse des titres est la signature */
+  --fw-light: 330;    /* display, titres de section, titres */
+  --fw-regular: 400;  /* texte courant */
+  --fw-medium: 480;   /* boutons, navigation */
+  --fw-strong: 520;   /* noms, chiffres, labels appuyés */
+
+  /* Échelle typographique (voir DESIGN.md › Typography) */
+  --fs-xs: 0.75rem;        /* 12 — annotations mono : versions, dates, étiquettes */
+  --fs-sm: 0.875rem;       /* 14 — métadonnées, mentions */
+  --fs-label: 1rem;        /* 16 — navigation, labels, boutons */
+  --fs-small: 1rem;        /* 16 — texte secondaire, preuves, légendes */
+  --fs-body: 1.125rem;     /* 18 — texte courant */
+  --fs-body-lg: 1.125rem;  /* 18 — noms de compétences, titres de ligne */
+  --fs-subhead: 1.5rem;    /* 24 — sous-titres, accroche du hero */
+  --fs-lead: clamp(1.375rem, 1rem + 1vw, 1.75rem);       /* accroches */
+  --fs-title: clamp(1.75rem, 1.25rem + 1.6vw, 2.5rem);   /* titres de projet, chiffres */
+  --fs-headline: clamp(2.5rem, 1.6rem + 3vw, 3.5rem);    /* 56 — titres de section */
+  --fs-display: clamp(3rem, 1.6rem + 4.6vw, 4.5rem);     /* 72 — un par page */
+
+  /* --- Mise en page --- */
+  --page-max: 1200px;
+  --gutter: max(6vw, calc((100% - var(--page-max)) / 2));
+  --nav-h: 64px;
+  --nav-h-mobile: 56px;
+
+  /* --- Rayons : 2 / 8 / 16 / pilule --- */
+  --radius-sm: 2px;    /* détails fins */
+  --radius-md: 8px;    /* étiquettes, boutons fantômes, champs */
+  --radius-lg: 16px;   /* cartes, objet flottant */
+  --radius-full: 9999px; /* actions principales */
 }

@@ -38,9 +38,9 @@
   margin: 0;
   font-family: var(--sans);
   font-size: var(--fs-display);
-  font-weight: 600;
+  font-weight: var(--fw-light);
   line-height: 1;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   color: var(--text);
 }
 
@@ -52,7 +52,7 @@
 }
 
 .rn-byline strong {
-  font-weight: 600;
+  font-weight: var(--fw-strong);
   color: var(--text);
 }
 
@@ -113,7 +113,7 @@
 .rn-rail-title {
   margin: 0 0 0.75rem;
   font-size: var(--fs-sm);
-  font-weight: 600;
+  font-weight: var(--fw-strong);
   color: var(--text);
 }
 
@@ -173,7 +173,7 @@
 
 .rn-version {
   font-size: var(--fs-label);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   color: var(--text-muted);
 }
 
@@ -215,7 +215,7 @@
   padding: 0 0.55rem;
   border-radius: var(--radius-sm);
   font-size: var(--fs-xs);
-  font-weight: 600;
+  font-weight: var(--fw-strong);
   white-space: nowrap;
 }
 
@@ -253,7 +253,7 @@
 .rn-figure {
   font-family: var(--sans);
   font-size: var(--fs-body-lg);
-  font-weight: 600;
+  font-weight: var(--fw-strong);
   letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
   color: var(--text);
@@ -283,7 +283,7 @@
   padding: 0 0.6rem;
   border-radius: var(--radius-full);
   font-size: var(--fs-xs);
-  font-weight: 600;
+  font-weight: var(--fw-strong);
   color: var(--on-accent);
   background: var(--accent-solid);
 }
@@ -304,9 +304,9 @@
   margin: 1.5rem 0 0;
   font-family: var(--sans);
   font-size: var(--fs-title);
-  font-weight: 600;
+  font-weight: var(--fw-light);
   line-height: 1.1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   color: var(--text);
 }
 
@@ -339,7 +339,7 @@
   width: var(--rn-ver-w);
   margin-right: 1rem;
   font-size: var(--fs-sm);
-  font-weight: 600;
+  font-weight: var(--fw-strong);
   color: var(--text);
 }
 
@@ -356,7 +356,7 @@
   margin: 0 0 1rem;
   font-family: var(--sans);
   font-size: var(--fs-subhead);
-  font-weight: 600;
+  font-weight: var(--fw-strong);
   letter-spacing: -0.02em;
   color: var(--text);
 }
@@ -388,7 +388,7 @@
 
 .rn-title {
   font-size: var(--fs-body-lg);
-  font-weight: 600;
+  font-weight: var(--fw-strong);
   letter-spacing: -0.015em;
   color: var(--text);
   transition: color 0.2s ease;

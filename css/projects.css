@@ -52,7 +52,7 @@
 .case-scope {
   margin: 0 0 1rem;
   font-size: var(--fs-label);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   letter-spacing: -0.01em;
   color: var(--text-subtle);
 }
@@ -62,15 +62,15 @@
   max-width: 22ch;
   font-family: var(--sans);
   font-size: var(--fs-title);
-  font-weight: 600;
+  font-weight: var(--fw-light);
   line-height: 1.15;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   color: var(--text);
 }
 
-/* Le résultat, dans le titre, porte l'accent */
+/* Le résultat, dans le titre, se distingue par la graisse, pas la couleur */
 .case-figure {
-  color: var(--accent-text);
+  font-weight: var(--fw-strong);
 }
 
 .case-context {
@@ -103,9 +103,9 @@
 .case-metric-value {
   font-family: var(--sans);
   font-size: var(--fs-title);
-  font-weight: 600;
+  font-weight: var(--fw-light);
   line-height: 1.05;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
   color: var(--text);
   text-wrap: balance;
@@ -137,9 +137,9 @@
   gap: 0.4rem;
   min-height: 44px;
   font-size: var(--fs-small);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   letter-spacing: -0.01em;
-  color: var(--accent-text);
+  color: var(--text);
   cursor: pointer;
   list-style: none;
   user-select: none;
@@ -189,7 +189,7 @@
   margin: 0 0 0.6rem;
   font-family: var(--sans);
   font-size: var(--fs-small);
-  font-weight: 600;
+  font-weight: var(--fw-strong);
   letter-spacing: -0.01em;
   color: var(--text);
 }

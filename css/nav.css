@@ -9,7 +9,7 @@ nav {
   position: fixed;
   inset: 0 0 auto 0;
   height: var(--nav-h);
-  padding: 0 max(3rem, calc((100vw - 1240px) / 2));
+  padding: 0 var(--gutter);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,7 +36,7 @@ nav.is-scrolled {
   min-height: 44px;
   font-family: var(--sans);
   font-size: var(--fs-body-lg);
-  font-weight: 600;
+  font-weight: var(--fw-strong);
   color: var(--text);
   text-decoration: none;
   letter-spacing: -0.02em;
@@ -65,7 +65,7 @@ nav.is-scrolled {
   color: var(--text-muted);
   text-decoration: none;
   font-size: var(--fs-label);
-  font-weight: 400;
+  font-weight: var(--fw-regular);
   letter-spacing: -0.01em;
   transition: color 0.2s ease;
 }
@@ -127,18 +127,18 @@ nav.is-scrolled {
 }
 
 .nav-links a.nav-cta {
-  min-height: 34px;
-  padding: 0 1rem;
-  color: var(--on-accent);
-  background: var(--accent-solid);
+  min-height: 38px;
+  padding: 0 1.125rem;
+  color: var(--on-ink);
+  background: var(--text);
   border-radius: var(--radius-full);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .nav-links a.nav-cta:hover {
-  color: var(--on-accent);
-  background: var(--accent-solid-hover);
+  color: var(--on-ink);
+  background: var(--ink-hover);
 }
 
 .nav-links a.nav-cta:active {
@@ -267,8 +267,8 @@ nav.is-scrolled {
     min-height: 56px;
     padding: 0;
     font-size: var(--fs-title);
-    font-weight: 600;
-    letter-spacing: -0.025em;
+    font-weight: var(--fw-light);
+    letter-spacing: -0.02em;
     color: var(--text);
     border-bottom: 1px solid var(--border-subtle);
   }
@@ -292,7 +292,7 @@ nav.is-scrolled {
     justify-content: center;
     min-height: 50px;
     font-size: var(--fs-body-lg);
-    font-weight: 500;
+    font-weight: var(--fw-medium);
     letter-spacing: -0.01em;
     border-bottom: none;
   }
@@ -307,7 +307,7 @@ nav.is-scrolled {
     min-height: 48px;
     margin-top: 0.5rem;
     font-size: var(--fs-small);
-    font-weight: 500;
+    font-weight: var(--fw-medium);
     letter-spacing: -0.01em;
     color: var(--text-muted);
     border-bottom: none;

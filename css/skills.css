@@ -32,7 +32,7 @@
   border-bottom: 1px solid var(--border);
   font-family: var(--sans);
   font-size: var(--fs-subhead);
-  font-weight: 600;
+  font-weight: var(--fw-strong);
   letter-spacing: -0.02em;
   color: var(--text);
 }
@@ -59,7 +59,7 @@
 .skill-name {
   font-family: var(--sans);
   font-size: var(--fs-body-lg);
-  font-weight: 600;
+  font-weight: var(--fw-strong);
   letter-spacing: -0.015em;
   color: var(--text);
 }
@@ -84,7 +84,7 @@
 .skills-extra-row dt {
   margin: 0 0 0.35rem;
   font-size: var(--fs-label);
-  font-weight: 600;
+  font-weight: var(--fw-strong);
   letter-spacing: -0.01em;
   color: var(--text);
 }

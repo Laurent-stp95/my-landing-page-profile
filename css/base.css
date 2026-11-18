@@ -20,6 +20,9 @@
     font-family: var(--sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'kern';
+    font-size: var(--fs-body);
+    letter-spacing: -0.01em;
     /* clip (et non hidden) : évite de créer un conteneur de scroll
        imbriqué qui provoque un rebond/bounce vertical au scroll */
     overflow-x: clip;
@@ -28,17 +31,17 @@
 
   /* Section common */
   section {
-    padding: 6rem 6vw;
-    scroll-margin-top: 64px;
+    padding: 7.5rem var(--gutter);
+    scroll-margin-top: var(--nav-h);
   }
 
   .section-title {
     font-family: var(--sans);
     font-size: var(--fs-headline);
-    font-weight: 600;
-    letter-spacing: -0.025em;
+    font-weight: var(--fw-light);
+    letter-spacing: -0.02em;
     line-height: 1.1;
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
   }
 
   .section-title em {
@@ -63,7 +66,7 @@
     padding: 0.6rem 1rem;
     border-radius: var(--radius-full);
     font-size: var(--fs-small);
-    font-weight: 500;
+    font-weight: var(--fw-medium);
     color: var(--on-accent);
     background: var(--accent-solid);
     text-decoration: none;

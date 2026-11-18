@@ -22,7 +22,7 @@
   margin: 0 0 4.5rem;
   font-family: var(--sans);
   font-size: var(--fs-lead);
-  font-weight: 600;
+  font-weight: var(--fw-light);
   line-height: 1.35;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -60,7 +60,7 @@
 .about-flow::after {
   height: 2px;
   margin-top: -0.5px;
-  background: var(--accent);
+  background: var(--text);
   transform-origin: left center;
   transform: scaleX(1);
 }
@@ -80,22 +80,24 @@
   height: 15px;
   border-radius: 50%;
   background: var(--bg);
-  border: 2px solid var(--accent);
+  border: 2px solid var(--text);
   box-sizing: border-box;
 }
 
-/* La dernière étape (livrer) est pleine : c'est l'aboutissement */
+/* La dernière étape (livrer) est pleine et indigo : c'est l'aboutissement,
+   le seul point de couleur de la section */
 .flow-step:last-child .flow-marker {
   background: var(--accent);
+  border-color: var(--accent);
 }
 
 .flow-verb {
   margin: 0 0 0.75rem;
   font-family: var(--sans);
   font-size: var(--fs-lead);
-  font-weight: 600;
+  font-weight: var(--fw-light);
   line-height: 1.15;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   color: var(--text);
 }
 
@@ -109,7 +111,7 @@
 .flow-tools {
   margin: 1rem 0 0;
   font-size: var(--fs-sm);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   letter-spacing: -0.005em;
   color: var(--text-subtle);
 }
@@ -137,12 +139,13 @@
   }
 
   .js .about-flow.visible .flow-marker {
-    border-color: var(--accent);
+    border-color: var(--text);
     transform: scale(1);
   }
 
   .js .about-flow.visible .flow-step:last-child .flow-marker {
     background: var(--accent);
+    border-color: var(--accent);
   }
 
   /* Les étapes s'allument quand le remplissage les atteint */
@@ -196,7 +199,7 @@
 }
 
 .about-role strong {
-  font-weight: 600;
+  font-weight: var(--fw-strong);
   color: var(--text);
 }
 
@@ -206,10 +209,13 @@
   gap: 0.4rem;
   min-height: 44px;
   font-size: var(--fs-body);
-  font-weight: 500;
+  font-weight: var(--fw-medium);
   letter-spacing: -0.01em;
-  color: var(--accent-text);
-  text-decoration: none;
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 6px;
+  transition: text-decoration-color 0.2s ease;
 }
 
 .about-cv-link svg {
@@ -217,8 +223,7 @@
 }
 
 .about-cv-link:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  text-decoration-color: currentColor;
 }
 
 .about-cv-link:hover svg {
@@ -266,7 +271,7 @@
   .flow-step:not(:last-child)::after {
     width: 2px;
     margin-left: -0.5px;
-    background: var(--accent);
+    background: var(--text);
     transform-origin: center top;
   }
 
