@@ -14,7 +14,7 @@ Landing page personnelle — Profil Product Manager.
 my-landing-page-pm/
 ├── index.html
 ├── css/          ← 1 fichier par section
-├── js/           ← navigation, animations, parallax
+├── js/           ← navigation, animations, terminal
 └── assets/       ← images, favicon
 ```
 
