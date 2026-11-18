@@ -117,7 +117,7 @@
   font-weight: 500;
   letter-spacing: -0.01em;
   color: #fff;
-  background: var(--accent);
+  background: var(--accent-solid);
   border: none;
   border-radius: var(--radius-full);
   text-decoration: none;
@@ -126,7 +126,7 @@
 }
 
 .cv-download-btn:hover {
-  background: var(--accent-hover);
+  background: var(--accent-solid-hover);
 }
 
 /* =============================================

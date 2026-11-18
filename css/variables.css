@@ -26,10 +26,6 @@
   --accent-soft: rgba(0, 113, 227, 0.08);
   --accent-glow: rgba(0, 113, 227, 0.12);
 
-  /* --- Disciplines : bleu Apple + gris neutres --- */
-  --disc-product: #0071e3; /* bleu — product */
-  --disc-design:  #6e6e73; /* gris moyen */
-  --disc-code:    #6e6e73; /* gris moyen */
 
   /* --- Borders (gris neutres Apple) --- */
   --border: #d2d2d7;
@@ -62,7 +58,8 @@
   --spacing-xl: 3rem;
 
   /* --- Layout --- */
-  --nav-h-mobile: 48px; /* hauteur réelle de la nav fixe Apple */
+  --nav-h: 56px;        /* hauteur de la nav fixe (desktop) */
+  --nav-h-mobile: 52px; /* hauteur de la nav fixe (mobile) */
 
   /* --- Border Radius --- */
   --radius-sm: 4px;
@@ -87,9 +84,6 @@
     --accent-text: #4aa8ff;
     --accent-soft: rgba(41, 151, 255, 0.16);
     --accent-glow: rgba(41, 151, 255, 0.2);
-    --disc-product: #2997ff;
-    --disc-design: #a1a1a6;
-    --disc-code: #a1a1a6;
     --border: #38383a;
     --border-subtle: #2c2c2e;
     --border-bright: #48484a;

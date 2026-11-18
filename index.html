@@ -39,21 +39,19 @@
   </div>
 
   <!-- ========== NAV ========== -->
- <nav>
-    <a href="#" class="nav-logo">ldb<span>.pm</span></a>
-    <button class="nav-burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-        <line x1="3" y1="6" x2="21" y2="6"/>
-        <line x1="3" y1="12" x2="21" y2="12"/>
-        <line x1="3" y1="18" x2="21" y2="18"/>
-      </svg>
+  <nav aria-label="Navigation principale">
+    <a href="#" class="nav-logo" aria-label="ldb.pm, retour à l'accueil">ldb<span>.pm</span></a>
+    <button class="nav-burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+      <span class="burger-line" aria-hidden="true"></span>
+      <span class="burger-line" aria-hidden="true"></span>
     </button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#about">À propos</a></li>
-      <li><a href="#projects">Projets</a></li>
-      <li><a href="#skills">Compétences</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="#contact" class="nav-cta">Contact</a></li>
+      <li style="--i:0"><a href="#about">À propos</a></li>
+      <li style="--i:1"><a href="#projects">Projets</a></li>
+      <li style="--i:2"><a href="#skills">Compétences</a></li>
+      <li style="--i:3"><a href="cv.html">CV</a></li>
+      <li style="--i:4" class="nav-cta-item"><a href="#contact" class="nav-cta">Contact</a></li>
+      <li style="--i:5" class="nav-mobile-only"><a href="https://linkedin.com/in/laurentdelbraccio" class="nav-secondary" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></li>
     </ul>
   </nav>
 
@@ -75,13 +73,7 @@
           </span>
         </div>
 
-        <!-- Chips disciplines — signal owner multi-casquettes -->
-        <div class="hero-disciplines" id="heroDisciplines">
-          <span class="disc-chip disc-chip--product">Product</span>
-          <span class="disc-chip disc-chip--design">Design</span>
-          <span class="disc-chip disc-chip--code">Code</span>
-          <span class="disc-chip disc-chip--data">Data</span>
-        </div>
+        <p class="hero-lead">Je conçois, prototype et construis des produits SaaS&nbsp;B2B, de la vision au code livré.</p>
 
         <div class="hero-actions">
           <a href="#contact" class="footer-btn footer-btn--primary">Me contacter</a>

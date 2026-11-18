@@ -28,21 +28,19 @@
   </div>
 
   <!-- ========== NAV ========== -->
-  <nav>
-    <a href="index.html" class="nav-logo">ldb<span>.pm</span></a>
-    <button class="nav-burger" aria-label="Menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="3" y1="6" x2="21" y2="6"/>
-        <line x1="3" y1="12" x2="21" y2="12"/>
-        <line x1="3" y1="18" x2="21" y2="18"/>
-      </svg>
+  <nav aria-label="Navigation principale">
+    <a href="index.html" class="nav-logo" aria-label="ldb.pm, retour à l'accueil">ldb<span>.pm</span></a>
+    <button class="nav-burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+      <span class="burger-line" aria-hidden="true"></span>
+      <span class="burger-line" aria-hidden="true"></span>
     </button>
-    <ul class="nav-links">
-      <li><a href="index.html#about">À propos</a></li>
-      <li><a href="index.html#projects">Projets</a></li>
-      <li><a href="index.html#skills">Compétences</a></li>
-      <li><a href="cv.html" class="nav-active">CV</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
+    <ul class="nav-links" id="navLinks">
+      <li style="--i:0"><a href="index.html#about">À propos</a></li>
+      <li style="--i:1"><a href="index.html#projects">Projets</a></li>
+      <li style="--i:2"><a href="index.html#skills">Compétences</a></li>
+      <li style="--i:3"><a href="cv.html" class="nav-active" aria-current="page">CV</a></li>
+      <li style="--i:4" class="nav-cta-item"><a href="index.html#contact" class="nav-cta">Contact</a></li>
+      <li style="--i:5" class="nav-mobile-only"><a href="https://linkedin.com/in/laurentdelbraccio" class="nav-secondary" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></li>
     </ul>
   </nav>
 

@@ -54,29 +54,5 @@
       flex: 1 1 100%;
     }
 
-    /* Nav mobile */
-    nav {
-      padding: 0 5vw; /* height:48px héritée de la nav Apple */
-    }
 
-    .nav-links {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      flex-direction: column;
-      padding: 1rem 5vw 1.5rem;
-      gap: 0.25rem;
-    }
-  
-    .nav-links.open {
-      display: flex;
-    }
-  
-    .nav-burger {
-      display: flex;
-    }
   }
