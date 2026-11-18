@@ -52,7 +52,32 @@
   }
 
   h1, h2, h3 { text-wrap: balance; }
-  p, blockquote { text-wrap: pretty; }
+  p, blockquote, dd { text-wrap: pretty; }
+
+  /* Lien d'évitement : invisible jusqu'au focus clavier */
+  .skip-link {
+    position: fixed;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 200;
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--on-accent);
+    background: var(--accent-solid);
+    text-decoration: none;
+    transform: translateY(-150%);
+    transition: transform 0.2s ease;
+  }
+
+  .skip-link:focus-visible {
+    transform: none;
+    outline: 2px solid var(--accent-text);
+    outline-offset: 3px;
+  }
+
+  main:focus { outline: none; }
 
   .sr-only {
     position: absolute;

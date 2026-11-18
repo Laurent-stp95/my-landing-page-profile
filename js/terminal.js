@@ -32,6 +32,37 @@
 
   let timer = null;
 
+  // Pause quand le terminal est hors écran ou l'onglet caché :
+  // la prochaine étape attend simplement qu'il redevienne visible.
+  const terminal = document.getElementById('buildTerminal') || body;
+  let onScreen = true;
+  let pending = null;
+
+  const canRun = () => onScreen && !document.hidden;
+
+  function schedule(fn, ms) {
+    timer = setTimeout(() => {
+      if (canRun()) fn();
+      else pending = fn;
+    }, ms);
+  }
+
+  function resume() {
+    if (pending && canRun()) {
+      const fn = pending;
+      pending = null;
+      fn();
+    }
+  }
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver((entries) => {
+      onScreen = entries[0].isIntersecting;
+      resume();
+    }).observe(terminal);
+  }
+  document.addEventListener('visibilitychange', resume);
+
   function makeLine(item) {
     const el = document.createElement('span');
     el.className = 'term-line ' + (
@@ -68,7 +99,7 @@
       // fin : pause puis reset
       const c = cursor();
       body.appendChild(c);
-      timer = setTimeout(() => {
+      schedule(() => {
         body.innerHTML = '';
         setPhase(SCRIPT[0].phase);
         typeLine(0);
@@ -89,10 +120,10 @@
       if (i <= item.text.length) {
         el.textContent = item.text.slice(0, i);
         i++;
-        timer = setTimeout(typeChar, TYPE_MS);
+        schedule(typeChar, TYPE_MS);
       } else {
         c.remove();
-        timer = setTimeout(() => typeLine(index + 1), LINE_PAUSE);
+        schedule(() => typeLine(index + 1), LINE_PAUSE);
       }
     })();
   }
@@ -101,6 +132,6 @@
     runStatic();
   } else {
     // Démarre après l'apparition de la fenêtre (anim CSS ~1.3s + 0.8s)
-    setTimeout(() => typeLine(0), 1600);
+    schedule(() => typeLine(0), 1600);
   }
 })();

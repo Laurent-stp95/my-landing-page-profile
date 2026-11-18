@@ -36,9 +36,11 @@
   <link rel="stylesheet" href="css/transition.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
 
   <!-- Overlay de transition de page -->
-  <div class="page-transition page-transition--enter" id="pageTransition">
+  <div class="page-transition page-transition--enter" id="pageTransition" aria-hidden="true">
     <span class="page-transition-label">CV</span>
   </div>
 
@@ -60,7 +62,7 @@
   </nav>
 
   <!-- ========== CV ========== -->
-  <main class="cv-page rn-page">
+  <main class="cv-page rn-page" id="main">
 
     <header class="rn-header">
       <h1 class="rn-heading">Notes de version</h1>

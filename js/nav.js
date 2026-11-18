@@ -21,10 +21,16 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Menu mobile ── */
   const isOpen = () => navMenu.classList.contains('open');
 
+  // Tout ce qui n'est pas la nav devient inerte quand le menu est ouvert :
+  // ni focus clavier ni lecteur d'écran derrière le panneau.
+  const outside = () => Array.from(document.body.children)
+    .filter(el => el !== nav && el.tagName !== 'SCRIPT');
+
   const setMenu = (open) => {
     navMenu.classList.toggle('open', open);
     nav.classList.toggle('is-open', open);
     document.documentElement.classList.toggle('nav-open', open);
+    outside().forEach(el => { el.inert = open; });
     if (burger) {
       burger.setAttribute('aria-expanded', String(open));
       burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
@@ -41,11 +47,25 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Échap ferme le menu et rend le focus au bouton
+    // Échap ferme le menu ; Tab boucle entre le bouton et les liens du menu
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && isOpen()) {
+      if (!isOpen()) return;
+      if (e.key === 'Escape') {
         setMenu(false);
         burger.focus();
+        return;
+      }
+      if (e.key === 'Tab') {
+        const items = [burger, ...navMenu.querySelectorAll('a')];
+        const first = items[0];
+        const last = items[items.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
       }
     });
 
@@ -117,7 +137,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const band = window.innerHeight * 0.35;
       if (first > band || last < band) setActive(null);
     };
-    window.addEventListener('scroll', clearIfOutside, { passive: true });
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => { clearIfOutside(); ticking = false; });
+    }, { passive: true });
     clearIfOutside();
   }
 });

@@ -69,12 +69,12 @@ footer {
 
 /* Bouton primaire — pilule bleue Apple */
 .footer-btn--primary {
-  color: #fff;
+  color: var(--on-accent);
   background: var(--accent-solid);
 }
 
 .footer-btn--primary:hover {
-  color: #fff;
+  color: var(--on-accent);
   background: var(--accent-solid-hover);
 }
 

@@ -55,6 +55,16 @@ if (words.length > 1) {
 
   // Start rotation (immobile si mouvement réduit : le 1er mot reste affiché)
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    setInterval(rotateWord, 4000);
+    // Le mot ne tourne que si le hero est visible et l'onglet actif
+    const hero = document.querySelector('.hero');
+    let heroVisible = true;
+    if (hero && 'IntersectionObserver' in window) {
+      new IntersectionObserver((entries) => {
+        heroVisible = entries[0].isIntersecting;
+      }).observe(hero);
+    }
+    setInterval(() => {
+      if (heroVisible && !document.hidden) rotateWord();
+    }, 4000);
   }
 }

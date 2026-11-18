@@ -23,6 +23,7 @@
   --accent-text: #005bb8;  /* texte accent, ≥4.5:1 sur --bg, --bg-elevated et --accent-soft */
   --accent-solid: #0066cc; /* fond de bouton, texte blanc 5.6:1 */
   --accent-solid-hover: #0058b0;
+  --on-accent: #ffffff;    /* texte sur fond --accent-solid */
   --accent-soft: rgba(0, 113, 227, 0.08);
   --accent-glow: rgba(0, 113, 227, 0.12);
 
