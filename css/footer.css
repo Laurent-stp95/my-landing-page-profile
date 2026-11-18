@@ -17,10 +17,6 @@ footer {
   align-items: center;
 }
 
-.footer-cta .section-label {
-  margin-bottom: 0.75rem;
-}
-
 .footer-title {
   font-family: var(--sans);
   font-size: clamp(2rem, 4.5vw, 3.25rem);
@@ -54,24 +50,30 @@ footer {
   border: none;
   border-radius: var(--radius-full);
   text-decoration: none;
+  min-height: 44px;
   transition: background 0.2s ease, color 0.2s ease;
   cursor: pointer;
 }
 
 .footer-btn:hover {
-  background: #ebebef;
+  background: var(--btn-secondary-hover);
   color: var(--text);
 }
 
 /* Bouton primaire — pilule bleue Apple */
 .footer-btn--primary {
   color: #fff;
-  background: var(--accent);
+  background: var(--accent-solid);
 }
 
 .footer-btn--primary:hover {
   color: #fff;
-  background: var(--accent-hover);
+  background: var(--accent-solid-hover);
+}
+
+.footer-btn:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 3px;
 }
 
 .footer-btn svg {

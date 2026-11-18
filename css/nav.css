@@ -14,8 +14,8 @@
     z-index: 100;
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
-    background: rgba(251, 251, 253, 0.8);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    background: var(--nav-bg);
+    border-bottom: 1px solid var(--nav-border);
   }
 
   .nav-logo {
@@ -28,16 +28,20 @@
   }
 
   .nav-logo span {
-    color: var(--accent);
+    color: var(--accent-text);
   }
 
   .nav-burger {
     display: none;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
     background: none;
     border: none;
     color: var(--text);
     cursor: pointer;
-    padding: 0.3rem;
+    padding: 0;
   }
 
   .nav-links {
@@ -50,8 +54,11 @@
   .nav-links a {
     color: var(--text-muted);
     text-decoration: none;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     letter-spacing: -0.01em;
     transition: color 0.2s ease;
   }
@@ -63,8 +70,8 @@
   /* CTA contact — pilule pleine bleue Apple */
   .nav-links a.nav-cta {
     color: #fff;
-    background: var(--accent);
-    padding: 0.35rem 1rem;
+    background: var(--accent-solid);
+    padding: 0.5rem 1.1rem;
     border-radius: var(--radius-full);
     font-weight: 400;
     transition: background 0.2s ease;
@@ -72,18 +79,18 @@
 
   .nav-links a.nav-cta:hover {
     color: #fff;
-    background: var(--accent-hover);
+    background: var(--accent-solid-hover);
   }
 
   .nav-links a:focus-visible,
   .nav-logo:focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--accent-text);
     outline-offset: 4px;
     border-radius: 2px;
   }
 
   .nav-burger:focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--accent-text);
     outline-offset: 4px;
     border-radius: 2px;
   }
