@@ -29,16 +29,7 @@
   /* Section common */
   section {
     padding: 6rem 6vw;
-    scroll-margin-top: 80px;
-  }
-  
-  .section-label {
-    font-family: var(--sans);
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--accent);
-    letter-spacing: 0;
-    margin-bottom: 0.75rem;
+    scroll-margin-top: 64px;
   }
 
   .section-title {
@@ -53,4 +44,39 @@
   .section-title em {
     font-style: normal;
     color: var(--text-muted);
+  }
+
+  ::selection {
+    background: var(--accent-soft);
+    color: var(--text);
+  }
+
+  h1, h2, h3 { text-wrap: balance; }
+  p, blockquote { text-wrap: pretty; }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Mouvement réduit : plus de défilement animé ni d'entrées différées.
+     Les états finaux restent identiques, seul le trajet disparaît. */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal,
+    .project-card {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+    .rotator-word span { transition: none !important; }
+    .page-transition,
+    .page-transition-label { transition-duration: 0.01ms !important; transition-delay: 0s !important; }
   }

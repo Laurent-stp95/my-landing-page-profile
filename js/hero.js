@@ -19,10 +19,6 @@ words.forEach(word => {
 if (words.length > 1) {
   let current = 0;
 
-  // Compteur
-  const counterCurrent = document.getElementById('rotatorCounter')?.querySelector('.counter-current');
-  const pad = (n) => String(n + 1).padStart(2, '0');
-
   const setLetterDelays = (word, delayPerLetter) => {
     const letters = word.querySelectorAll('span');
     letters.forEach((letter, index) => {
@@ -50,15 +46,6 @@ if (words.length > 1) {
       words[current].classList.remove('exit');
       words[current].classList.add('active');
 
-      // Mise à jour compteur
-      if (counterCurrent) {
-        counterCurrent.style.opacity = '0';
-        setTimeout(() => {
-          counterCurrent.textContent = pad(current);
-          counterCurrent.style.opacity = '1';
-        }, 150);
-      }
-
       // Clean up exit class after animation completes
       setTimeout(() => {
         words[prev].classList.remove('exit');
@@ -66,6 +53,8 @@ if (words.length > 1) {
     }, 400);
   };
 
-  // Start rotation
-  setInterval(rotateWord, 4000);
+  // Start rotation (immobile si mouvement réduit : le 1er mot reste affiché)
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    setInterval(rotateWord, 4000);
+  }
 }

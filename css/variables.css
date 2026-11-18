@@ -5,6 +5,7 @@
    ============================================= */
 
 :root {
+  color-scheme: light dark;
   /* --- Backgrounds (blanc profond Apple / gris neutres) --- */
   --bg: #fbfbfd;
   --bg-elevated: #f5f5f7;
@@ -12,20 +13,23 @@
 
   /* --- Text Colors (Apple ink → gris neutres) --- */
   --text: #1d1d1f;        /* ink Apple */
-  --text-muted: #6e6e73;  /* gris secondaire Apple */
-  --text-subtle: #86868b; /* gris tertiaire Apple */
+  --text-muted: #515154;  /* secondaire, 7.5:1 */
+  --text-subtle: #6e6e73; /* tertiaire, ≥4.5:1 sur --bg et --bg-elevated */
 
   /* --- Accent = BLEU Apple (liens, CTA, badges) --- */
   --accent: #0071e3;       /* bleu boutons Apple */
-  --accent-hover: #0077ed; /* hover légèrement plus clair */
+  --accent-hover: #0077ed; /* hover décoratif (jamais derrière du texte blanc) */
   --accent-dim: #0066cc;   /* bleu liens texte Apple */
+  --accent-text: #005bb8;  /* texte accent, ≥4.5:1 sur --bg, --bg-elevated et --accent-soft */
+  --accent-solid: #0066cc; /* fond de bouton, texte blanc 5.6:1 */
+  --accent-solid-hover: #0058b0;
   --accent-soft: rgba(0, 113, 227, 0.08);
   --accent-glow: rgba(0, 113, 227, 0.12);
 
   /* --- Disciplines : bleu Apple + gris neutres --- */
   --disc-product: #0071e3; /* bleu — product */
   --disc-design:  #6e6e73; /* gris moyen */
-  --disc-code:    #86868b; /* gris clair */
+  --disc-code:    #6e6e73; /* gris moyen */
 
   /* --- Borders (gris neutres Apple) --- */
   --border: #d2d2d7;
@@ -34,6 +38,10 @@
   --border-accent: #0071e3;
 
   /* --- Surface States --- */
+  --btn-secondary-hover: #ebebef;
+  --nav-bg: rgba(251, 251, 253, 0.8);
+  --nav-border: rgba(0, 0, 0, 0.08);
+  --card-shadow-hover: 0 22px 50px -25px rgba(0, 0, 0, 0.22);
   --surface-hover: rgba(0, 0, 0, 0.04);
   --surface-active: rgba(0, 0, 0, 0.06);
 
@@ -61,4 +69,35 @@
   --radius-md: 8px;
   --radius-lg: 12px;
   --radius-full: 9999px;
+}
+
+/* --- Mode sombre : mêmes rôles, valeurs inversées. Le terminal du hero
+   reste sombre dans les deux modes. --- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --bg-elevated: #1d1d1f;
+    --bg-subtle: #1d1d1f;
+    --text: #f5f5f7;
+    --text-muted: #c7c7cc;
+    --text-subtle: #a1a1a6;
+    --accent: #2997ff;
+    --accent-hover: #4aa8ff;
+    --accent-dim: #4aa8ff;
+    --accent-text: #4aa8ff;
+    --accent-soft: rgba(41, 151, 255, 0.16);
+    --accent-glow: rgba(41, 151, 255, 0.2);
+    --disc-product: #2997ff;
+    --disc-design: #a1a1a6;
+    --disc-code: #a1a1a6;
+    --border: #38383a;
+    --border-subtle: #2c2c2e;
+    --border-bright: #48484a;
+    --btn-secondary-hover: #2c2c2e;
+    --nav-bg: rgba(0, 0, 0, 0.72);
+    --nav-border: rgba(255, 255, 255, 0.1);
+    --card-shadow-hover: 0 22px 50px -25px rgba(0, 0, 0, 0.8);
+    --surface-hover: rgba(255, 255, 255, 0.06);
+    --surface-active: rgba(255, 255, 255, 0.1);
+  }
 }
