@@ -76,7 +76,30 @@ nav.is-scrolled {
   color: var(--text);
 }
 
-/* Indicateur de section : petit point bleu sous le lien actif */
+/* Indicateur de section (desktop) : un seul point bleu, déplacé par
+   nav.js sous le lien actif. Il glisse d'un lien à l'autre au scroll et,
+   grâce à son view-transition-name, d'une page à l'autre. */
+.nav-dot {
+  position: absolute;
+  top: calc(50% + 14px);
+  left: 0;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0;
+  transform: translateX(var(--dot-x, 0px));
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+  pointer-events: none;
+  view-transition-name: nav-dot;
+}
+
+.nav-dot.is-visible {
+  opacity: 1;
+}
+
+/* Point par lien : utilisé uniquement dans le menu mobile */
 .nav-links a:not(.nav-cta)::after {
   content: '';
   position: absolute;
@@ -177,7 +200,17 @@ nav.is-scrolled {
 /* =============================================
    MOBILE (< 900px) — panneau plein écran
    ============================================= */
+@media (min-width: 901px) {
+  .nav-links a:not(.nav-cta)::after {
+    display: none;
+  }
+}
+
 @media (max-width: 900px) {
+  .nav-dot {
+    display: none;
+  }
+
   nav {
     height: var(--nav-h-mobile);
     padding: 0 5vw;
@@ -296,7 +329,8 @@ html.nav-open body {
   .nav-links,
   .nav-links li,
   .burger-line,
-  .nav-links a::after {
+  .nav-links a::after,
+  .nav-dot {
     transition: none !important;
   }
 }

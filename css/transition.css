@@ -1,79 +1,62 @@
 /* =============================================
-   PAGE TRANSITION — Wipe entre index et cv.html
+   PAGE TRANSITION — View Transitions entre pages
+   Natif (Chrome, Edge, Safari récents) ; ailleurs la page
+   s'affiche simplement, sans animation ni attente.
+   - l'ancienne page s'efface en montant légèrement
+   - la nouvelle arrive en glissant vers le haut
+   - la barre de navigation reste en place
+   - le point bleu glisse vers le lien de la page d'arrivée
    ============================================= */
 
-/* Courbe Apple : douce, sans rebond */
+@view-transition {
+  navigation: auto;
+}
+
 :root {
-  --transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-dur: 0.75s;
+  --vt-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.page-transition {
-  position: fixed;
-  inset: 0;
-  z-index: 8000;
-  background: var(--text); /* ink Apple #1d1d1f */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-
-  /* Wipe : le voile monte depuis le bas */
-  transform: translateY(100%);
-  transition: transform var(--transition-dur) var(--transition-ease);
+/* La barre est un élément partagé : elle ne glisse pas avec la page */
+nav {
+  view-transition-name: site-nav;
 }
 
-/* État actif : couvre l'écran */
-.page-transition.is-active {
-  transform: translateY(0%);
+::view-transition-group(site-nav) {
+  z-index: 2;
 }
 
-/* Sortie sur cv.html : commence couvrant, remonte vers le haut */
-.page-transition--enter {
-  transform: translateY(0%);
-  transition: transform var(--transition-dur) var(--transition-ease);
+::view-transition-group(nav-dot) {
+  z-index: 3;
+  animation-duration: 0.45s;
+  animation-timing-function: var(--vt-ease);
 }
 
-.page-transition--enter.is-done {
-  transform: translateY(-100%);
+/* Contenu : fondu + léger glissement vertical */
+::view-transition-old(root) {
+  animation: vt-out 0.22s ease-in both;
 }
 
-/* Retour vers index.html : voile descend depuis le haut */
-.page-transition--exit {
-  transform: translateY(-100%);
-  transition: transform var(--transition-dur) var(--transition-ease);
+::view-transition-new(root) {
+  animation: vt-in 0.4s var(--vt-ease) 0.06s both;
 }
 
-.page-transition--exit.is-active {
-  transform: translateY(0%);
+@keyframes vt-out {
+  to {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
 }
 
-/* Label central — SF, sobre, léger fade + scale */
-.page-transition-label {
-  font-family: var(--sans);
-  font-size: clamp(2.5rem, 7vw, 5rem);
-  font-weight: 600;
-  color: var(--bg);
-  letter-spacing: -0.03em;
-  line-height: 1;
-  user-select: none;
-
-  opacity: 0;
-  transform: scale(0.94);
-  transition:
-    opacity 0.4s ease 0.15s,
-    transform 0.55s var(--transition-ease) 0.15s;
+@keyframes vt-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
 }
 
-.page-transition.is-active .page-transition-label,
-.page-transition--enter .page-transition-label,
-.page-transition--exit.is-active .page-transition-label {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.page-transition--enter.is-done .page-transition-label {
-  opacity: 0;
-  transform: scale(1.04);
-  transition-delay: 0s;
+/* Mouvement réduit : changement de page instantané */
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
 }

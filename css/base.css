@@ -102,6 +102,4 @@
       transition: none !important;
     }
     .rotator-word span { transition: none !important; }
-    .page-transition,
-    .page-transition-label { transition-duration: 0.01ms !important; transition-delay: 0s !important; }
   }

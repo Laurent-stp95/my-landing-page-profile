@@ -26,7 +26,7 @@ Puis ouvrir http://localhost:8000. La page `404.html` ne s'affiche qu'en ligne (
 ├── cv.html             parcours (notes de version)
 ├── 404.html            page introuvable (styles intégrés)
 ├── css/                un fichier par section + variables.css
-├── js/                 nav, hero, terminal, scroll-reveal, transition, release-notes
+├── js/                 nav, hero, terminal, scroll-reveal, release-notes
 ├── assets/             image de partage, icônes
 ├── favicon.svg
 ├── site.webmanifest

@@ -16,6 +16,29 @@ document.addEventListener('DOMContentLoaded', () => {
     nav.classList.toggle('is-scrolled', window.scrollY > 8);
   };
   updateScrolled();
+
+  /* ── Point bleu (desktop) : glisse sous le lien actif ── */
+  const dot = nav.querySelector('.nav-dot');
+  const placeDot = () => {
+    if (!dot) return;
+    const active = navMenu.querySelector('a.is-active, a.nav-active');
+    if (!active || mobileQuery.matches) {
+      dot.classList.remove('is-visible');
+      return;
+    }
+    const navBox = nav.getBoundingClientRect();
+    const box = active.getBoundingClientRect();
+    dot.style.setProperty('--dot-x', `${box.left - navBox.left + box.width / 2}px`);
+    dot.classList.add('is-visible');
+  };
+  // Première position sans glissement, puis transitions normales
+  if (dot) {
+    dot.style.transition = 'none';
+    placeDot();
+    requestAnimationFrame(() => requestAnimationFrame(() => { dot.style.transition = ''; }));
+  }
+  window.addEventListener('resize', placeDot);
+  mobileQuery.addEventListener('change', placeDot);
   window.addEventListener('scroll', updateScrolled, { passive: true });
 
   /* ── Menu mobile ── */
@@ -119,6 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (active) a.setAttribute('aria-current', 'true');
         else a.removeAttribute('aria-current');
       });
+      placeDot();
     };
 
     // Une section est "active" quand elle traverse la bande haute du viewport
