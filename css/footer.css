@@ -8,7 +8,7 @@ footer {
 
 /* --- CTA contact --- */
 .footer-cta {
-  padding: 7rem 6vw;
+  padding: 5rem 6vw 6rem;
   max-width: 1240px;
   margin: 0 auto;
   text-align: center;
@@ -24,8 +24,15 @@ footer {
   letter-spacing: -0.03em;
   line-height: 1.1;
   color: var(--text);
-  margin: 0 0 2.25rem 0;
+  margin: 0 0 1rem 0;
   max-width: 16ch;
+}
+
+.footer-lead {
+  margin: 0 0 2.25rem;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: var(--text-muted);
 }
 
 /* --- Boutons --- */
@@ -80,12 +87,76 @@ footer {
   flex-shrink: 0;
 }
 
+/* --- Adresse e-mail copiable --- */
+.footer-email {
+  margin-top: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0 0.75rem;
+  font-family: var(--sans);
+  font-size: 0.9375rem;
+  letter-spacing: -0.01em;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.footer-email:hover {
+  color: var(--text);
+  background: var(--surface-hover);
+}
+
+.footer-email:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 2px;
+}
+
+.footer-email-icon {
+  position: relative;
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+}
+
+.footer-email-icon svg {
+  position: absolute;
+  inset: 0;
+  transition: opacity 0.2s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.footer-email .icon-check {
+  opacity: 0;
+  transform: scale(0.6);
+  color: var(--accent-text);
+}
+
+.footer-email.is-copied .icon-copy {
+  opacity: 0;
+  transform: scale(0.6);
+}
+
+.footer-email.is-copied .icon-check {
+  opacity: 1;
+  transform: none;
+}
+
+.footer-email-status {
+  min-height: 1.4em;
+  margin: 0.25rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--accent-text);
+}
+
 /* --- Barre légale --- */
 .footer-bar {
   border-top: 1px solid var(--border);
-  padding: 1.75rem 6vw;
-  max-width: 1240px;
-  margin: 0 auto;
+  padding: 1.75rem 0;
+  margin: 0 6vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -120,7 +191,8 @@ footer {
   .footer-bar {
     flex-direction: column;
     align-items: flex-start;
-    padding: 1.5rem 5vw;
+    margin: 0 5vw;
+    padding: 1.5rem 0;
     gap: 0.4rem;
   }
 }

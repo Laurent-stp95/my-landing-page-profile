@@ -319,26 +319,27 @@
   <footer id="contact">
     <div class="footer-cta reveal">
       <h2 class="footer-title">Construisons votre prochain produit.</h2>
+      <p class="footer-lead">Écrivez-moi, ou retrouvez-moi sur LinkedIn.</p>
       <div class="footer-actions">
-        <a href="https://linkedin.com/in/laurentdelbraccio" class="footer-btn footer-btn--primary" target="_blank" rel="noopener noreferrer" onclick="window.goatcounter&&goatcounter.count({path:'click-linkedin',title:'LinkedIn',event:true})">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-            <rect x="2" y="9" width="4" height="12"/>
-            <circle cx="4" cy="4" r="2"/>
-          </svg>
+        <a href="mailto:dbraccio.laurent@gmail.com" class="footer-btn footer-btn--primary" onclick="window.goatcounter&&goatcounter.count({path:'click-email',title:'Email',event:true})">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          M'écrire
+        </a>
+        <a href="https://linkedin.com/in/laurentdelbraccio" class="footer-btn" target="_blank" rel="noopener noreferrer" onclick="window.goatcounter&&goatcounter.count({path:'click-linkedin',title:'LinkedIn',event:true})">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           LinkedIn
         </a>
         <a href="cv.html" class="footer-btn" onclick="window.goatcounter&&goatcounter.count({path:'click-cv',title:'CV Page',event:true})">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-            <polyline points="14 2 14 8 20 8"/>
-            <line x1="16" y1="13" x2="8" y2="13"/>
-            <line x1="16" y1="17" x2="8" y2="17"/>
-            <polyline points="10 9 9 9 8 9"/>
-          </svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           Mon CV
         </a>
       </div>
+      <button type="button" class="footer-email" data-copy="dbraccio.laurent@gmail.com" aria-describedby="emailStatus">
+        <span class="footer-email-address">dbraccio.laurent@gmail.com</span>
+        <span class="footer-email-icon"><svg class="icon-copy" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><svg class="icon-check" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <span class="sr-only">Copier l'adresse e-mail</span>
+      </button>
+      <p class="footer-email-status" id="emailStatus" aria-live="polite"></p>
     </div>
     <div class="footer-bar">
       <span>© 2026 Laurent Del Braccio · Product Builder</span>
@@ -352,6 +353,7 @@
   <script src="js/nav.js" defer></script>
   <script src="js/scroll-reveal.js" defer></script>
   <script src="js/transition.js" defer></script>
+  <script src="js/contact.js" defer></script>
 
 </body>
 </html>
