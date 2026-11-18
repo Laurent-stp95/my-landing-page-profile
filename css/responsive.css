@@ -14,7 +14,7 @@
     }
   
     .hero h1 {
-      font-size: clamp(2.5rem, 11vw, 3.8rem);
+      font-size: var(--fs-display);
     }
 
     .hero-rotator {

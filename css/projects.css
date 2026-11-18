@@ -51,7 +51,7 @@
 
 .case-scope {
   margin: 0 0 1rem;
-  font-size: 0.875rem;
+  font-size: var(--fs-label);
   font-weight: 500;
   letter-spacing: -0.01em;
   color: var(--text-subtle);
@@ -61,7 +61,7 @@
   margin: 0;
   max-width: 22ch;
   font-family: var(--sans);
-  font-size: clamp(1.6rem, 2.8vw, 2.25rem);
+  font-size: var(--fs-title);
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.025em;
@@ -76,7 +76,7 @@
 .case-context {
   margin: 1.25rem 0 0;
   max-width: 52ch;
-  font-size: 1.05rem;
+  font-size: var(--fs-body-lg);
   line-height: 1.6;
   color: var(--text-muted);
 }
@@ -102,7 +102,7 @@
 
 .case-metric-value {
   font-family: var(--sans);
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-size: var(--fs-title);
   font-weight: 600;
   line-height: 1.05;
   letter-spacing: -0.035em;
@@ -112,7 +112,7 @@
 }
 
 .case-metric--text .case-metric-value {
-  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+  font-size: var(--fs-subhead);
   letter-spacing: -0.02em;
   line-height: 1.2;
 }
@@ -120,7 +120,7 @@
 .case-metric-label {
   margin: 0.4rem 0 0;
   max-width: 34ch;
-  font-size: 0.9375rem;
+  font-size: var(--fs-small);
   line-height: 1.5;
   color: var(--text-muted);
 }
@@ -136,7 +136,7 @@
   align-items: center;
   gap: 0.4rem;
   min-height: 44px;
-  font-size: 0.9375rem;
+  font-size: var(--fs-small);
   font-weight: 500;
   letter-spacing: -0.01em;
   color: var(--accent-text);
@@ -188,7 +188,7 @@
 .case-block-label {
   margin: 0 0 0.6rem;
   font-family: var(--sans);
-  font-size: 0.9375rem;
+  font-size: var(--fs-small);
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--text);
@@ -197,7 +197,7 @@
 .case-block p {
   margin: 0;
   max-width: 62ch;
-  font-size: 0.9875rem;
+  font-size: var(--fs-small);
   line-height: 1.65;
   color: var(--text-muted);
 }
@@ -238,15 +238,15 @@
   }
 
   .case-metric-value {
-    font-size: clamp(1.5rem, 6.5vw, 2rem);
+    font-size: var(--fs-title);
   }
 
   .case-metric--text .case-metric-value {
-    font-size: 1.125rem;
+    font-size: var(--fs-body-lg);
   }
 
   .case-metric-label {
-    font-size: 0.875rem;
+    font-size: var(--fs-label);
   }
 
   .case-details {

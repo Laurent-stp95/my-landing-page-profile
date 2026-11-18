@@ -31,7 +31,7 @@
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--border);
   font-family: var(--sans);
-  font-size: 1.25rem;
+  font-size: var(--fs-subhead);
   font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -58,7 +58,7 @@
 
 .skill-name {
   font-family: var(--sans);
-  font-size: 1.0625rem;
+  font-size: var(--fs-body-lg);
   font-weight: 600;
   letter-spacing: -0.015em;
   color: var(--text);
@@ -66,7 +66,7 @@
 
 .skill-proof {
   max-width: 56ch;
-  font-size: 0.9375rem;
+  font-size: var(--fs-small);
   line-height: 1.55;
   color: var(--text-muted);
 }
@@ -83,7 +83,7 @@
 
 .skills-extra-row dt {
   margin: 0 0 0.35rem;
-  font-size: 0.875rem;
+  font-size: var(--fs-label);
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--text);
@@ -91,7 +91,7 @@
 
 .skills-extra-row dd {
   margin: 0;
-  font-size: 0.9375rem;
+  font-size: var(--fs-small);
   line-height: 1.6;
   color: var(--text-muted);
 }

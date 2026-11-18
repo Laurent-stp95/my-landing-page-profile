@@ -28,36 +28,58 @@ colors:
   hairline-dark: "#38383a"
   hairline-soft-dark: "#2c2c2e"
   terminal: "#1d1d1f"
+  terminal-close: "#ff5c5f"
+  terminal-minimize: "#fac800"
+  terminal-maximize: "#34c759"
+  terminal-success: "#30d158"
 typography:
   display:
     fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif"
-    fontSize: "clamp(3rem, 7vw, 6rem)"
+    fontSize: "clamp(2.5rem, 1rem + 6vw, 6rem)"
     fontWeight: 600
     lineHeight: 1.05
     letterSpacing: "-0.03em"
   headline:
     fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif"
-    fontSize: "clamp(2rem, 4.5vw, 3.25rem)"
+    fontSize: "clamp(2rem, 1.4rem + 2.4vw, 3.25rem)"
     fontWeight: 600
     lineHeight: 1.1
     letterSpacing: "-0.025em"
   title:
     fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif"
-    fontSize: "clamp(1.6rem, 2.8vw, 2.25rem)"
+    fontSize: "clamp(1.6rem, 1.2rem + 1.4vw, 2.25rem)"
     fontWeight: 600
     lineHeight: 1.15
     letterSpacing: "-0.025em"
   lead:
     fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif"
-    fontSize: "clamp(1.3rem, 2.1vw, 1.75rem)"
+    fontSize: "clamp(1.3rem, 1rem + 1vw, 1.75rem)"
     fontWeight: 600
     lineHeight: 1.35
     letterSpacing: "-0.02em"
+  subhead:
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+    fontSize: "1.25rem"
+    fontWeight: 600
+    lineHeight: 1.3
+    letterSpacing: "-0.02em"
+  body-lg:
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+    fontSize: "1.125rem"
+    fontWeight: 600
+    lineHeight: 1.4
+    letterSpacing: "-0.015em"
   body:
     fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.6
+    letterSpacing: "-0.01em"
+  small:
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+    fontSize: "0.9375rem"
+    fontWeight: 400
+    lineHeight: 1.55
     letterSpacing: "-0.01em"
   label:
     fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif"
@@ -72,6 +94,12 @@ typography:
     lineHeight: 1.4
     letterSpacing: "0em"
     fontFeature: "tnum"
+  caption:
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+    fontSize: "0.75rem"
+    fontWeight: 600
+    lineHeight: 1.2
+    letterSpacing: "0em"
 rounded:
   sm: "4px"
   md: "8px"
@@ -111,7 +139,7 @@ components:
   tag-shipped:
     backgroundColor: "{colors.release-blue-wash}"
     textColor: "{colors.release-blue-text}"
-    typography: "{typography.label}"
+    typography: "{typography.caption}"
     rounded: "{rounded.sm}"
     padding: "0 0.55rem"
     height: "1.5rem"
@@ -171,7 +199,7 @@ Une palette neutre et froide, portée par un unique bleu dont la rareté signale
 - **Encre atténuée** (ink-muted, 7,5:1) : paragraphes secondaires, légendes de chiffres, accroches en deux tons.
 - **Encre discrète** (ink-subtle, ≥ 4,5:1) : métadonnées, dates, scopes de projet, pied de page.
 - **Filet** (hairline) : séparateurs principaux et bordure de la navigation ; **filet doux** (hairline-soft) entre les lignes d'une même liste ; **filet marqué** (hairline-strong) pour les soulignements de liens au repos.
-- **Terminal** (terminal) : le fond du terminal du hero, sombre dans les deux modes.
+- **Terminal** (terminal) : le fond du terminal du hero, sombre dans les deux modes. Ses trois pastilles de fenêtre (terminal-close, terminal-minimize, terminal-maximize) et la coche de la ligne finale (terminal-success) sont les seules couleurs hors palette, tolérées parce qu'elles appartiennent à l'objet représenté.
 
 ### Mode sombre
 Mêmes rôles, valeurs inversées : fond noir (ground-dark), surfaces gris anthracite (surface-dark), encres claires (ink-dark, ink-muted-dark, ink-subtle-dark), bleu éclairci pour rester lisible (release-blue-dark, release-blue-text-dark) et filets sombres (hairline-dark, hairline-soft-dark). Le fond des boutons pleins (release-blue-solid) reste identique dans les deux modes.
@@ -190,16 +218,24 @@ Mêmes rôles, valeurs inversées : fond noir (ground-dark), surfaces gris anthr
 **Character:** Une seule famille sans empattement, très resserrée sur les grands titres et neutre en texte courant. La mono n'apparaît que là où l'information est une donnée : elle donne à la page son ton de note de version sans la déguiser en écran de code.
 
 ### Hierarchy
-- **Display** (600, clamp(3rem → 6rem), interligne 1,05, approche −0,03em) : le nom dans le hero et le titre « Notes de version ». Un seul par page.
-- **Headline** (600, clamp(2rem → 3,25rem), 1,1, −0,025em) : titres de section. La seconde moitié peut passer en encre atténuée pour créer deux tons (« Un PM qui construit, *pas seulement qui pilote.* »).
-- **Title** (600, clamp(1,6rem → 2,25rem), 1,15, −0,025em) : titres de projets et de la version actuelle. Le résultat qu'ils annoncent passe en bleu texte.
-- **Lead** (600, clamp(1,3rem → 1,75rem), 1,35) : accroches de section en deux tons, première phrase en encre, suite en encre discrète. Mesure ≈ 34 caractères.
-- **Body** (400, 1rem, 1,6) : paragraphes et preuves. Mesure 52 à 65 caractères ; `text-wrap: pretty` sur les paragraphes et les légendes, `balance` sur les titres.
-- **Label** (500, 0,875rem) : scopes de projet, liens « Voir le détail », boutons de navigation.
-- **Data** (mono 400, 0,8125rem, chiffres tabulaires) : numéros de version, dates, durées, contenu du terminal.
+Onze rôles, chacun exposé en variable CSS `--fs-<rôle>` dans `css/variables.css`. Les quatre plus grands sont fluides : ils grandissent avec la largeur d'écran entre deux bornes, sans réglage par point de rupture.
+
+- **Display** (600, 2,5 → 6rem fluide, interligne 1,05, approche −0,03em) : le nom dans le hero et le titre « Notes de version ». Un seul par page.
+- **Headline** (600, 2 → 3,25rem fluide, 1,1, −0,025em) : titres de section et de la page 404. La seconde moitié peut passer en encre atténuée pour créer deux tons (« Un PM qui construit, *pas seulement qui pilote.* »).
+- **Title** (600, 1,6 → 2,25rem fluide, 1,15, −0,025em) : titres de projets et de la version actuelle, chiffres de projet, sous-titre « Product Builder » du hero, liens du menu mobile. Le résultat annoncé par un titre passe en bleu texte.
+- **Lead** (600, 1,3 → 1,75rem fluide, 1,35) : accroches de section en deux tons, verbes du rail des étapes. Mesure ≈ 34 caractères.
+- **Subhead** (600, 1,25rem) : titres de groupe (Product, Design & code, Versions précédentes), accroche du hero, ligne de signature du CV, chiffres textuels.
+- **Body-lg** (600, 1,125rem) : noms de compétences, titres de versions précédentes, logo, chiffres en ligne, accroche de la page 404.
+- **Body** (400, 1rem, 1,6) : paragraphes et contexte des projets. Mesure 52 à 65 caractères ; `text-wrap: pretty` sur paragraphes et légendes, `balance` sur les titres.
+- **Small** (400, 0,9375rem, 1,55) : preuves, légendes de chiffres, texte secondaire, boutons.
+- **Label** (500, 0,875rem) : navigation, scopes de projet, liens « Voir le détail », titres de colonnes.
+- **Data** (mono 400, 0,8125rem, chiffres tabulaires) : numéros de version, dates, durées, texte du terminal ; aussi la taille des mentions du pied de page (en sans).
+- **Caption** (600, 0,75rem) : étiquettes Livré / Amélioré / Méthode, badge « Version actuelle », libellés du terminal.
 
 ### Named Rules
 **The Data in Mono Rule.** La mono est réservée aux données : versions, dates, durées, lignes du terminal. Jamais pour un titre, une accroche ou une étiquette décorative.
+
+**The Scale Only Rule.** Aucune taille de texte en dur : chaque `font-size` utilise une variable `--fs-*`. Un besoin nouveau se traite en ajoutant un rôle à l'échelle (et à ce document), pas une valeur isolée.
 
 **The No Eyebrow Rule.** Aucun sur-titre ni label en petites capitales au-dessus d'un titre, et pas de numéro de section (01, 02…). Le titre porte seul son poids.
 

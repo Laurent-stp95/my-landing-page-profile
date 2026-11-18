@@ -19,7 +19,7 @@ footer {
 
 .footer-title {
   font-family: var(--sans);
-  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-size: var(--fs-headline);
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 1.1;
@@ -30,7 +30,7 @@ footer {
 
 .footer-lead {
   margin: 0 0 2.25rem;
-  font-size: 1.125rem;
+  font-size: var(--fs-body-lg);
   line-height: 1.5;
   color: var(--text-muted);
 }
@@ -49,7 +49,7 @@ footer {
   gap: 0.5rem;
   padding: 0.7rem 1.5rem;
   font-family: var(--sans);
-  font-size: 0.95rem;
+  font-size: var(--fs-small);
   font-weight: 500;
   letter-spacing: -0.01em;
   color: var(--text);
@@ -100,7 +100,7 @@ footer {
 }
 
 .footer-bar span {
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
   color: var(--text-subtle);
 }
 

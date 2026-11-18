@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-18T14:17:32Z",
+  "generatedAt": "2026-11-18T14:31:12Z",
   "title": "Design System: ldb.pm",
   "extensions": {
     "colorMeta": {
@@ -143,31 +143,47 @@
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Nom dans le hero, titre « Notes de version ». Un seul par page."
+        "purpose": "Nom dans le hero, titre « Notes de version ». Un seul par page. --fs-display"
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Titres de section, souvent en deux tons."
+        "purpose": "Titres de section et de la 404, souvent en deux tons. --fs-headline"
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Titres de projet et de version actuelle ; le résultat en bleu texte."
+        "purpose": "Titres de projet et de version, chiffres, sous-titre du hero. --fs-title"
       },
       "lead": {
         "displayName": "Lead",
-        "purpose": "Accroches de section en deux tons."
+        "purpose": "Accroches de section, verbes du rail. --fs-lead"
+      },
+      "subhead": {
+        "displayName": "Subhead",
+        "purpose": "Titres de groupe, accroche du hero, signature du CV. --fs-subhead"
+      },
+      "body-lg": {
+        "displayName": "Body large",
+        "purpose": "Noms de compétences, titres de versions, logo, chiffres en ligne. --fs-body-lg"
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Paragraphes et preuves, mesure 52–65 caractères."
+        "purpose": "Texte courant, mesure 52–65 caractères. --fs-body"
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Preuves, légendes, texte secondaire, boutons. --fs-small"
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Scopes, liens d'action, navigation."
+        "purpose": "Navigation, scopes, liens d action. --fs-label"
       },
       "data": {
         "displayName": "Data (mono)",
-        "purpose": "Versions, dates, durées, terminal. Rien d'autre."
+        "purpose": "Versions, dates, durées, terminal. --fs-sm"
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Étiquettes de note de version, badge, libellés du terminal. --fs-xs"
       }
     },
     "shadows": [
@@ -235,7 +251,7 @@
       "refersTo": "button-primary",
       "description": "Action principale (M'écrire, Retour à l'accueil).",
       "html": "<a class=\"ds-btn-primary\" href=\"#\">M'écrire</a>",
-      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:.7rem 1.5rem;border-radius:9999px;font:500 .95rem/1 -apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;letter-spacing:-.01em;color:var(--on-accent,#fff);background:var(--accent-solid,#0066cc);text-decoration:none;transition:background-color .2s ease}.ds-btn-primary:hover{background:var(--accent-solid-hover,#0058b0)}.ds-btn-primary:focus-visible{outline:2px solid var(--accent-text,#005bb8);outline-offset:3px}"
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:.7rem 1.5rem;border-radius:9999px;font:500 .9375rem/1 -apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;letter-spacing:-.01em;color:var(--on-accent,#fff);background:var(--accent-solid,#0066cc);text-decoration:none;transition:background-color .2s ease}.ds-btn-primary:hover{background:var(--accent-solid-hover,#0058b0)}.ds-btn-primary:focus-visible{outline:2px solid var(--accent-text,#005bb8);outline-offset:3px}"
     },
     {
       "name": "Bouton secondaire",
@@ -243,7 +259,7 @@
       "refersTo": "button-secondary",
       "description": "Actions secondaires (LinkedIn, Mon CV, Voir mes projets).",
       "html": "<a class=\"ds-btn-secondary\" href=\"#\">Voir mes projets</a>",
-      "css": ".ds-btn-secondary{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:.7rem 1.5rem;border-radius:9999px;font:500 .95rem/1 -apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;letter-spacing:-.01em;color:var(--text,#1d1d1f);background:var(--bg-elevated,#f5f5f7);text-decoration:none;transition:background-color .2s ease}.ds-btn-secondary:hover{background:var(--btn-secondary-hover,#ebebef)}.ds-btn-secondary:focus-visible{outline:2px solid var(--accent-text,#005bb8);outline-offset:3px}"
+      "css": ".ds-btn-secondary{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:.7rem 1.5rem;border-radius:9999px;font:500 .9375rem/1 -apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;letter-spacing:-.01em;color:var(--text,#1d1d1f);background:var(--bg-elevated,#f5f5f7);text-decoration:none;transition:background-color .2s ease}.ds-btn-secondary:hover{background:var(--btn-secondary-hover,#ebebef)}.ds-btn-secondary:focus-visible{outline:2px solid var(--accent-text,#005bb8);outline-offset:3px}"
     },
     {
       "name": "Navigation",
@@ -310,6 +326,11 @@
       {
         "name": "The Data in Mono Rule",
         "body": "La mono est réservée aux données : versions, dates, durées, lignes du terminal. Jamais pour un titre, une accroche ou une étiquette décorative.",
+        "section": "typography"
+      },
+      {
+        "name": "The Scale Only Rule",
+        "body": "Aucune taille de texte en dur : chaque `font-size` utilise une variable `--fs-*`. Un besoin nouveau se traite en ajoutant un rôle à l'échelle (et à ce document), pas une valeur isolée.",
         "section": "typography"
       },
       {

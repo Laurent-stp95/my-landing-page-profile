@@ -34,7 +34,7 @@
 
   .section-title {
     font-family: var(--sans);
-    font-size: clamp(2rem, 4.5vw, 3.25rem);
+    font-size: var(--fs-headline);
     font-weight: 600;
     letter-spacing: -0.025em;
     line-height: 1.1;
@@ -62,7 +62,7 @@
     z-index: 200;
     padding: 0.6rem 1rem;
     border-radius: var(--radius-full);
-    font-size: 0.9rem;
+    font-size: var(--fs-small);
     font-weight: 500;
     color: var(--on-accent);
     background: var(--accent-solid);
