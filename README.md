@@ -31,5 +31,6 @@ Puis ouvrir http://localhost:8000. La page `404.html` ne s'affiche qu'en ligne (
 ├── favicon.svg
 ├── site.webmanifest
 ├── PRODUCT.md          contexte produit (utilisé par impeccable)
+├── DESIGN.md           système visuel : couleurs, typo, composants, règles
 └── instructions/       guides git (push, commit)
 ```
